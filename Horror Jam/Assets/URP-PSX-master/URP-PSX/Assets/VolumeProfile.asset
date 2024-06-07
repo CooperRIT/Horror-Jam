@@ -40,13 +40,13 @@ MonoBehaviour:
     m_Value: 0
   ditherThreshold:
     m_OverrideState: 1
-    m_Value: 3
+    m_Value: 4.3
   ditherStrength:
     m_OverrideState: 0
     m_Value: 1
   ditherScale:
     m_OverrideState: 1
-    m_Value: 2.5
+    m_Value: 2
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -78,13 +78,13 @@ MonoBehaviour:
   active: 1
   fogDensity:
     m_OverrideState: 1
-    m_Value: 1.3
+    m_Value: 0.69
   fogDistance:
     m_OverrideState: 1
-    m_Value: 25.8
+    m_Value: 50
   fogColor:
     m_OverrideState: 1
-    m_Value: {r: 1, g: 1, b: 1, a: 0}
+    m_Value: {r: 0.735849, g: 0.6768423, b: 0.6768423, a: 0}
   fogNear:
     m_OverrideState: 0
     m_Value: 1

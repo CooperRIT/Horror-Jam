@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.VFX;
 
@@ -10,8 +8,7 @@ public class EventManager : MonoBehaviour
 
     [Header("Events Refernces")]
     [SerializeField] private VisualEffect lightningSpawner;
-
-    public void EventTree(int eventID)
+    public void EventTree(int eventID, Transform vfxTransform)
     {
         switch (eventID)
         {
@@ -20,6 +17,9 @@ public class EventManager : MonoBehaviour
                 break;
 
             case 1:
+                lightningSpawner.transform.position = vfxTransform.position;
+                lightningSpawner.transform.rotation = vfxTransform.rotation;
+
                 lightningSpawner.Play();
                 break;
 

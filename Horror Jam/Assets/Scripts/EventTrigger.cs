@@ -8,10 +8,14 @@ public class EventTrigger : MonoBehaviour
     [Header("Scriptable Object Reference")]
     [SerializeField] private EventChannel eventChannel;
 
+
+    [Header("Event Trigger Settings")]
     [Tooltip("The ID of the event being called")]
     [SerializeField] private int eventID;
 
     [SerializeField] private int playerLayer;
+
+    [SerializeField] private Transform vfxTransform;
 
     [SerializeField] private bool destroyOnTrigger;
 
@@ -19,7 +23,7 @@ public class EventTrigger : MonoBehaviour
     {
         if (other.gameObject.layer != playerLayer) return;
 
-        eventChannel.TriggerEvent(eventID);
+        eventChannel.TriggerEvent(eventID, vfxTransform);
 
         if (!destroyOnTrigger) return;
 
