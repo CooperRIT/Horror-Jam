@@ -31,6 +31,7 @@ namespace PSX
         static readonly int FogDensity = Shader.PropertyToID("_FogDensity");
         static readonly int FogDistance = Shader.PropertyToID("_FogDistance");
         static readonly int FogColor = Shader.PropertyToID("_FogColor");
+        static readonly int AmbientColor = Shader.PropertyToID("_AmbientColor");
         static readonly int FogNear = Shader.PropertyToID("_FogNear");
         static readonly int FogFar = Shader.PropertyToID("_FogFar");
         static readonly int FogAltScale = Shader.PropertyToID("_FogAltScale");
@@ -96,6 +97,7 @@ namespace PSX
             this.fogMaterial.SetFloat(FogDensity, this.fog.fogDensity.value);
             this.fogMaterial.SetFloat(FogDistance, this.fog.fogDistance.value);
             this.fogMaterial.SetColor(FogColor, this.fog.fogColor.value);
+            this.fogMaterial.SetColor(AmbientColor, this.fog.fogColor.value);
             this.fogMaterial.SetFloat(FogNear, this.fog.fogNear.value);
             this.fogMaterial.SetFloat(FogFar, this.fog.fogFar.value);
             this.fogMaterial.SetFloat(FogAltScale, this.fog.fogAltScale.value);

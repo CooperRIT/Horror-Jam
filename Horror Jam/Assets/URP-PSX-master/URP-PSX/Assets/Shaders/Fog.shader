@@ -17,6 +17,7 @@ Shader "PostEffect/Fog"
         float _FogDensity;
         float _FogDistance;
         float4 _FogColor;
+        float4 _AmbientColor;
         
         float _FogNear;
         float _FogFar;
