@@ -75,7 +75,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 32eb3b8fb939d9b41b04b5621e6d36dd, type: 3}
   m_Name: Fog
   m_EditorClassIdentifier: 
-  active: 1
+  active: 0
   fogDensity:
     m_OverrideState: 1
     m_Value: 0.69
@@ -84,7 +84,7 @@ MonoBehaviour:
     m_Value: 50
   fogColor:
     m_OverrideState: 1
-    m_Value: {r: 0.735849, g: 0.6768423, b: 0.6768423, a: 0}
+    m_Value: {r: 0.3037113, g: 0.7627829, b: 0.8584906, a: 0}
   fogNear:
     m_OverrideState: 0
     m_Value: 1
