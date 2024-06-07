@@ -49,7 +49,7 @@ Material:
     - _FoamSpeed: 1
     - _QueueControl: 0
     - _QueueOffset: 0
-    - _RefractionScale: 1
+    - _RefractionScale: 16.61
     - _RefractionSpeed: 0.5
     - _RefractionStength: 0
     - _SrcBlend: 5
