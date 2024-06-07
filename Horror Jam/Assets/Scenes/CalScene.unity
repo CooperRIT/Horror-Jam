@@ -1093,7 +1093,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8956346763871697208, guid: cbbf57a8ce757ae45bbe3f784b8becb9, type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 8956346763871697208, guid: cbbf57a8ce757ae45bbe3f784b8becb9, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1335,31 +1335,37 @@ Transform:
   - {fileID: 524798022}
   - {fileID: 8795642}
   - {fileID: 1084556260}
+  - {fileID: 7134286435774391736}
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &7134286435774391736 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 485524253654711266, guid: 240e1395e9eaf7f4eb86bc02b24604aa, type: 3}
+  m_PrefabInstance: {fileID: 7331576565107826266}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &7331576565107826266
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    m_TransformParent: {fileID: 0}
+    m_TransformParent: {fileID: 2094517097}
     m_Modifications:
     - target: {fileID: 485524253654711266, guid: 240e1395e9eaf7f4eb86bc02b24604aa, type: 3}
       propertyPath: m_RootOrder
-      value: 8
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 485524253654711266, guid: 240e1395e9eaf7f4eb86bc02b24604aa, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 28.749987
+      value: 27.35128
       objectReference: {fileID: 0}
     - target: {fileID: 485524253654711266, guid: 240e1395e9eaf7f4eb86bc02b24604aa, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 72.976166
+      value: -33.6623
       objectReference: {fileID: 0}
     - target: {fileID: 485524253654711266, guid: 240e1395e9eaf7f4eb86bc02b24604aa, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -21.395067
+      value: 7.4636364
       objectReference: {fileID: 0}
     - target: {fileID: 485524253654711266, guid: 240e1395e9eaf7f4eb86bc02b24604aa, type: 3}
       propertyPath: m_LocalRotation.w
@@ -1392,6 +1398,10 @@ PrefabInstance:
     - target: {fileID: 1006340184534196568, guid: 240e1395e9eaf7f4eb86bc02b24604aa, type: 3}
       propertyPath: m_Name
       value: 4x4x2ShippingContainer(TEMP)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1006340184534196568, guid: 240e1395e9eaf7f4eb86bc02b24604aa, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 240e1395e9eaf7f4eb86bc02b24604aa, type: 3}
