@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 881284601283493523}
   - component: {fileID: 1837161618541306979}
   - component: {fileID: 3638827605382289196}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: FlashLightHead
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -94,7 +94,7 @@ GameObject:
   - component: {fileID: 2004256379904720071}
   - component: {fileID: 511249216557839145}
   - component: {fileID: 7671357742642615649}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Handel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -175,7 +175,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2210646616911961731}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: CameraHolder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -214,7 +214,7 @@ GameObject:
   - component: {fileID: 2210646617093219873}
   - component: {fileID: 2210646617093219872}
   - component: {fileID: 2210646617093219875}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Player
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -449,7 +449,7 @@ GameObject:
   - component: {fileID: 2210646617724671471}
   - component: {fileID: 2210646617724671456}
   - component: {fileID: 2210646617724671469}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Main Camera
   m_TagString: MainCamera
   m_Icon: {fileID: 0}
@@ -567,7 +567,7 @@ GameObject:
   - component: {fileID: 8748562914939101213}
   - component: {fileID: 4311926647157612637}
   - component: {fileID: 2764380032940959889}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Base
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -651,7 +651,7 @@ GameObject:
   - component: {fileID: 4333232957611910086}
   - component: {fileID: 4333232957611910088}
   - component: {fileID: 4333232957611910087}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Spot Light
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -685,7 +685,7 @@ Light:
   m_Type: 0
   m_Shape: 0
   m_Color: {r: 1, g: 0.95686275, b: 0.8392157, a: 1}
-  m_Intensity: 8.05
+  m_Intensity: 0
   m_Range: 26.47
   m_SpotAngle: 165.90286
   m_InnerSpotAngle: 30.372532
@@ -765,7 +765,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4333232957901746691}
   - component: {fileID: 4333232957901746692}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Scripts
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -813,7 +813,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8756636657499047411}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Lantern
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -851,7 +851,7 @@ GameObject:
   - component: {fileID: 54946931798242106}
   - component: {fileID: 4980793995424038256}
   - component: {fileID: 6938324423483984812}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: WHEEL
   m_TagString: Untagged
   m_Icon: {fileID: 0}

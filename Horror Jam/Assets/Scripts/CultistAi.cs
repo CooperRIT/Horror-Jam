@@ -25,6 +25,23 @@ public class CultistAi : MonoBehaviour
     [Header("SpottingVariables")]
     [SerializeField] float timer;
     float spottingTime = 3;
+
+    [Header("VisionCone")]
+    //Material For Rendering The Vision Cone
+    [SerializeField] Material visionConeMaterial;
+    [SerializeField] float visionConeRange;
+    [SerializeField] float visionConeAngle;
+
+    //Layer mask for rays to hit against in order to stop on walls
+    [SerializeField] LayerMask obstructionLayer;
+    //How many Triangles Comprise the cone
+    int visionConeResolution = 120;
+    Mesh visionConeMesh;
+    MeshFilter meshFilter;
+
+    Vector3 raycastDirection;
+
+
     // Start is called before the first frame update
     void Awake()
     {
@@ -46,6 +63,11 @@ public class CultistAi : MonoBehaviour
         //When the cult member no longer needs their transform list, it destroys it
         Destroy(transformList.gameObject);
         currentState = CultistStates.Patroling;
+
+        //VisionCone Initialization code
+
+        //Converts the angle inputed from degrees to radians
+        visionConeAngle *= Mathf.Deg2Rad;
     }
 
     // Update is called once per frame
@@ -62,6 +84,13 @@ public class CultistAi : MonoBehaviour
             case CultistStates.Pursuing:
                 break;
         }
+
+        ConeCasting();
+    }
+
+    private void OnDrawGizmos()
+    {
+        Debug.DrawRay(transform.position, raycastDirection * visionConeRange, Color.red);
     }
 
     void Patroling()
@@ -103,5 +132,26 @@ public class CultistAi : MonoBehaviour
     void Pursuing()
     {
 
+    }
+
+    void ConeCasting()
+    {
+        float currentAngle = -visionConeAngle / 2;
+        float angleIncrement = visionConeAngle / (visionConeResolution - 1);
+        float sine;
+        float cosine;
+
+        for (int i = 0; i < visionConeResolution; i++)
+        {
+            sine = Mathf.Sin(currentAngle);
+            cosine = Mathf.Cos(currentAngle);
+            raycastDirection = (transform.forward * cosine) + (transform.right * sine);
+            if(Physics.Raycast(transform.position, raycastDirection, out RaycastHit hit, visionConeRange, obstructionLayer))
+            {
+                Debug.Log("ConeHitSomething");
+            }
+
+            currentAngle += angleIncrement;
+        }
     }
 }
