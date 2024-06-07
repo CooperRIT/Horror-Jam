@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 5468652496128161437}
   - component: {fileID: 7782353409567703639}
   m_Layer: 0
-  m_Name: ShippingContainer(TEMP)
+  m_Name: BlueContainer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -61,7 +61,8 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 8aeab5f40b3fb8f41bc980141622ef67, type: 2}
+  - {fileID: 2100000, guid: a83a81fa008b0974983cf0a5f445438c, type: 2}
+  - {fileID: 2100000, guid: 0efb3e2b6639e5f47b78fe6ee076d9c0, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
