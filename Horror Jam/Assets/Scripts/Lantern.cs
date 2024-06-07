@@ -75,7 +75,6 @@ public class Lantern : MonoBehaviour
     {
         while (isOn)
         {
-            Debug.Log("Is on");
             if(spotLight.intensity < maxIntensity)
             {
                 spotLight.intensity += intensityRate * Time.deltaTime;
@@ -99,7 +98,6 @@ public class Lantern : MonoBehaviour
     {
         while (!isOn)
         {
-            Debug.Log("Is off");
             if (spotLight.intensity > 0)
             {
                 spotLight.intensity -= intensityRate * Time.deltaTime;

@@ -7,7 +7,8 @@ enum CultistStates
 {
     Patroling = 0,
     Spotting = 1,
-    Pursuing = 2
+    Pursuing = 2,
+    Stopped
 }
 
 public class CultistAi : MonoBehaviour
@@ -22,24 +23,24 @@ public class CultistAi : MonoBehaviour
     bool reverse;
     int currentPatrol = 0;
 
-    [Header("SpottingVariables")]
+    [Header("Spotting Variables")]
     [SerializeField] float timer;
     float spottingTime = 3;
 
-    [Header("VisionCone")]
-    //Material For Rendering The Vision Cone
-    [SerializeField] Material visionConeMaterial;
-    [SerializeField] float visionConeRange;
-    [SerializeField] float visionConeAngle;
+    [Header("Pursuing Variables")]
+    Transform playerTransform;
+    Light headLight;
+    float lightPerSecond = 30;
 
+    [Header("VisionCone")]
+    float visionConeRange = 10;
+    float visionConeAngle = 140;
     //Layer mask for rays to hit against in order to stop on walls
     [SerializeField] LayerMask obstructionLayer;
-    //How many Triangles Comprise the cone
-    int visionConeResolution = 120;
-    Mesh visionConeMesh;
-    MeshFilter meshFilter;
-
+    //How many Rays Are Fired Out the cone
+    int visionConeResolution = 30;
     Vector3 raycastDirection;
+    bool foundPlayer;
 
 
     // Start is called before the first frame update
@@ -47,6 +48,7 @@ public class CultistAi : MonoBehaviour
     {
         cultist = GetComponentInParent<NavMeshAgent>();
         transformList = transform.GetChild(0);
+        headLight = transform.GetChild(1).GetComponent<Light>();
 
         //Makes sure u have transform in the transform list
         if(Application.isEditor && transformList.childCount == 0)
@@ -68,6 +70,7 @@ public class CultistAi : MonoBehaviour
 
         //Converts the angle inputed from degrees to radians
         visionConeAngle *= Mathf.Deg2Rad;
+        StartCoroutine(nameof(ConeCasting));
     }
 
     // Update is called once per frame
@@ -82,21 +85,30 @@ public class CultistAi : MonoBehaviour
                 Spotting();
                 break;
             case CultistStates.Pursuing:
+                Pursuing();
+                break;
+            default:
                 break;
         }
 
+        if (foundPlayer)
+        {
+            return;
+        }
         ConeCasting();
     }
 
     private void OnDrawGizmos()
     {
         Debug.DrawRay(transform.position, raycastDirection * visionConeRange, Color.red);
+        Debug.DrawRay(transform.position, transform.forward * visionConeRange, Color.red);
     }
 
     void Patroling()
     {
         cultist.SetDestination(locationsToPatrol[currentPatrol]);
 
+        //Switch to Spotting once cultist arrives at destination
         if (Vector3.Distance(locationsToPatrol[currentPatrol], cultist.transform.position) <= minPatrolDistance)
         {
             currentState = CultistStates.Spotting;
@@ -105,7 +117,6 @@ public class CultistAi : MonoBehaviour
 
     void Spotting()
     {
-
         if (timer <= spottingTime)
         {
             timer += 1 * Time.deltaTime;
@@ -131,7 +142,7 @@ public class CultistAi : MonoBehaviour
 
     void Pursuing()
     {
-
+        cultist.SetDestination(playerTransform.position);
     }
 
     void ConeCasting()
@@ -148,10 +159,36 @@ public class CultistAi : MonoBehaviour
             raycastDirection = (transform.forward * cosine) + (transform.right * sine);
             if(Physics.Raycast(transform.position, raycastDirection, out RaycastHit hit, visionConeRange, obstructionLayer))
             {
-                Debug.Log("ConeHitSomething");
+                if (hit.transform.gameObject.layer == 6)
+                {
+                    currentState = CultistStates.Stopped;
+                    playerTransform = hit.transform;
+                    foundPlayer = true;
+                    cultist.speed = 10;
+                    StartCoroutine(nameof(SeenPlayer));
+                }
             }
 
             currentAngle += angleIncrement;
         }
+    }
+
+    IEnumerator SeenPlayer()
+    {
+        cultist.SetDestination(transform.position);
+        while(true)
+        {
+            if (headLight.intensity < 20)
+            {
+                headLight.intensity += lightPerSecond * Time.deltaTime;
+                yield return null;
+            }
+            else
+            {
+                break;
+            }
+
+        }
+        currentState = CultistStates.Pursuing;
     }
 }
