@@ -8,6 +8,8 @@ public class EventManager : MonoBehaviour
 
     [Header("Events Refernces")]
     [SerializeField] private VisualEffect lightningSpawner;
+    [SerializeField] private AudioSource audioSource;
+    [SerializeField] private AudioClip lightningClip;
     public void EventTree(int eventID, Transform vfxTransform)
     {
         switch (eventID)
@@ -21,6 +23,7 @@ public class EventManager : MonoBehaviour
                 lightningSpawner.transform.rotation = vfxTransform.rotation;
 
                 lightningSpawner.Play();
+                audioSource.PlayOneShot(lightningClip);
                 break;
 
             default:
