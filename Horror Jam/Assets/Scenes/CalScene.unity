@@ -424,6 +424,7 @@ MonoBehaviour:
   eventChannel: {fileID: 11400000, guid: 6dc4e509d24954a4a8890ba7e21b7efc, type: 2}
   eventID: 1
   playerLayer: 6
+  vfxTransform: {fileID: 0}
   destroyOnTrigger: 0
 --- !u!65 &463293910
 BoxCollider:
