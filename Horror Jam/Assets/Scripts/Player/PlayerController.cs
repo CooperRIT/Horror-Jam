@@ -44,6 +44,8 @@ public class PlayerController : MonoBehaviour
 
     private Camera cam;
 
+    private Vector2 moveInput;
+
     private float lookRotation;
 
     private bool isGrounded;
@@ -52,6 +54,7 @@ public class PlayerController : MonoBehaviour
     public bool IsGrounded { get { return isGrounded; } }
     public bool IsMoving { get { return isMoving; } }
     public bool ApplyMovementEffects { get { return applyMovementEffects; } }
+    public Vector2 MoveInput { get { return moveInput; } }
 
     // Start is called before the first frame update
     void Awake()
@@ -66,8 +69,6 @@ public class PlayerController : MonoBehaviour
     void Update()
     {
         isGrounded = Physics.Raycast(transform.position, -Vector3.up, out groundHit, offsetRayDistance, groundLayer);
-        Debug.Log(groundHit.distance);
-        Debug.DrawRay(transform.position, -Vector3.up * offsetRayDistance, Color.yellow);
     }
     void FixedUpdate() => Move();
 
@@ -76,7 +77,7 @@ public class PlayerController : MonoBehaviour
     private Vector3 MoveDirection()
     {
         //Read player input
-        Vector2 moveInput = playerMovement.Move?.ReadValue<Vector2>() ?? Vector2.zero;
+        moveInput = playerMovement.Move?.ReadValue<Vector2>() ?? Vector2.zero;
 
         //Project two vectors onto an orthagonal plane and multiply them by the players x and y inputs
         Vector3 moveDirection =
@@ -94,7 +95,7 @@ public class PlayerController : MonoBehaviour
         if (!isGrounded) return;
 
         //Check if moving
-        isMoving = rb.velocity.magnitude < 0;
+        isMoving = playerMovement.Move.inProgress;
 
         //Apply walk speed to the movement vector
         Vector3 moveForce = MoveDirection() * walkSpeed;
