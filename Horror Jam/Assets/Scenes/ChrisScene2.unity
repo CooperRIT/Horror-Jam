@@ -834,6 +834,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4661560526383725405, guid: ab592d32b9b282f4b86c32e43be92f7b, type: 3}
+      propertyPath: amplitude
+      value: 0.17
+      objectReference: {fileID: 0}
+    - target: {fileID: 4661560526383725405, guid: ab592d32b9b282f4b86c32e43be92f7b, type: 3}
+      propertyPath: frequency
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 5132847815332065801, guid: ab592d32b9b282f4b86c32e43be92f7b, type: 3}
       propertyPath: m_RootOrder
       value: 1

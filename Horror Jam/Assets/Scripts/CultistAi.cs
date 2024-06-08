@@ -42,11 +42,21 @@ public class CultistAi : MonoBehaviour
     Vector3 raycastDirection;
     bool foundPlayer;
 
+    [Header("Animation")]
+    Transform cultistTransform;
+    // How high the object will move
+    float amplitude = .17f;
+    // How fast the object will move
+    float frequency = 3f;
+
+    private Vector3 startPosition;
+
 
     // Start is called before the first frame update
     void Awake()
     {
         cultist = GetComponentInParent<NavMeshAgent>();
+        cultistTransform = cultist.transform;
         transformList = transform.GetChild(0);
         headLight = transform.GetChild(1).GetComponent<Light>();
 
@@ -71,6 +81,7 @@ public class CultistAi : MonoBehaviour
         //Converts the angle inputed from degrees to radians
         visionConeAngle *= Mathf.Deg2Rad;
         StartCoroutine(nameof(ConeCasting));
+        startPosition = cultistTransform.position;
     }
 
     // Update is called once per frame
@@ -90,6 +101,8 @@ public class CultistAi : MonoBehaviour
             default:
                 break;
         }
+
+        AnimatePlayer();
 
         if (foundPlayer)
         {
@@ -190,5 +203,14 @@ public class CultistAi : MonoBehaviour
 
         }
         currentState = CultistStates.Pursuing;
+    }
+
+    /// <summary>
+    /// Adds slight up and down hover with sin waves
+    /// </summary>
+    void AnimatePlayer()
+    {
+        float newY = startPosition.y + Mathf.Sin(Time.time * frequency) * amplitude;
+        cultist.transform.position = new Vector3(cultistTransform.position.x, newY, cultistTransform.position.z);
     }
 }
