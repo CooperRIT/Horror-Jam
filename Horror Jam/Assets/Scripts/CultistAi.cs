@@ -25,7 +25,7 @@ public class CultistAi : MonoBehaviour
 
     [Header("Spotting Variables")]
     [SerializeField] float timer;
-    float spottingTime = 3;
+    [SerializeField] float spottingTime = 3;
 
     [Header("Pursuing Variables")]
     Transform playerTransform;
