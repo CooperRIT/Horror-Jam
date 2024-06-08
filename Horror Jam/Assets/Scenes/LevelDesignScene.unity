@@ -6158,6 +6158,10 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 0efb3e2b6639e5f47b78fe6ee076d9c0, type: 2}
+    - target: {fileID: -7511558181221131132, guid: 50e87d73661d7be409bdbb56a8b4c497, type: 3}
+      propertyPath: m_Materials.Array.data[1]
+      value: 
+      objectReference: {fileID: 2100000, guid: 9a03a1240079f524ab03f4f93e34eaa5, type: 2}
     - target: {fileID: 919132149155446097, guid: 50e87d73661d7be409bdbb56a8b4c497, type: 3}
       propertyPath: m_Name
       value: CargoShip
