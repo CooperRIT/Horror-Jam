@@ -80,7 +80,7 @@ public class CultistAi : MonoBehaviour
         }
 
         //When the cult member no longer needs their transform list, it destroys it
-        //Destroy(transformList.gameObject);
+        Destroy(transformList.gameObject);
         currentState = CultistStates.Patroling;
 
         //VisionCone Initialization code
