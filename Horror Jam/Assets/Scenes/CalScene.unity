@@ -1069,10 +1069,18 @@ PrefabInstance:
       propertyPath: m_ConstrainProportionsScale
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: -3098938704564108080, guid: f85bffb406466ab44adf3f3a65d44482, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 0efb3e2b6639e5f47b78fe6ee076d9c0, type: 2}
     - target: {fileID: 919132149155446097, guid: f85bffb406466ab44adf3f3a65d44482, type: 3}
       propertyPath: m_Name
       value: CargoShipRailings
       objectReference: {fileID: 0}
+    - target: {fileID: 1799367976738178929, guid: f85bffb406466ab44adf3f3a65d44482, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 0efb3e2b6639e5f47b78fe6ee076d9c0, type: 2}
     - target: {fileID: 6568882477425521131, guid: f85bffb406466ab44adf3f3a65d44482, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
