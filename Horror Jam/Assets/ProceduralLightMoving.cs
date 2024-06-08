@@ -20,7 +20,7 @@ public class ProceduralLightMoving : MonoBehaviour
         waitTime = new WaitForSeconds(timer);
     }
 
-    IEnumerator MoveLight()
+    /*IEnumerator MoveLight()
     {
         while (true)
         {
@@ -28,7 +28,9 @@ public class ProceduralLightMoving : MonoBehaviour
             {
                 yield return waitTime;
             }
+
+
             yield return null;
         }
-    }
+    }*/
 }
