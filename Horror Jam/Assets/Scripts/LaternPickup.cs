@@ -4,10 +4,19 @@ using UnityEngine;
 
 public class LaternPickup : MonoBehaviour, IInteract
 {
+    [Header("Scriptable Object Reference")]
+    [SerializeField] private UIEventChannel uiEventChannel;
+
+    [Header("Lantern Reference")]
+    [SerializeField] private GameObject lantern;
+
     public string Prompt => "Press [E] to pickup lantern";
 
     public void Interact()
     {
-        Debug.Log("Your IP: 173.28.82.1");
+        lantern.SetActive(true);
+        gameObject.SetActive(false);
+
+        uiEventChannel.TriggerEvent(string.Empty);
     }
 }
