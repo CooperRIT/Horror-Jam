@@ -10,8 +10,18 @@ public class EventManager : MonoBehaviour
     [SerializeField] private VisualEffect lightningSpawner;
     [SerializeField] private AudioSource audioSource;
     [SerializeField] private AudioClip lightningClip;
+
+    [Header("Respawn Manager")]
+    [SerializeField] private RespawnManager respawnManager;
     public void EventTree(int eventID, Transform vfxTransform)
     {
+        //Checks if the event is a respawn point(all respawn points have a negative event ID
+        if (eventID < 0)
+        {
+            respawnManager.SetSpawnPoint(vfxTransform.position);
+            return;
+        }
+
         switch (eventID)
         {
             case 0:
@@ -30,6 +40,7 @@ public class EventManager : MonoBehaviour
                 throw new System.Exception("Event ID out of range");
         }
     }
+
     private void OnEnable() => eventChannel.CallEvent += EventTree;
     private void OnDisable() => eventChannel.CallEvent -= EventTree;
 }

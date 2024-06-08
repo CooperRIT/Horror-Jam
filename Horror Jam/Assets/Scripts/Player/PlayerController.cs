@@ -35,6 +35,9 @@ public class PlayerController : MonoBehaviour
     [Tooltip("The layers the player can walk on")]
     [SerializeField] private LayerMask groundLayer;
 
+    [Tooltip("Scriptable Object Reference for death")]
+    [SerializeField] private DeathEventChannel deathEventChannel;
+
     private PlayerControls playerActions;
     private PlayerControls.PlayerActions playerMovement;
 
@@ -165,5 +168,14 @@ public class PlayerController : MonoBehaviour
     {
         playerMovement.Disable();
         playerMovement.Interact.performed -= CallInteract;
+    }
+
+    public void OnCollisionEnter(Collision collision)
+    {
+        //if the player touches the cultist
+        if (collision.gameObject.layer == 8)
+        {
+            deathEventChannel.TriggerEvent(transform);
+        }
     }
 }

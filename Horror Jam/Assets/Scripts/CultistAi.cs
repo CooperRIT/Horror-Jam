@@ -51,17 +51,23 @@ public class CultistAi : MonoBehaviour
 
     private Vector3 startPosition;
 
+    [Header("ResetVariables")]
+    float startingSpeed;
+    float startingIntensity;
+
 
     // Start is called before the first frame update
     void Awake()
     {
         cultist = GetComponentInParent<NavMeshAgent>();
+        startingSpeed = cultist.speed;
         cultistTransform = cultist.transform;
         transformList = transform.GetChild(0);
         headLight = transform.GetChild(1).GetComponent<Light>();
+        startingIntensity = headLight.intensity;
 
         //Makes sure u have transform in the transform list
-        if(Application.isEditor && transformList.childCount == 0)
+        if (Application.isEditor && transformList.childCount == 0)
         {
             throw new System.Exception("you are a goober, populate the transform list");
         }
@@ -73,7 +79,7 @@ public class CultistAi : MonoBehaviour
         }
 
         //When the cult member no longer needs their transform list, it destroys it
-        Destroy(transformList.gameObject);
+        //Destroy(transformList.gameObject);
         currentState = CultistStates.Patroling;
 
         //VisionCone Initialization code
@@ -212,5 +218,16 @@ public class CultistAi : MonoBehaviour
     {
         float newY = startPosition.y + Mathf.Sin(Time.time * frequency) * amplitude;
         cultist.transform.position = new Vector3(cultistTransform.position.x, newY, cultistTransform.position.z);
+    }
+
+    public void RestartCultist()
+    {
+        foundPlayer = false;
+        cultistTransform.position = startPosition;
+        currentState = CultistStates.Patroling;
+        headLight.intensity = .6f;
+        timer = 0f;
+        cultist.SetDestination(transform.position);
+        cultist.speed = startingSpeed;
     }
 }
