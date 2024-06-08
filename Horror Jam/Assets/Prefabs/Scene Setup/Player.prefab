@@ -386,6 +386,7 @@ MonoBehaviour:
   groundLayer:
     serializedVersion: 2
     m_Bits: 8
+  deathEventChannel: {fileID: 11400000, guid: 05c062e06a2b1ae498e8969c8563bd7b, type: 2}
 --- !u!114 &2210646617093219873
 MonoBehaviour:
   m_ObjectHideFlags: 0
