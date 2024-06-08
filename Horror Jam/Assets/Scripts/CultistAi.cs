@@ -63,8 +63,8 @@ public class CultistAi : MonoBehaviour
         cultist = GetComponentInParent<NavMeshAgent>();
         startingSpeed = cultist.speed;
         cultistTransform = cultist.transform;
-        transformList = transform.GetChild(0);
-        headLight = transform.GetChild(1).GetComponent<Light>();
+        transformList = transform.parent.parent.GetChild(0);
+        headLight = transform.GetChild(0).GetComponent<Light>();
         startingIntensity = headLight.intensity;
 
         //Makes sure u have transform in the transform list
@@ -73,7 +73,7 @@ public class CultistAi : MonoBehaviour
             throw new System.Exception("you are a goober, populate the transform list");
         }
 
-        locationsToPatrol.Add(transform.parent.position);
+        locationsToPatrol.Add(transform.parent.parent.position);
         for (int i = 0; i < transformList.childCount; i++)
         {
             locationsToPatrol.Add(transformList.GetChild(i).position);

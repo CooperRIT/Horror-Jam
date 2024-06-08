@@ -6,6 +6,7 @@ public class DeathManager : MonoBehaviour
 {
     [SerializeField] DeathEventChannel deathEventChannel;
     [SerializeField] RespawnManager respawnManager;
+    bool restarting;
 
     public void OnDeath(Transform player)
     {

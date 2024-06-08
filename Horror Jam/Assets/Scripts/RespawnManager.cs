@@ -17,9 +17,10 @@ public class RespawnManager : MonoBehaviour
             throw new System.Exception("Put all of your enemies under a gameobject called 'Enemies'");
         }
 
+        //This is the location of the cultist AI script on each cultist
         for(int i = 0; i < enemies.childCount; i++)
         {
-            cultists.Add(enemies.GetChild(i).GetChild(0).GetComponent<CultistAi>());
+            cultists.Add(enemies.GetChild(i).GetChild(1).GetChild(0).GetComponent<CultistAi>());
         }
     }
 
@@ -42,5 +43,4 @@ public class RespawnManager : MonoBehaviour
         player.transform.position = currentSpawnPoint;
         Debug.Log("restarted cultists and player");
     }
-
 }
