@@ -13,11 +13,13 @@ public class EventManager : MonoBehaviour
 
     [Header("Respawn Manager")]
     [SerializeField] private RespawnManager respawnManager;
+
     public void EventTree(int eventID, Transform vfxTransform)
     {
         //Checks if the event is a respawn point(all respawn points have a negative event ID
         if (eventID < 0)
         {
+            if (respawnManager == null) Debug.Log("Poop");
             respawnManager.SetSpawnPoint(vfxTransform.position);
             return;
         }
