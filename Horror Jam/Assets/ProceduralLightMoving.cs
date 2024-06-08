@@ -26,7 +26,7 @@ public class ProceduralLightMoving : MonoBehaviour
         {
             if (shipLight.rotation.y == desiredRoation)
             {
-                yield return 
+                yield return waitTime;
             }
             yield return null;
         }
