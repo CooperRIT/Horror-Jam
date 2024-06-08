@@ -20,15 +20,17 @@ public class ProceduralLightMoving : MonoBehaviour
         waitTime = new WaitForSeconds(timer);
     }
 
-    IEnumerator MoveLight()
+    /*IEnumerator MoveLight()
     {
         while (true)
         {
             if (shipLight.rotation.y == desiredRoation)
             {
-                yield return 
+                yield return waitTime;
             }
+
+
             yield return null;
         }
-    }
+    }*/
 }
