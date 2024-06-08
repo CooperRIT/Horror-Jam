@@ -4,8 +4,11 @@ using UnityEngine;
 
 public class ProceduralLightMoving : MonoBehaviour
 {
+    [Tooltip("How much you want it to rotate per second")]
     [SerializeField] float rotationAmmount = 10;
+    [Tooltip("How much total rotation you want to happen")]
     [SerializeField] float desiredRoationAmmount = 70;
+    [Tooltip("How much time in between rotation you want")]
     [SerializeField] float timer = 3;
     Transform shipLight;
     float initalY;
