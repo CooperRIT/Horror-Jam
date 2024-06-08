@@ -61,6 +61,8 @@ public class PlayerController : MonoBehaviour
     public bool ApplyMovementEffects { get { return applyMovementEffects; } }
     public Vector2 MoveInput { get { return moveInput; } }
 
+    public float Sensitivity {  get { return sensitivity; } set { sensitivity = value; } }
+
     // Start is called before the first frame update
     void Awake()
     {
