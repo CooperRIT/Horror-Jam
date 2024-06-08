@@ -35,7 +35,13 @@ public class ProceduralLightMoving : MonoBehaviour
                 rotationAmmount *= -1;
                 yield return waitTime;
             }
-            shipLight.Rotate(0, rotationAmmount * Time.deltaTime, 0);
+            //shipLight.Rotate(0, rotationAmmount * Time.deltaTime, 0);
+            // Store the current rotation of the light
+            Vector3 currentRotation = shipLight.transform.eulerAngles;
+            // Modify only the y component of the rotation
+            currentRotation.y += rotationAmmount * Time.deltaTime;
+            // Apply the modified rotation back to the light
+            shipLight.transform.eulerAngles = currentRotation;
             additiveRoation += rotationAmmount * Time.deltaTime;
 
             yield return null;
