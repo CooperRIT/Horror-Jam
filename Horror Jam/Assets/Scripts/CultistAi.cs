@@ -18,11 +18,12 @@ public class CultistAi : MonoBehaviour
 
     [Header("Patroling Variables")]
     [SerializeField] List<Vector3> locationsToPatrol = new List<Vector3>();
+    [Tooltip("Circling patrol makes the cultist go back to the first point after going through all the points. Having this off makes the cultists retrace his steps when he arrives at the final point")]
+    [SerializeField] bool circlingPatrol = false;
     Transform transformList;
     float minPatrolDistance = .5f;
     bool reverse;
-    int currentPatrol = 0;
-
+    int currentPatrol = 0;    
     [Header("Spotting Variables")]
     [SerializeField] float timer;
     [SerializeField] float spottingTime = 3;
@@ -146,7 +147,15 @@ public class CultistAi : MonoBehaviour
 
         if (currentPatrol == locationsToPatrol.Count - 1)
         {
-            reverse = true;
+            if(circlingPatrol)
+            {
+                //will put the current patrol back to -1 which will be added to for a current patrol of 0 come the patrolling state
+                currentPatrol = -1;
+            }
+            else
+            {
+                reverse = true;
+            }
         }
         else if(currentPatrol == 0)
         {
