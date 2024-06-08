@@ -296,6 +296,8 @@ GameObject:
   - component: {fileID: 2973464611598142933}
   - component: {fileID: 2973464611598142932}
   - component: {fileID: 2973464611598142935}
+  - component: {fileID: 1617832230}
+  - component: {fileID: 1617832229}
   m_Layer: 0
   m_Name: EventSystem
   m_TagString: Untagged
@@ -349,6 +351,34 @@ MonoBehaviour:
   lightningSpawner: {fileID: 0}
   audioSource: {fileID: 0}
   lightningClip: {fileID: 8300000, guid: 78fe928513b699f45a9e7bf878811747, type: 3}
+  respawnManager: {fileID: 1617832229}
+--- !u!114 &1617832230
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2973464611598142934}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 16af38f7f6f0f9b47895a2ff35722981, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  deathEventChannel: {fileID: 11400000, guid: 05c062e06a2b1ae498e8969c8563bd7b, type: 2}
+  respawnManager: {fileID: 1617832229}
+--- !u!114 &1617832229
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2973464611598142934}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e6a344fdbc419b9429857eb797f77ab9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cultists: []
 --- !u!1 &2973464611944461547
 GameObject:
   m_ObjectHideFlags: 0
