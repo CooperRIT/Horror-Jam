@@ -37,6 +37,8 @@ public class PlayerController : MonoBehaviour
 
     private PlayerControls playerActions;
     private PlayerControls.PlayerActions playerMovement;
+
+    private PlayerInteractor playerInteractor;
     
     private Rigidbody rb;
 
@@ -61,6 +63,8 @@ public class PlayerController : MonoBehaviour
     {
         playerActions = new PlayerControls();
         playerMovement = playerActions.Player;
+
+        playerInteractor = GetComponentInChildren<PlayerInteractor>();
 
         rb = GetComponent<Rigidbody>();
 
@@ -149,13 +153,17 @@ public class PlayerController : MonoBehaviour
         cam.transform.eulerAngles = new(lookRotation, cam.transform.eulerAngles.y, cam.transform.eulerAngles.z);
     }
 
+    private void CallInteract(InputAction.CallbackContext ctx) => playerInteractor.CanInteract();
+
     private void OnEnable()
     {
         playerMovement.Enable();
+        playerMovement.Interact.performed += CallInteract;
     }
 
     private void OnDisable()
     {
-        playerMovement.Disable(); 
+        playerMovement.Disable();
+        playerMovement.Interact.performed -= CallInteract;
     }
 }

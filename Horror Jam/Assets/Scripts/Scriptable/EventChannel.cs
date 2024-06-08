@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(menuName = "Event Channel/Events")]
+[CreateAssetMenu(menuName = "Event Channel/Events", fileName = "EventChannel", order = 0)]
 public class EventChannel : ScriptableObject
 {
     public delegate void EventTree(int eventID, Transform vfxTransform);
