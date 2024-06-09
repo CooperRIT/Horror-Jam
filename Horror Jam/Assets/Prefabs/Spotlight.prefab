@@ -257,6 +257,7 @@ GameObject:
   - component: {fileID: 5062443661430064784}
   - component: {fileID: 8209695044353427765}
   - component: {fileID: 6199844169518185983}
+  - component: {fileID: 7326032483122621477}
   m_Layer: 0
   m_Name: Spotlight
   m_TagString: Untagged
@@ -332,3 +333,17 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &7326032483122621477
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5551453023756606506}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e1bd31c74cb03fc4a85ed51bc0f752df, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  despawnDistance: 100
+  spotLight: {fileID: 4741112612560676488}
