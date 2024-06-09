@@ -177,7 +177,15 @@ public class PlayerController : MonoBehaviour
         //if the player touches the cultist
         if (collision.gameObject.layer == 8)
         {
-            deathEventChannel.TriggerEvent(transform);
+            switch(collision.gameObject.tag)
+            {
+                case "Cultist":
+                    deathEventChannel.TriggerCultistDeathEvent(0);
+                    break;
+                case "Death":
+                    deathEventChannel.TriggerRespawn();
+                    break;
+            }
         }
     }
 }

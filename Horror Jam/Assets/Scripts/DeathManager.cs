@@ -6,13 +6,29 @@ public class DeathManager : MonoBehaviour
 {
     [SerializeField] DeathEventChannel deathEventChannel;
     [SerializeField] RespawnManager respawnManager;
-    bool restarting;
 
-    public void OnDeath(Transform player)
+    [SerializeField] CutsceneManager cutsceneManager;
+
+    public void OnKilledByCultist(int cutSceneIndex)
     {
-        respawnManager.RestartScene(player);
+        //Change this value for different cutscenes
+        //TEMP FOR TESTING
+        cutsceneManager.OnStartCutScene(0);
     }
 
-    private void OnEnable() => deathEventChannel.KillPlayer += OnDeath;
-    private void OnDisable() => deathEventChannel.KillPlayer -= OnDeath;
+    public void OnDeath()
+    {
+        respawnManager.RestartScene();
+    }
+
+    private void OnEnable()
+    {
+        deathEventChannel.CultistKill += OnKilledByCultist;
+        deathEventChannel.KillPlayer += OnDeath;
+    }
+    private void OnDisable()
+    {
+        deathEventChannel.CultistKill -= OnKilledByCultist;
+        deathEventChannel.KillPlayer -= OnDeath;
+    }
 }

@@ -7,6 +7,7 @@ public class RespawnManager : MonoBehaviour
 {
     Vector3 currentSpawnPoint;
     [SerializeField] List<CultistAi> cultists;
+    [SerializeField] Transform player;
 
     [Header("Fade Controller")]
     [SerializeField] Image fadePanel;
@@ -37,6 +38,7 @@ public class RespawnManager : MonoBehaviour
         }
 
         StartCoroutine(nameof(FadeIn));
+        player = GameObject.Find("Player").transform;
         //StartCoroutine(nameof(FadeOut));
     }
 
@@ -55,8 +57,11 @@ public class RespawnManager : MonoBehaviour
         get { return currentSpawnPoint; }
     }
 
-    public void RestartScene(Transform player)
+    public void RestartScene()
     {
+        //Experimental For Cutscense
+        player.parent = null;
+
         foreach(CultistAi cultistAi in cultists)
         {
             cultistAi.RestartCultist();
@@ -97,5 +102,12 @@ public class RespawnManager : MonoBehaviour
             yield return null;
         }
         Debug.Log("Finished Fading Out");
+    }
+
+    void CutToBlack()
+    {
+        Color slate = fadePanel.color;
+        slate.a = 1;
+        fadePanel.color = slate;
     }
 }
