@@ -1,11 +1,20 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class RespawnManager : MonoBehaviour
 {
     Vector3 currentSpawnPoint;
     [SerializeField] List<CultistAi> cultists;
+
+    [Header("Fade Controller")]
+    [SerializeField] Image fadePanel;
+    [Tooltip("How much transparency u want to take away for add during fades")]
+    [Range(0, 1)]
+    [SerializeField] float fadeAmount = 0;
+    [SerializeField] AnimationCurve fadeInCurve;
+    [SerializeField] AnimationCurve fadeOutCurve;
 
     private void Awake()
     {
@@ -22,6 +31,18 @@ public class RespawnManager : MonoBehaviour
         {
             cultists.Add(enemies.GetChild(i).GetChild(1).GetChild(0).GetComponent<CultistAi>());
         }
+        if (fadePanel == null)
+        {
+            return;
+        }
+
+        StartCoroutine(nameof(FadeIn));
+        //StartCoroutine(nameof(FadeOut));
+    }
+
+    private void Start()
+    {
+
     }
 
     public void SetSpawnPoint(Vector3 spawnPointPosition)
@@ -42,5 +63,39 @@ public class RespawnManager : MonoBehaviour
         }
         player.transform.position = currentSpawnPoint;
         Debug.Log("restarted cultists and player");
+        StartCoroutine(FadeIn());
+    }
+
+    IEnumerator FadeIn()
+    {
+        //makes a new color to copy these changes onto and sets the starting oppacity of the fade pannel to 1
+        Color slate = fadePanel.color;
+        slate.a = 1;
+        fadePanel.color = slate;
+        float lerpAmmount = 0;
+        while (fadePanel.color.a != .0f)
+        {
+            slate.a = fadeInCurve.Evaluate(lerpAmmount);
+            fadePanel.color = slate;
+            lerpAmmount += fadeAmount * Time.deltaTime;
+            yield return null;
+        }
+        Debug.Log("Finished Fading In");
+    }
+
+    IEnumerator FadeOut()
+    {
+        Color slate = fadePanel.color;
+        slate.a = 0;
+        fadePanel.color = slate;
+        float lerpAmmount = 0;
+        while (fadePanel.color.a != 1)
+        {
+            slate.a = fadeOutCurve.Evaluate(lerpAmmount);
+            fadePanel.color = slate;
+            lerpAmmount += fadeAmount * Time.deltaTime;
+            yield return null;
+        }
+        Debug.Log("Finished Fading Out");
     }
 }
