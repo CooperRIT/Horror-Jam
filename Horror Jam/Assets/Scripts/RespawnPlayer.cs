@@ -11,7 +11,9 @@ public class RespawnPlayer : MonoBehaviour
     {
         animator = GetComponent<Animator>();
     }
-    // Start is called before the first frame update
+    /// <summary>
+    /// Public void for anim event playing
+    /// </summary>
     public void AnimEventRespawnPlayer()
     {
         deathEventChannel.TriggerRespawn();

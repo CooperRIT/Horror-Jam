@@ -13,9 +13,12 @@ public class DeathManager : MonoBehaviour
     {
         //Change this value for different cutscenes
         //TEMP FOR TESTING
-        cutsceneManager.OnStartCutScene(0);
+        cutsceneManager.OnStartCutScene(cutSceneIndex);
     }
 
+    /// <summary>
+    /// For actually respawning the player
+    /// </summary>
     public void OnDeath()
     {
         respawnManager.RestartScene();
