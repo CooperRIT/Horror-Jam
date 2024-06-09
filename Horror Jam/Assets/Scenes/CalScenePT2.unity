@@ -334,6 +334,14 @@ PrefabInstance:
       propertyPath: m_ConstrainProportionsScale
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: a947ba33e638be349a77933a8c779cb0, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 9a03a1240079f524ab03f4f93e34eaa5, type: 2}
+    - target: {fileID: -7511558181221131132, guid: a947ba33e638be349a77933a8c779cb0, type: 3}
+      propertyPath: m_Materials.Array.data[1]
+      value: 
+      objectReference: {fileID: 2100000, guid: 23ec1e987df53454e8d79f28fef8b276, type: 2}
     - target: {fileID: -3887185075125053422, guid: a947ba33e638be349a77933a8c779cb0, type: 3}
       propertyPath: m_DirtyAABB
       value: 0
@@ -675,27 +683,27 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 94cda82adcb26d04783a32dd75cba553, type: 3}
       propertyPath: m_LocalScale.x
-      value: 24.75
+      value: 25.62615
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 94cda82adcb26d04783a32dd75cba553, type: 3}
       propertyPath: m_LocalScale.y
-      value: 24.75
+      value: 25.62615
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 94cda82adcb26d04783a32dd75cba553, type: 3}
       propertyPath: m_LocalScale.z
-      value: 24.75
+      value: 25.62615
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 94cda82adcb26d04783a32dd75cba553, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 4.6
+      value: 4.6008
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 94cda82adcb26d04783a32dd75cba553, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -13.5
+      value: -19.053
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 94cda82adcb26d04783a32dd75cba553, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 90.48916
+      value: 89.72
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 94cda82adcb26d04783a32dd75cba553, type: 3}
       propertyPath: m_LocalRotation.w
@@ -878,3 +886,25 @@ MonoBehaviour:
   m_ShadowLayerMask: 1
   m_LightCookieSize: {x: 1, y: 1}
   m_LightCookieOffset: {x: 0, y: 0}
+--- !u!1 &2108137743 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 94cda82adcb26d04783a32dd75cba553, type: 3}
+  m_PrefabInstance: {fileID: 1709098576}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &2108137746
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2108137743}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 494e75838902b0b4091c9e68ee5221b9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mouthBlendShapeIndices: 00000000
+  minAnimationSpeed: 0.5
+  maxAnimationSpeed: 2
+  maxBlendShapeValue: 100
+  randomnessFactor: 0.1
