@@ -858,6 +858,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6472212910876311446, guid: afe3bf058a3d7f842875e2433ac211fa, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: afe3bf058a3d7f842875e2433ac211fa, type: 3}
 --- !u!1 &2088598663
@@ -899,6 +903,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2088598664}
     m_Modifications:
+    - target: {fileID: 1151652065022350820, guid: 7b67edae933a8464f9ce4ed36ba12787, type: 3}
+      propertyPath: m_AutoBraking
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1151652065022350820, guid: 7b67edae933a8464f9ce4ed36ba12787, type: 3}
+      propertyPath: m_Acceleration
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 1151652065022350820, guid: 7b67edae933a8464f9ce4ed36ba12787, type: 3}
+      propertyPath: m_AngularSpeed
+      value: 500
+      objectReference: {fileID: 0}
     - target: {fileID: 1151652065862457395, guid: 7b67edae933a8464f9ce4ed36ba12787, type: 3}
       propertyPath: visionConeFOV
       value: 120

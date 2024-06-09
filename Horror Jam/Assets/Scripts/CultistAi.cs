@@ -32,6 +32,8 @@ public class CultistAi : MonoBehaviour
     Transform playerTransform;
     Light headLight;
     float lightPerSecond = 30;
+    Vector3 playerPreviousPosition;
+    Vector3 predictionAdditive;
 
     [Header("VisionCone")]
     [SerializeField] float visionConeRange = 15;
@@ -109,7 +111,7 @@ public class CultistAi : MonoBehaviour
                 break;
         }
 
-        AnimatePlayer();
+        AnimateCultist();
 
         if (foundPlayer)
         {
@@ -122,6 +124,7 @@ public class CultistAi : MonoBehaviour
     {
         Debug.DrawRay(transform.position, raycastDirection * visionConeRange, Color.red);
         Debug.DrawRay(transform.position, transform.forward * visionConeRange, Color.red);
+        Debug.DrawLine(transform.position, predictionAdditive, Color.red);
     }
 
     void Patroling()
@@ -170,7 +173,23 @@ public class CultistAi : MonoBehaviour
 
     void Pursuing()
     {
-        cultist.SetDestination(playerTransform.position);
+        PredictMovement();
+        cultist.SetDestination(predictionAdditive);
+        playerPreviousPosition = playerTransform.position;
+    }
+
+    void PredictMovement()
+    {
+        Vector3 playerVelocity = playerTransform.position - playerPreviousPosition;
+        predictionAdditive = playerTransform.position + playerVelocity * 100;
+    }
+
+    void PredictRotation()
+    {
+        
+
+        //var rotation = Quaternion.LookRotation(heading);
+        //
     }
 
     void ConeCasting()
@@ -192,7 +211,9 @@ public class CultistAi : MonoBehaviour
                     currentState = CultistStates.Stopped;
                     playerTransform = hit.transform;
                     foundPlayer = true;
-                    cultist.speed = 10;
+                    cultist.speed = 15;
+                    cultist.angularSpeed = 500;
+                    cultist.acceleration = 30;
                     StartCoroutine(nameof(SeenPlayer));
                 }
             }
@@ -223,7 +244,7 @@ public class CultistAi : MonoBehaviour
     /// <summary>
     /// Adds slight up and down hover with sin waves
     /// </summary>
-    void AnimatePlayer()
+    void AnimateCultist()
     {
         float newY = startPosition.y + Mathf.Sin(Time.time * frequency) * amplitude;
         cultist.transform.position = new Vector3(cultistTransform.position.x, newY, cultistTransform.position.z);
