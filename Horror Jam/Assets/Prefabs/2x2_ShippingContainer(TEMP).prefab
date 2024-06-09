@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 4455920184468004454}
   - component: {fileID: 754705167193625027}
   - component: {fileID: 3286984583247734025}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: 2x2_ShippingContainer(TEMP)
   m_TagString: Untagged
   m_Icon: {fileID: 0}

@@ -34,8 +34,8 @@ public class CultistAi : MonoBehaviour
     float lightPerSecond = 30;
 
     [Header("VisionCone")]
-    float visionConeRange = 10;
-    float visionConeAngle = 140;
+    [SerializeField] float visionConeRange = 10;
+    [SerializeField] float visionConeFOV = 140;
     //Layer mask for rays to hit against in order to stop on walls
     [SerializeField] LayerMask obstructionLayer;
     //How many Rays Are Fired Out the cone
@@ -86,7 +86,7 @@ public class CultistAi : MonoBehaviour
         //VisionCone Initialization code
 
         //Converts the angle inputed from degrees to radians
-        visionConeAngle *= Mathf.Deg2Rad;
+        visionConeFOV *= Mathf.Deg2Rad;
         StartCoroutine(nameof(ConeCasting));
         startPosition = cultistTransform.position;
     }
@@ -175,8 +175,8 @@ public class CultistAi : MonoBehaviour
 
     void ConeCasting()
     {
-        float currentAngle = -visionConeAngle / 2;
-        float angleIncrement = visionConeAngle / (visionConeResolution - 1);
+        float currentAngle = -visionConeFOV / 2;
+        float angleIncrement = visionConeFOV / (visionConeResolution - 1);
         float sine;
         float cosine;
 

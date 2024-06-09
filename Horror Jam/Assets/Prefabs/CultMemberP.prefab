@@ -204,9 +204,11 @@ MonoBehaviour:
   circlingPatrol: 1
   timer: 0
   spottingTime: 3
+  visionConeRange: 15
+  visionConeFOV: 120
   obstructionLayer:
     serializedVersion: 2
-    m_Bits: 64
+    m_Bits: 576
 --- !u!1 &1151652065991275570
 GameObject:
   m_ObjectHideFlags: 0
