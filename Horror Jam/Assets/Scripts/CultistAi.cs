@@ -34,8 +34,8 @@ public class CultistAi : MonoBehaviour
     float lightPerSecond = 30;
 
     [Header("VisionCone")]
-    [SerializeField] float visionConeRange = 10;
-    [SerializeField] float visionConeFOV = 140;
+    [SerializeField] float visionConeRange = 15;
+    [SerializeField] float visionConeFOV = 120;
     //Layer mask for rays to hit against in order to stop on walls
     [SerializeField] LayerMask obstructionLayer;
     //How many Rays Are Fired Out the cone
