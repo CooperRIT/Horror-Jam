@@ -11,10 +11,11 @@ public class Lantern : MonoBehaviour
     [Header("Light Properties")]
     [SerializeField] Light spotLight;
     [SerializeField] float maxIntensity;
+    [Tooltip("How much intensity is added per second")]
+    [SerializeField] float intensityRate = 5;
     [SerializeField] float maxRange;
     float currentIntensity = 0;
     float currentRange = 0;
-    float intensityRate = 5;
 
     [Header("WheelProperties")]
     [SerializeField] Transform wheel;
