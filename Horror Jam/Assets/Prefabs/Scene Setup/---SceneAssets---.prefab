@@ -214,7 +214,7 @@ Light:
   serializedVersion: 10
   m_Type: 1
   m_Shape: 0
-  m_Color: {r: 0.764151, g: 0.5747052, b: 0.33521715, a: 1}
+  m_Color: {r: 0.36271802, g: 0.40730393, b: 0.5377358, a: 1}
   m_Intensity: 1
   m_Range: 10
   m_SpotAngle: 30
@@ -549,6 +549,10 @@ PrefabInstance:
     - target: {fileID: 8111604251333534206, guid: 290f4d9df0b3b9e439823d7b54b443ba, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8111604251333534207, guid: 290f4d9df0b3b9e439823d7b54b443ba, type: 3}
+      propertyPath: ditherThreshold
+      value: 6.3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 290f4d9df0b3b9e439823d7b54b443ba, type: 3}
