@@ -141,7 +141,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   blendShapeIndex: 0
-  beatSpeed: 1
+  beatInterval: 1
+  beatDuration: 0.2
+  pauseDuration: 0.6
   maxBlendShapeValue: 100
 --- !u!1 &948252311 stripped
 GameObject:
