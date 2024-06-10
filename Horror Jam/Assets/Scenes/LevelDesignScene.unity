@@ -3219,7 +3219,7 @@ PrefabInstance:
     - target: {fileID: 2973464611944461544, guid: afe3bf058a3d7f842875e2433ac211fa, type: 3}
       propertyPath: audioSource
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 2108635882}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: afe3bf058a3d7f842875e2433ac211fa, type: 3}
 --- !u!1001 &239077838
@@ -25432,6 +25432,11 @@ BoxCollider:
 Transform:
   m_CorrespondingSourceObject: {fileID: 9207110597593072569, guid: 073d8761e3cc5814496fce059a8f523b, type: 3}
   m_PrefabInstance: {fileID: 1441025293}
+  m_PrefabAsset: {fileID: 0}
+--- !u!82 &2108635882 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 2108635882, guid: 3ff464556fcfba9479075e63a5f42b0f, type: 3}
+  m_PrefabInstance: {fileID: 1528997386}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &2114710845
 PrefabInstance:

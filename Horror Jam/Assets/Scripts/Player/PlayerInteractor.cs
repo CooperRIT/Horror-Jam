@@ -19,7 +19,7 @@ public class PlayerInteractor : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        interactable = other.gameObject.layer == interactLayer;
+        interactable = other.gameObject.layer != interactLayer;
 
         if (other.gameObject.TryGetComponent(out interact))
         {
