@@ -8,7 +8,6 @@ public class PlayerController : MonoBehaviour
 {
     [Tooltip("Scriptable Object Reference")]
     [SerializeField] private DeathEventChannel deathEventChannel;
-    [SerializeField] private InputEventChannel inputEventChannel;
 
     [Header("Camera Settings")]
     [SerializeField] private float sensitivity = 30f;
@@ -52,8 +51,6 @@ public class PlayerController : MonoBehaviour
     private Vector2 moveInput;
 
     private float lookRotation;
-
-    private bool canInput = true;
 
     private bool isGrounded;
     private bool isMoving;
@@ -103,12 +100,6 @@ public class PlayerController : MonoBehaviour
 
     private void Move()
     {
-        if (!canInput)
-        {
-            rb.velocity = new Vector3(0, rb.velocity.y, 0);
-            return;
-        }
-
         if (!isGrounded) return;
 
         //Check if moving
@@ -167,22 +158,16 @@ public class PlayerController : MonoBehaviour
     }
 
     private void CallInteract(InputAction.CallbackContext ctx) => playerInteractor.CanInteract();
-
-    private void SetInput(bool canInput) => this.canInput = canInput;
     private void OnEnable()
     {
         playerMovement.Enable();
         playerMovement.Interact.performed += CallInteract;
-
-        inputEventChannel.CanInput += SetInput;
     }
 
     private void OnDisable()
     {
         playerMovement.Disable();
         playerMovement.Interact.performed -= CallInteract;
-
-        inputEventChannel.CanInput -= SetInput;
     }
 
     public void OnCollisionEnter(Collision collision)
