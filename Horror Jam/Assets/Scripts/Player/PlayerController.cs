@@ -4,9 +4,12 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.InputSystem;
-[RequireComponent(typeof(Rigidbody))]
 public class PlayerController : MonoBehaviour
 {
+    [Tooltip("Scriptable Object Reference")]
+    [SerializeField] private DeathEventChannel deathEventChannel;
+    [SerializeField] private InputEventChannel inputEventChannel;
+
     [Header("Camera Settings")]
     [SerializeField] private float sensitivity = 30f;
 
@@ -35,9 +38,6 @@ public class PlayerController : MonoBehaviour
     [Tooltip("The layers the player can walk on")]
     [SerializeField] private LayerMask groundLayer;
 
-    [Tooltip("Scriptable Object Reference for death")]
-    [SerializeField] private DeathEventChannel deathEventChannel;
-
     private PlayerControls playerActions;
     private PlayerControls.PlayerActions playerMovement;
 
@@ -47,11 +47,13 @@ public class PlayerController : MonoBehaviour
 
     private RaycastHit groundHit;
 
-    private Camera cam;
+    [SerializeField] private Camera cam;
 
     private Vector2 moveInput;
 
     private float lookRotation;
+
+    private bool canInput;
 
     private bool isGrounded;
     private bool isMoving;
@@ -69,11 +71,9 @@ public class PlayerController : MonoBehaviour
         playerActions = new PlayerControls();
         playerMovement = playerActions.Player;
 
-        playerInteractor = GetComponentInChildren<PlayerInteractor>();
+        playerInteractor = transform.GetChild(1).GetComponent<PlayerInteractor>();
 
         rb = GetComponent<Rigidbody>();
-
-        cam = GetComponentInChildren<Camera>();
     }
     void Update()
     {
@@ -101,6 +101,8 @@ public class PlayerController : MonoBehaviour
 
     private void Move()
     {
+        if (!canInput) return;
+
         if (!isGrounded) return;
 
         //Check if moving
@@ -160,16 +162,21 @@ public class PlayerController : MonoBehaviour
 
     private void CallInteract(InputAction.CallbackContext ctx) => playerInteractor.CanInteract();
 
+    private void SetInput(bool canInput) => this.canInput = canInput;
     private void OnEnable()
     {
         playerMovement.Enable();
         playerMovement.Interact.performed += CallInteract;
+
+        inputEventChannel.CanInput += SetInput;
     }
 
     private void OnDisable()
     {
         playerMovement.Disable();
         playerMovement.Interact.performed -= CallInteract;
+
+        inputEventChannel.CanInput -= SetInput;
     }
 
     public void OnCollisionEnter(Collision collision)
