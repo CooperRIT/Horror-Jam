@@ -22,10 +22,13 @@ public class UIManager : MonoBehaviour
     {
         if(prompt == string.Empty)
         {
+            Debug.Log("stopped");
+            typing = false;
             StopAllCoroutines();
             promptText.text = string.Empty;
             return;
         }
+        Debug.Log("Started");
         this.prompt = prompt;
         if (typing) return;
         StartCoroutine(nameof(DisplayText));
