@@ -927,6 +927,10 @@ PrefabInstance:
       propertyPath: visionConeRange
       value: 15
       objectReference: {fileID: 0}
+    - target: {fileID: 1151652065862457395, guid: 7b67edae933a8464f9ce4ed36ba12787, type: 3}
+      propertyPath: exposurePerFrame
+      value: 0.7
+      objectReference: {fileID: 0}
     - target: {fileID: 1151652065991275570, guid: 7b67edae933a8464f9ce4ed36ba12787, type: 3}
       propertyPath: m_Name
       value: CultMemberP

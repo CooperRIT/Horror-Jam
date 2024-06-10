@@ -8,7 +8,7 @@ enum CultistStates
     Patroling = 0,
     Spotting = 1,
     Pursuing = 2,
-    Stopped
+    Stopped = 3
 }
 
 public class CultistAi : MonoBehaviour
@@ -23,7 +23,8 @@ public class CultistAi : MonoBehaviour
     Transform transformList;
     float minPatrolDistance = .5f;
     bool reverse;
-    int currentPatrol = 0;    
+    int currentPatrol = 0;
+
     [Header("Spotting Variables")]
     [SerializeField] float timer;
     [SerializeField] float spottingTime = 3;
@@ -44,6 +45,18 @@ public class CultistAi : MonoBehaviour
     int visionConeResolution = 30;
     Vector3 raycastDirection;
     bool foundPlayer;
+
+    [Header("Exposure")]
+    [Tooltip("The max allowed exposure before cultist pursues player")]
+    [SerializeField] float maxExposure = 1f;
+    [Tooltip("How much exposure is applied per frame")]
+    [SerializeField] float exposurePerFrame = .1f;
+    [Tooltip("How much exposure is taken away per frame when the player is not visible to the cultist")]
+    [SerializeField] float exposureDecayRate = .1f;
+    [Tooltip("The current exposure of the player")]
+    [SerializeField] float currentExposure;
+    bool exposedThisFrame;
+    int stateBeforeStopping;
 
     [Header("Animation")]
     Transform cultistTransform;
@@ -208,22 +221,48 @@ public class CultistAi : MonoBehaviour
             {
                 if (hit.transform.gameObject.layer == 6)
                 {
+                    if (stateBeforeStopping == -1)
+                    {
+                        stateBeforeStopping = (int)currentState;
+                    }
                     currentState = CultistStates.Stopped;
-                    playerTransform = hit.transform;
-                    foundPlayer = true;
-                    cultist.speed = 15;
-                    cultist.angularSpeed = 500;
-                    cultist.acceleration = 30;
-                    StartCoroutine(nameof(SeenPlayer));
+                    cultist.SetDestination(transform.position);
+                    cultistTransform.LookAt(hit.point);
+                    if (!exposedThisFrame)
+                    {
+                        currentExposure += exposurePerFrame * Time.deltaTime;
+                        exposedThisFrame = true;
+                    }
+
+                    if (currentExposure >= maxExposure)
+                    {
+                        playerTransform = hit.transform;
+                        StartCoroutine(nameof(SeenPlayer));
+                    }
                 }
             }
-
             currentAngle += angleIncrement;
         }
+        if(!exposedThisFrame && currentState == CultistStates.Stopped)
+        {
+            currentExposure -= exposureDecayRate * Time.deltaTime;
+
+            if (currentExposure <= 0)
+            {
+                currentState = stateBeforeStopping == -1 ? currentState : (CultistStates)stateBeforeStopping;
+                currentExposure = 0;
+                stateBeforeStopping = -1;
+            }
+        }
+        exposedThisFrame = false;
     }
 
     IEnumerator SeenPlayer()
     {
+        foundPlayer = true;
+        cultist.speed = 15;
+        cultist.angularSpeed = 500;
+        cultist.acceleration = 30;
         cultist.SetDestination(transform.position);
         while(true)
         {
