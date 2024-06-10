@@ -968,6 +968,7 @@ GameObject:
   - component: {fileID: 2973464611598142935}
   - component: {fileID: 1617832230}
   - component: {fileID: 1617832229}
+  - component: {fileID: 1395875407}
   m_Layer: 0
   m_Name: EventSystem
   m_TagString: Untagged
@@ -1036,6 +1037,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   deathEventChannel: {fileID: 11400000, guid: 05c062e06a2b1ae498e8969c8563bd7b, type: 2}
   respawnManager: {fileID: 1617832229}
+  cutsceneManager: {fileID: 1395875407}
 --- !u!114 &1617832229
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1108,6 +1110,20 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+  inputEventChannel: {fileID: 11400000, guid: 490ac51ab80db3545a560a54d204c36c, type: 2}
+--- !u!114 &1395875407
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2973464611598142934}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d6d4c9899517cbe4aa80fb0058f1b5c6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  inputEventChannel: {fileID: 11400000, guid: 490ac51ab80db3545a560a54d204c36c, type: 2}
 --- !u!1 &2973464611944461547
 GameObject:
   m_ObjectHideFlags: 0

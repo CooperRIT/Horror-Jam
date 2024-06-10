@@ -73,6 +73,8 @@ public class CultistAi : MonoBehaviour
     float startingSpeed;
     float startingIntensity;
 
+    private AudioSource source;
+
 
     // Start is called before the first frame update
     void Awake()
@@ -82,6 +84,7 @@ public class CultistAi : MonoBehaviour
         cultistTransform = cultist.transform;
         transformList = transform.parent.parent.GetChild(0);
         headLight = transform.GetChild(0).GetComponent<Light>();
+        source = GetComponentInParent<AudioSource>();
         startingIntensity = headLight.intensity;
 
         //Makes sure u have transform in the transform list
@@ -225,6 +228,8 @@ public class CultistAi : MonoBehaviour
                 {
                     if (stateBeforeStopping == -1)
                     {
+                        source.Play();
+                        Debug.Log("Play");
                         stateBeforeStopping = (int)currentState;
                     }
                     currentState = CultistStates.Stopped;
