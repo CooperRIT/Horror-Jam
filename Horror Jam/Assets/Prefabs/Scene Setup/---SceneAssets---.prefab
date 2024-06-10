@@ -1242,12 +1242,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   uiEventChannel: {fileID: 11400000, guid: b707338632e6e1f4e849c8a980d409ee, type: 2}
   promptText: {fileID: 2973464610808104118}
-  timePerLetter: 0.1
-  audioClips:
-  - {fileID: 8300000, guid: 71781ab1c62a2784eb8ba3c746cfb188, type: 3}
-  minPitch: 0.95
-  maxPitch: 1.1
-  audioSource: {fileID: 0}
 --- !u!1001 &2973464609881726582
 PrefabInstance:
   m_ObjectHideFlags: 0

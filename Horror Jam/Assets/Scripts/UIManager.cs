@@ -10,7 +10,7 @@ public class UIManager : MonoBehaviour
 
     [SerializeField] private TextMeshProUGUI promptText;
 
-    [SerializeField] float timePerLetter = .1f;
+    [SerializeField] float timePerLetter = .01f;
 
     WaitForSeconds timedLetters;
 
@@ -18,28 +18,17 @@ public class UIManager : MonoBehaviour
 
     bool typing;
 
-    [Header("Audio Pitcher Settings")]
-    [Tooltip("The audio clips that will be played when walking")]
-    [SerializeField] private AudioClip[] audioClips;
-
-    [Tooltip("Minimum pitch the footstep can be")]
-    [SerializeField] private float minPitch = 0.95f;
-
-    [Tooltip("Maximum pitch the footstep can be")]
-    [SerializeField] private float maxPitch = 1.1f;
-
-    [SerializeField] private AudioSource audioSource;
-
-    private float currentTime;
     private void SetPromptText(string prompt)
     {
         if(prompt == string.Empty)
         {
+            Debug.Log("stopped");
             typing = false;
             StopAllCoroutines();
             promptText.text = string.Empty;
             return;
         }
+        Debug.Log("Started");
         this.prompt = prompt;
         if (typing) return;
         StartCoroutine(nameof(DisplayText));
@@ -52,22 +41,12 @@ public class UIManager : MonoBehaviour
         string newPrompt = "";
         for(int i = 0; i < prompt.Length; i++)
         {
-            AudioPitcher();   
             newPrompt += prompt[i];
             promptText.text = newPrompt;
             yield return timedLetters;
         }
         Debug.Log("Done");
         typing = false;
-    }
-
-    private void AudioPitcher()
-    {
-        audioSource.pitch = Random.Range(minPitch, maxPitch);
-
-        int index = Random.Range(0, audioClips.Length);
-        AudioClip clip = audioClips[index];
-        audioSource.PlayOneShot(clip);
     }
 
     private void OnEnable() => uiEventChannel.SetPrompt += SetPromptText;
