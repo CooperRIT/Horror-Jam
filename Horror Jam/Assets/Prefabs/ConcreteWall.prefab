@@ -11,7 +11,8 @@ GameObject:
   - component: {fileID: 9207110597593072569}
   - component: {fileID: 5217949977879907356}
   - component: {fileID: 8038105726471305430}
-  m_Layer: 0
+  - component: {fileID: 6232292397892718099}
+  m_Layer: 9
   m_Name: ConcreteWall
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -27,7 +28,7 @@ Transform:
   m_GameObject: {fileID: 8398627137505286403}
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 11.46, y: -18.1, z: -56.6}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1, y: 0.98980737, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -83,3 +84,16 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &6232292397892718099
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8398627137505286403}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 6.3704343, y: 3.0010867, z: 1.5718038}
+  m_Center: {x: 0, y: 1.4994566, z: 0}
