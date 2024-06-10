@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class HeadBob : MonoBehaviour
@@ -29,17 +30,23 @@ public class HeadBob : MonoBehaviour
 
     private float smoothTime;
 
+    private bool applyMovementEffects => playerController.ApplyMovementEffects;
+    private bool isGrounded => playerController.IsGrounded;
+    private bool isMoving => playerController.IsMoving;
+
 
     private void Start()
     {
         //Get components
         playerController = GetComponent<PlayerController>();
+
         rb = GetComponent<Rigidbody>();
     }
     private void Update()
     {
-        if (playerController.ApplyMovementEffects)
-            return;
+        if (playerController == null) return;
+
+        if (applyMovementEffects) return;
 
         UpdateBob();
     }
@@ -48,13 +55,13 @@ public class HeadBob : MonoBehaviour
     {
         float speedFactor = rb.velocity.magnitude;
 
-        if (!playerController.IsGrounded || !playerController.IsMoving)
+        if (!isGrounded || !isMoving)
         {
             currentPos = Vector2.zero;
             currentTime = Vector2.zero;
             smoothTime = 0.2f;
         }
-        else if (playerController.IsMoving)
+        else if (isMoving)
         {
             currentTime.x += headbobSpeed.x / 10 * Time.deltaTime * speedFactor;
             currentTime.y += headbobSpeed.y / 10 * Time.deltaTime * speedFactor;

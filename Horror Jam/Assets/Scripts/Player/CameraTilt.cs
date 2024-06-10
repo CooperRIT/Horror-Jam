@@ -24,6 +24,11 @@ public class CameraTilt : MonoBehaviour
     private Vector3 currentRotation;
     private Vector3 targetRotation;
 
+    private bool applyMovementEffects => playerController.ApplyMovementEffects;
+    private bool isGrounded => playerController.IsGrounded;
+
+    private Vector2 moveInput => playerController.MoveInput;
+
     private void Start()
     {
         playerController = GetComponent<PlayerController>();
@@ -32,8 +37,10 @@ public class CameraTilt : MonoBehaviour
 
     private void Update()
     {
+        if (playerController == null) return;
+
         //Guard Clause to prevent applying affect when not ideal
-        if (playerController.ApplyMovementEffects || !playerController.IsGrounded)
+        if (applyMovementEffects || !isGrounded)
             return;
 
         TiltUpdate();
@@ -46,12 +53,12 @@ public class CameraTilt : MonoBehaviour
         bool doTilt = false;
 
         //If the player is moving above a certain velocity, set the current rotation to the tilt amount
-        if (playerController.MoveInput.x != 0 && rb.velocity.magnitude > 2)
+        if (moveInput.x != 0 && rb.velocity.magnitude > 2)
             doTilt = true;
 
         if (doTilt)
         {
-            if (playerController.MoveInput.x < 0)
+            if (moveInput.x < 0)
                 currentRotation = new(0, 0, -tiltAmount);
             else
                 currentRotation = new(0, 0, tiltAmount);

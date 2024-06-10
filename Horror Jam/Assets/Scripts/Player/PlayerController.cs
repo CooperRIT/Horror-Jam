@@ -47,7 +47,7 @@ public class PlayerController : MonoBehaviour
 
     private RaycastHit groundHit;
 
-    [SerializeField] private Camera cam;
+    private Camera cam;
 
     private Vector2 moveInput;
 
