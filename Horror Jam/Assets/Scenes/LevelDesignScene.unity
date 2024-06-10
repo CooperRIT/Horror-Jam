@@ -6222,14 +6222,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 8027430788115606650, guid: 7b67edae933a8464f9ce4ed36ba12787, type: 3}
-      propertyPath: MaxDistance
-      value: 15
-      objectReference: {fileID: 0}
-    - target: {fileID: 8027430788115606650, guid: 7b67edae933a8464f9ce4ed36ba12787, type: 3}
-      propertyPath: rolloffMode
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 8696351435991874055, guid: 7b67edae933a8464f9ce4ed36ba12787, type: 3}
       propertyPath: MaxDistance
       value: 45
