@@ -13,21 +13,38 @@ public class PlayerInteractor : MonoBehaviour
     private bool canInteract;
     public void CanInteract() => canInteract = true;
 
+    bool interactable;
+
+    IInteract interact;
+
+    private void OnTriggerEnter(Collider other)
+    {
+        interactable = other.gameObject.layer == interactLayer;
+
+        if (other.gameObject.TryGetComponent(out interact))
+        {
+            uiEventChannel.TriggerEvent(interact.Prompt);
+        }
+
+    }
+
     private void OnTriggerStay(Collider other)
     {
-        if (other.gameObject.layer != interactLayer) return;
-
-        //Set prompt text
-        if (other.gameObject.TryGetComponent(out IInteract interact))
-            uiEventChannel.TriggerEvent(interact.Prompt);
+        if (interactable) return;
 
         if (!canInteract) return;
+
+        if (interact == null) return;
 
         interact.Interact();
 
         canInteract = false;
     }
-    private void OnTriggerExit(Collider other) => uiEventChannel.TriggerEvent(string.Empty);
+    private void OnTriggerExit(Collider other)
+    {
+        uiEventChannel.TriggerEvent(string.Empty);
+        interact = null;
+    }
 }
 public interface IInteract
 {
