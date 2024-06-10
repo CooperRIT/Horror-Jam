@@ -23,6 +23,7 @@ public class CutsceneManager : MonoBehaviour
         string paramName = cutSceneAnimator.GetParameter(cutSceneIndex).name;
         cutSceneAnimator.SetTrigger(paramName);
     }
+    
 
     //HOW TO MAKE A CUTSCENE
     //1: Create a new empty game object under the CutScenes GameObject(Order does matter as they are indexed properly)

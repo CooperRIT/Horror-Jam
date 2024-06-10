@@ -8,6 +8,7 @@ public class RespawnManager : MonoBehaviour
     Vector3 currentSpawnPoint;
     [SerializeField] List<CultistAi> cultists;
     [SerializeField] Transform player;
+    [SerializeField] CutsceneManager cutsceneManager;
 
     [Header("Fade Controller")]
     [SerializeField] Image fadePanel;
@@ -39,6 +40,7 @@ public class RespawnManager : MonoBehaviour
 
         StartCoroutine(nameof(FadeIn));
         player = GameObject.Find("Player").transform;
+        cutsceneManager.GetComponent<RespawnManager>();
         //StartCoroutine(nameof(FadeOut));
     }
 
