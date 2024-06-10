@@ -40,7 +40,7 @@ public class RespawnManager : MonoBehaviour
 
         StartCoroutine(nameof(FadeIn));
         player = GameObject.Find("Player").transform;
-        cutsceneManager.GetComponent<RespawnManager>();
+        cutsceneManager = transform.GetComponent<CutsceneManager>();
         //StartCoroutine(nameof(FadeOut));
     }
 

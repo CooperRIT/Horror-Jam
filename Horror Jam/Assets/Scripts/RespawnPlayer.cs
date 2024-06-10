@@ -17,6 +17,7 @@ public class RespawnPlayer : MonoBehaviour
     public void AnimEventRespawnPlayer()
     {
         deathEventChannel.TriggerRespawn();
+        transform.gameObject.SetActive(false);
         animator.SetTrigger("SetStateToNull");
     }
 }
