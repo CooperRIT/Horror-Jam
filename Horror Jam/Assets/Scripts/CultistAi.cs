@@ -58,7 +58,7 @@ public class CultistAi : MonoBehaviour
     [Tooltip("The current exposure of the player")]
     [SerializeField] float currentExposure;
     bool exposedThisFrame;
-    int stateBeforeStopping;
+    int stateBeforeStopping = -1;
 
     [Header("Animation")]
     Transform cultistTransform;
@@ -249,6 +249,10 @@ public class CultistAi : MonoBehaviour
                 }
             }
             currentAngle += angleIncrement;
+        }
+        if(playerTransform != null)
+        {
+            return;
         }
         if(!exposedThisFrame && currentState == CultistStates.Stopped)
         {
