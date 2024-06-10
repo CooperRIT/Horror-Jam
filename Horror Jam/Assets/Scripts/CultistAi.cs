@@ -73,7 +73,10 @@ public class CultistAi : MonoBehaviour
     float startingSpeed;
     float startingIntensity;
 
+    [Header("Audio")]
     private AudioSource source;
+    [SerializeField] private AudioClip seenClip;
+    [SerializeField] private AudioClip chaseClip;
 
 
     // Start is called before the first frame update
@@ -228,8 +231,7 @@ public class CultistAi : MonoBehaviour
                 {
                     if (stateBeforeStopping == -1)
                     {
-                        source.Play();
-                        Debug.Log("Play");
+                        source.PlayOneShot(seenClip);
                         stateBeforeStopping = (int)currentState;
                     }
                     currentState = CultistStates.Stopped;
@@ -288,6 +290,7 @@ public class CultistAi : MonoBehaviour
             }
 
         }
+        source.PlayOneShot(chaseClip);
         currentState = CultistStates.Pursuing;
     }
 

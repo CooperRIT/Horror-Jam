@@ -135,7 +135,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 7614785c0468f7d4f8b9bf49115ef422, type: 3}
+  m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
   m_Volume: 0.6
   m_Pitch: 1
@@ -311,6 +311,8 @@ MonoBehaviour:
   exposurePerFrame: 1.5
   exposureDecayRate: 0.3
   currentExposure: 0
+  seenClip: {fileID: 8300000, guid: 16db612d9d1815040af4bae989e82074, type: 3}
+  chaseClip: {fileID: 8300000, guid: 7614785c0468f7d4f8b9bf49115ef422, type: 3}
 --- !u!1 &1151652065991275570
 GameObject:
   m_ObjectHideFlags: 0

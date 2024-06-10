@@ -103,7 +103,11 @@ public class PlayerController : MonoBehaviour
 
     private void Move()
     {
-        if (!canInput) return;
+        if (!canInput)
+        {
+            rb.velocity = new Vector3(0, rb.velocity.y, 0);
+            return;
+        }
 
         if (!isGrounded) return;
 
