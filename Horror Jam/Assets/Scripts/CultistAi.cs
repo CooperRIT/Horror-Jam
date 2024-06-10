@@ -30,6 +30,8 @@ public class CultistAi : MonoBehaviour
     [SerializeField] float spottingTime = 3;
 
     [Header("Pursuing Variables")]
+    [Tooltip("Max speed when the cultist has noticed the player")]
+    [SerializeField] float maxSpeed = 15;
     Transform playerTransform;
     Light headLight;
     float lightPerSecond = 30;
@@ -260,7 +262,7 @@ public class CultistAi : MonoBehaviour
     IEnumerator SeenPlayer()
     {
         foundPlayer = true;
-        cultist.speed = 15;
+        cultist.speed = maxSpeed;
         cultist.angularSpeed = 500;
         cultist.acceleration = 30;
         cultist.SetDestination(transform.position);

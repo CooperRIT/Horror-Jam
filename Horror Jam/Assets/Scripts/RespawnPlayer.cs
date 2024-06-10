@@ -14,10 +14,10 @@ public class RespawnPlayer : MonoBehaviour
     /// <summary>
     /// Public void for anim event playing
     /// </summary>
-    public void AnimEventRespawnPlayer()
+    public void AnimEventRespawnPlayer(int cutsceneIndex)
     {
         deathEventChannel.TriggerRespawn();
-        transform.gameObject.SetActive(false);
+        transform.GetChild(cutsceneIndex).gameObject.SetActive(false);
         animator.SetTrigger("SetStateToNull");
     }
 }

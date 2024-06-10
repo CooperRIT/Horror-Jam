@@ -7,8 +7,7 @@ public class RespawnManager : MonoBehaviour
 {
     Vector3 currentSpawnPoint;
     [SerializeField] List<CultistAi> cultists;
-    [SerializeField] Transform player;
-    [SerializeField] CutsceneManager cutsceneManager;
+    Transform player;
 
     [Header("Fade Controller")]
     [SerializeField] Image fadePanel;
@@ -17,6 +16,7 @@ public class RespawnManager : MonoBehaviour
     [SerializeField] float fadeAmount = 0;
     [SerializeField] AnimationCurve fadeInCurve;
     [SerializeField] AnimationCurve fadeOutCurve;
+    [SerializeField] InputEventChannel inputEventChannel;
 
     private void Awake()
     {
@@ -37,11 +37,8 @@ public class RespawnManager : MonoBehaviour
         {
             return;
         }
-
         StartCoroutine(nameof(FadeIn));
         player = GameObject.Find("Player").transform;
-        cutsceneManager = transform.GetComponent<CutsceneManager>();
-        //StartCoroutine(nameof(FadeOut));
     }
 
     private void Start()
@@ -70,6 +67,7 @@ public class RespawnManager : MonoBehaviour
         }
         player.transform.position = currentSpawnPoint;
         Debug.Log("restarted cultists and player");
+        inputEventChannel.TriggerEvent(true);
         StartCoroutine(FadeIn());
     }
 

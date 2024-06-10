@@ -53,7 +53,7 @@ public class PlayerController : MonoBehaviour
 
     private float lookRotation;
 
-    private bool canInput;
+    private bool canInput = true;
 
     private bool isGrounded;
     private bool isMoving;
@@ -74,6 +74,8 @@ public class PlayerController : MonoBehaviour
         playerInteractor = transform.GetChild(1).GetComponent<PlayerInteractor>();
 
         rb = GetComponent<Rigidbody>();
+
+        cam = GetComponentInChildren<Camera>();
     }
     void Update()
     {
