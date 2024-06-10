@@ -78,7 +78,8 @@ public class CultistAi : MonoBehaviour
         locationsToPatrol.Add(transform.parent.parent.position);
         for (int i = 0; i < transformList.childCount; i++)
         {
-            locationsToPatrol.Add(transformList.GetChild(i).position);
+            //Makes the y normalized through out all cultist
+            locationsToPatrol.Add(new Vector3(transformList.GetChild(i).position.x, cultistTransform.position.y, transformList.GetChild(i).position.z));
         }
 
         //When the cult member no longer needs their transform list, it destroys it
@@ -124,7 +125,6 @@ public class CultistAi : MonoBehaviour
     {
         Debug.DrawRay(transform.position, raycastDirection * visionConeRange, Color.red);
         Debug.DrawRay(transform.position, transform.forward * visionConeRange, Color.red);
-        Debug.DrawLine(transform.position, predictionAdditive, Color.red);
     }
 
     void Patroling()
