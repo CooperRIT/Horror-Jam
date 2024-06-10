@@ -3216,6 +3216,10 @@ PrefabInstance:
       propertyPath: lightningSpawner
       value: 
       objectReference: {fileID: 2044524295}
+    - target: {fileID: 2973464611944461544, guid: afe3bf058a3d7f842875e2433ac211fa, type: 3}
+      propertyPath: audioSource
+      value: 
+      objectReference: {fileID: 1528997388}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: afe3bf058a3d7f842875e2433ac211fa, type: 3}
 --- !u!1001 &239077838
@@ -17990,6 +17994,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3ff464556fcfba9479075e63a5f42b0f, type: 3}
+--- !u!82 &1528997388 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 252035075440926213, guid: 3ff464556fcfba9479075e63a5f42b0f, type: 3}
+  m_PrefabInstance: {fileID: 1528997386}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1538090460
 PrefabInstance:
   m_ObjectHideFlags: 0
