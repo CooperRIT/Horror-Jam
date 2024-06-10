@@ -191,16 +191,16 @@ public class CultistAi : MonoBehaviour
 
     void Pursuing()
     {
-        PredictMovement();
-        cultist.SetDestination(predictionAdditive);
-        playerPreviousPosition = playerTransform.position;
+        //PredictMovement();
+        cultist.SetDestination(playerTransform.position);
+        //playerPreviousPosition = playerTransform.position;
     }
 
-    void PredictMovement()
+    /*oid PredictMovement()
     {
         Vector3 playerVelocity = playerTransform.position - playerPreviousPosition;
         predictionAdditive = playerTransform.position + playerVelocity * 100;
-    }
+    }*/
 
     void PredictRotation()
     {
