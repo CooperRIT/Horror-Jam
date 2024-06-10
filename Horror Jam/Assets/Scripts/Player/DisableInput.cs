@@ -23,5 +23,5 @@ public class DisableInput : MonoBehaviour
         controller.enabled = canInput;
     }
     private void OnEnable() => inputEventChannel.CanInput += SetInput;
-    private void OnDisable() => inputEventChannel.CanInput -= SetInput;
+    private void OnDisable() => inputEventChannel.CanInput += SetInput;
 }
