@@ -54,7 +54,7 @@ public class PlayerController : MonoBehaviour
 
     private float lookRotation;
 
-    private bool canInput;
+    private bool canInput = true;
 
     private bool isGrounded;
     private bool isMoving;

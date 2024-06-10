@@ -5090,7 +5090,6 @@ GameObject:
   - component: {fileID: 614409995}
   - component: {fileID: 1528997388}
   - component: {fileID: 1528997398}
-  - component: {fileID: 1726161996}
   m_Layer: 6
   m_Name: Player
   m_TagString: Untagged
@@ -5193,6 +5192,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   deathEventChannel: {fileID: 11400000, guid: 05c062e06a2b1ae498e8969c8563bd7b, type: 2}
+  inputEventChannel: {fileID: 11400000, guid: 490ac51ab80db3545a560a54d204c36c, type: 2}
   sensitivity: 15
   walkSpeed: 35
   maxSlopeAngle: 45
@@ -5445,19 +5445,6 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!114 &1726161996
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2210646617093219896}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 80ba533b7d89d9342a4005226e5d948c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  inputEventChannel: {fileID: 11400000, guid: 490ac51ab80db3545a560a54d204c36c, type: 2}
 --- !u!1 &2210646617724671457
 GameObject:
   m_ObjectHideFlags: 0

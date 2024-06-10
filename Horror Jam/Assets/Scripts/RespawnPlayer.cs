@@ -20,4 +20,13 @@ public class RespawnPlayer : MonoBehaviour
         transform.GetChild(cutsceneIndex).gameObject.SetActive(false);
         animator.SetTrigger("SetStateToNull");
     }
+
+    /// <summary>
+    /// Put in the index of the cutscene, Plays audio from source of the FIRST child of that child
+    /// </summary>
+    /// <param name="childIndex"></param>
+    public void PlaySound(int childIndex)
+    {
+        transform.GetChild(childIndex).GetChild(0).GetComponent<AudioSource>().Play();
+    }
 }
