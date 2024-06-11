@@ -78,7 +78,7 @@ public class Lantern : MonoBehaviour
 
     IEnumerator SpinLampAction()
     {
-        soundEventChannel.TriggerEvent(soundSourceSO.audioLevel, false);
+        soundEventChannel.currentSoundLevel += soundSourceSO.audioLevel;
         while (isOn)
         {
             if(spotLight.intensity < maxIntensity)
@@ -102,7 +102,7 @@ public class Lantern : MonoBehaviour
 
     IEnumerator SlowDownLampAction()
     {
-        soundEventChannel.TriggerEvent(soundSourceSO.audioLevel, true);
+        soundEventChannel.currentSoundLevel -= soundSourceSO.audioLevel;
         while (!isOn)
         {
             if (spotLight.intensity > 0)
