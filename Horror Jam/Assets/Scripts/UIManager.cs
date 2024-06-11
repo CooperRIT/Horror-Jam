@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class UIManager : MonoBehaviour
 {
@@ -70,6 +71,9 @@ public class UIManager : MonoBehaviour
         AudioClip clip = audioClips[index];
         audioSource.PlayOneShot(clip);
     }
+
+    public void LoadScene(int sceneNumber) => SceneManager.LoadScene(sceneNumber);
+    public void Quit() => Application.Quit();
 
     private void OnEnable() => uiEventChannel.SetPrompt += SetPromptText;
     private void OnDisable() => uiEventChannel.SetPrompt -= SetPromptText;
