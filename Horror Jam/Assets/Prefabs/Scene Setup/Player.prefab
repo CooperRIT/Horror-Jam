@@ -5440,6 +5440,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   audioPitcherSO: {fileID: 11400000, guid: defbe7d99228ca342ae21b9b17401110, type: 2}
+  soundEventChannel: {fileID: 11400000, guid: 735300f21b4c8ab4c987fbb371d21e25, type: 2}
   playSpeed: 5
   audioInterval: 0.35
 --- !u!82 &1528997398
@@ -6010,7 +6011,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c32df72ab2f896d4e93242f89bac3c9b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  soundSourceSO: {fileID: 11400000, guid: 57fe57e33a45bed4790acdfc57ff8f85, type: 2}
+  audioPitcherSO: {fileID: 0}
   soundEventChannel: {fileID: 11400000, guid: 735300f21b4c8ab4c987fbb371d21e25, type: 2}
   spotLight: {fileID: 4333232957611910088}
   maxIntensity: 10

@@ -32,7 +32,7 @@ public class FootstepAudioPitcher : MonoBehaviour
         if (!playerController.IsGrounded || !playerController.IsMoving)
         {
             currentTime = 0f;
-            soundEventChannel.currentSoundLevel -= audioPitcherSO.decayLevel * Time.deltaTime;
+            soundEventChannel.CurrentSoundLevel -= audioPitcherSO.decayLevel * Time.deltaTime;
         }   
         else if (playerController.IsMoving)
             currentTime += playSpeed / 10 * Time.deltaTime;
@@ -42,7 +42,7 @@ public class FootstepAudioPitcher : MonoBehaviour
             currentTime = 0.0f;
 
             audioPitcherSO.Play(audioSource);
-            soundEventChannel.currentSoundLevel += audioPitcherSO.audioLevel * Time.deltaTime;
+            soundEventChannel.CurrentSoundLevel += audioPitcherSO.audioLevel * Time.deltaTime;
         }
     }
 }
