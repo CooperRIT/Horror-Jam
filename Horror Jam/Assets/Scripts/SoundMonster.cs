@@ -36,8 +36,7 @@ public class SoundMonster : EnemyBase
     // Update is called once per frame
     void Update()
     {
-        currentSoundLevel = soundEventChannel.currentSoundLevel;
-        currentSoundLevel = Mathf.Clamp(currentSoundLevel, 0, 100);
+        currentSoundLevel = soundEventChannel.CurrentSoundLevel;
         SoundInterest(currentSoundLevel);
     }
 
@@ -48,7 +47,7 @@ public class SoundMonster : EnemyBase
         if (playerSound > soundToDistanceRatio)
         {
             //Go to the player
-            Debug.Log("I can hear you");
+            //Debug.Log("I can hear you");
             parentTransform.LookAt(player.position);
         }
     }
