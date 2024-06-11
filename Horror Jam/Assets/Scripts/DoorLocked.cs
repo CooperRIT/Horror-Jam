@@ -4,7 +4,9 @@ using UnityEngine;
 
 public class DoorLocked : MonoBehaviour, IInteract
 {
-    public string Prompt => "The Door is locked";
+    [Header("Interact Settings")]
+    [SerializeField] private string interactPrompt = "The door is locked";
+    public string Prompt { get { return interactPrompt; } }
 
     public void Interact()
     {

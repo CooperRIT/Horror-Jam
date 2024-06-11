@@ -8,7 +8,9 @@ public class BunkerDoor : MonoBehaviour, IInteract
     [Header("Scene Settings")]
     [SerializeField] private int sceneNumber;
 
-    public string Prompt => "Press [E] to go below deck";
+    [Header("Interact Settings")]
+    [SerializeField] private string interactPrompt = "Press [E] to pickup lantern";
+    public string Prompt { get { return interactPrompt; } }
 
     public void Interact() => SceneManager.LoadScene(sceneNumber);
 }

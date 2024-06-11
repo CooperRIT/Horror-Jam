@@ -4,7 +4,11 @@ using UnityEngine;
 
 public class TestInteractable : MonoBehaviour, IInteract
 {
-    public string Prompt => "Press E for candy";
+    [SerializeField] private float clearDistance = 5f;
+    public float Distance { get { return clearDistance; } }
+
+    [SerializeField] private string interactPrompt = "Press E for candy";
+    public string Prompt { get { return interactPrompt; } }
 
     public void Interact()
     {
