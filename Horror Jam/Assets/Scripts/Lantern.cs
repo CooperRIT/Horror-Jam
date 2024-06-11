@@ -5,6 +5,10 @@ using UnityEngine.InputSystem;
 
 public class Lantern : MonoBehaviour
 {
+    [Header("Scriptable Object Reference")]
+    [SerializeField] private SoundSourceSO soundSourceSO;
+    [SerializeField] private SoundEventChannel soundEventChannel;
+
     Controls controls;
     bool isOn;
 
@@ -74,6 +78,7 @@ public class Lantern : MonoBehaviour
 
     IEnumerator SpinLampAction()
     {
+        soundEventChannel.TriggerEvent(soundSourceSO.audioLevel, false);
         while (isOn)
         {
             if(spotLight.intensity < maxIntensity)
@@ -97,6 +102,7 @@ public class Lantern : MonoBehaviour
 
     IEnumerator SlowDownLampAction()
     {
+        soundEventChannel.TriggerEvent(soundSourceSO.audioLevel, true);
         while (!isOn)
         {
             if (spotLight.intensity > 0)
