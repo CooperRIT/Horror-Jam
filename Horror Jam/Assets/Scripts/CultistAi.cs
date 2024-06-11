@@ -11,7 +11,7 @@ enum CultistStates
     Stopped = 3
 }
 
-public class CultistAi : MonoBehaviour
+public class CultistAi : EnemyBase
 {
     CultistStates currentState;
     NavMeshAgent cultist;
@@ -85,7 +85,7 @@ public class CultistAi : MonoBehaviour
         cultist = GetComponentInParent<NavMeshAgent>();
         startingSpeed = cultist.speed;
         cultistTransform = cultist.transform;
-        transformList = transform.parent.parent.GetChild(0);
+        transformList = transform.parent.parent.GetChild(1);
         headLight = transform.GetChild(0).GetComponent<Light>();
         source = GetComponentInParent<AudioSource>();
         startingIntensity = headLight.intensity;
@@ -303,7 +303,7 @@ public class CultistAi : MonoBehaviour
         cultist.transform.position = new Vector3(cultistTransform.position.x, newY, cultistTransform.position.z);
     }
 
-    public void RestartCultist()
+    public override void ResetEnemy()
     {
         foundPlayer = false;
         cultistTransform.position = startPosition;

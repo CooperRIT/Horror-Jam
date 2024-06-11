@@ -7,17 +7,23 @@ public class CutsceneManager : MonoBehaviour
     Transform cutSceneAnimatorTransform;
     Animator cutSceneAnimator;
     Transform player;
+    bool hasCutscenes;
     [SerializeField] InputEventChannel inputEventChannel;
 
     private void Awake()
     {
         player = GameObject.Find("Player").transform;
         cutSceneAnimatorTransform = GameObject.Find("CutScenes").transform;
+        hasCutscenes = cutSceneAnimatorTransform.childCount != 0;
         cutSceneAnimator = cutSceneAnimatorTransform.GetComponent<Animator>();
     }
     // Start is called before the first frame update
     public void OnStartCutScene(int cutSceneIndex)
     {
+        if(!hasCutscenes)
+        {
+            return;
+        }
         cutSceneAnimatorTransform.GetChild(cutSceneIndex).gameObject.SetActive(true);
         inputEventChannel.TriggerEvent(false);
         player.parent = cutSceneAnimatorTransform.GetChild(cutSceneIndex).GetChild(1);
