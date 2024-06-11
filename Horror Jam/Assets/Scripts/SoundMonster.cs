@@ -12,7 +12,8 @@ public class SoundMonster : EnemyBase
     [SerializeField] float minDistance;
     [Tooltip("How much sound is needed to alert the enemy")]
     [SerializeField] float soundToDistanceRatio;
-    [SerializeField] float currentSoundLevel;
+    [SerializeField] SoundEventChannel soundEventChannel;
+    [SerializeField] float currentSoundLevel => soundEventChannel.CurrentSoundLevel;
     Transform parentTransform;
     Transform player;
     [Header("AnimationCurves")]
@@ -35,6 +36,7 @@ public class SoundMonster : EnemyBase
     // Update is called once per frame
     void Update()
     {
+        currentSoundLevel = 
         SoundInterest(currentSoundLevel);
     }
 
