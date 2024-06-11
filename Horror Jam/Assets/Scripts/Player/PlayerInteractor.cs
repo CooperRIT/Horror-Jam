@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using BelowDeck.MiniUtil;
 
 public class PlayerInteractor : MonoBehaviour
 {
@@ -25,7 +26,6 @@ public class PlayerInteractor : MonoBehaviour
         {
             uiEventChannel.TriggerEvent(interact.Prompt);
         }
-
     }
 
     private void OnTriggerStay(Collider other)

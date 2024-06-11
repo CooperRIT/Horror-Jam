@@ -5,7 +5,6 @@ using BelowDeck.MiniUtil;
 
 public class SoundMonster : EnemyBase
 {
-    [SerializeField] SoundEventChannel soundEventChannel;
 
     [Header("Sound Values")]
     [SerializeField] float currentDistance;
@@ -13,7 +12,8 @@ public class SoundMonster : EnemyBase
     [SerializeField] float minDistance;
     [Tooltip("How much sound is needed to alert the enemy")]
     [SerializeField] float soundToDistanceRatio;
-    [SerializeField] float currentSoundLevel;
+    [SerializeField] SoundEventChannel soundEventChannel;
+    [SerializeField] float currentSoundLevel => soundEventChannel.CurrentSoundLevel;
     Transform parentTransform;
     Transform player;
     [Header("AnimationCurves")]
@@ -36,7 +36,6 @@ public class SoundMonster : EnemyBase
     // Update is called once per frame
     void Update()
     {
-        currentSoundLevel = soundEventChannel.CurrentSoundLevel;
         SoundInterest(currentSoundLevel);
     }
 

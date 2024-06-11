@@ -17944,10 +17944,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1528997388, guid: 3ff464556fcfba9479075e63a5f42b0f, type: 3}
-      propertyPath: soundEventChannel
-      value: 
-      objectReference: {fileID: 11400000, guid: 735300f21b4c8ab4c987fbb371d21e25, type: 2}
     - target: {fileID: 2210646617093219876, guid: 3ff464556fcfba9479075e63a5f42b0f, type: 3}
       propertyPath: m_RootOrder
       value: 1

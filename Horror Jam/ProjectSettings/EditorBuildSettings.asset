@@ -12,6 +12,6 @@ EditorBuildSettings:
     path: Assets/Scenes/AboveDeck.unity
     guid: 566a7fe9c0f789a4cad049a380f67378
   - enabled: 1
-    path: Assets/Scenes/CalScenePT2.unity
-    guid: a1a57ab916bacf94582c34c26ea95e8f
+    path: Assets/Scenes/BelowDeck.unity
+    guid: 85d4bd070c9550a42839f86198d825cb
   m_configObjects: {}

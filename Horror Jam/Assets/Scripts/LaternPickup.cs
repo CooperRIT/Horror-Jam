@@ -10,7 +10,9 @@ public class LaternPickup : MonoBehaviour, IInteract
     [Header("Lantern Reference")]
     [SerializeField] private GameObject lantern;
 
-    public string Prompt => "Press [E] to pickup lantern";
+    [Header("Interact Settings")]
+    [SerializeField] private string interactPrompt = "Press [E] to pickup lantern";
+    public string Prompt { get { return interactPrompt; } }
 
     public void Interact()
     {
