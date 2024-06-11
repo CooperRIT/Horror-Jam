@@ -78,7 +78,6 @@ public class Lantern : MonoBehaviour
 
     IEnumerator SpinLampAction()
     {
-        soundEventChannel.currentSoundLevel += soundSourceSO.audioLevel;
         while (isOn)
         {
             if(spotLight.intensity < maxIntensity)
@@ -94,6 +93,7 @@ public class Lantern : MonoBehaviour
             {
                 wheel.Rotate(maxSpinRate, 0, 0);
             }
+            soundEventChannel.currentSoundLevel += soundSourceSO.audioLevel * Time.deltaTime;
             yield return null;
         }
 
@@ -102,7 +102,6 @@ public class Lantern : MonoBehaviour
 
     IEnumerator SlowDownLampAction()
     {
-        soundEventChannel.currentSoundLevel -= soundSourceSO.audioLevel;
         while (!isOn)
         {
             if (spotLight.intensity > 0)
@@ -114,6 +113,7 @@ public class Lantern : MonoBehaviour
                 wheel.Rotate(currentSpinRate, 0, 0);
                 currentSpinRate -= spinRateRate * Time.deltaTime;
             }
+            soundEventChannel.currentSoundLevel -= soundSourceSO.audioLevel * Time.deltaTime;
             yield return null;
         }
     }

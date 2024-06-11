@@ -12,4 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 36c56c0e684894844a2133fe151a09da, type: 3}
   m_Name: Lantern
   m_EditorClassIdentifier: 
-  audioLevel: 30
+  audioLevel: 3
