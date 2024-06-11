@@ -5439,13 +5439,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: efc3bc560425dba41b2ea0241e6df119, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  audioClips:
-  - {fileID: 8300000, guid: 22ec5a942f56f7e47aa4d6de5a47100d, type: 3}
-  - {fileID: 8300000, guid: bf5189b26aac04d4aa51bf55f63b02dc, type: 3}
-  minPitch: 0.95
-  maxPitch: 1.1
+  audioPitcherSO: {fileID: 11400000, guid: defbe7d99228ca342ae21b9b17401110, type: 2}
   playSpeed: 5
-  audioInterval: 0.3
+  audioInterval: 0.35
 --- !u!82 &1528997398
 AudioSource:
   m_ObjectHideFlags: 0
