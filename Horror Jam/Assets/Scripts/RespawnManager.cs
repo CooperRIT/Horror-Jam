@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class RespawnManager : MonoBehaviour
 {
     Vector3 currentSpawnPoint;
-    [SerializeField] List<CultistAi> cultists;
+    [SerializeField] List<EnemyBase> enemyList;
     Transform player;
 
     [Header("Fade Controller")]
@@ -20,25 +20,32 @@ public class RespawnManager : MonoBehaviour
 
     private void Awake()
     {
-        cultists = new List<CultistAi>();
+        enemyList = new List<EnemyBase>();
+
+        player = GameObject.Find("Player").transform;
+
         Transform enemies = GameObject.Find("Enemies").transform;
 
         if (enemies == null)
         {
-            throw new System.Exception("Put all of your enemies under a gameobject called 'Enemies'");
+            Debug.Log("No Cultists Found");
         }
 
-        //This is the location of the cultist AI script on each cultist
-        for(int i = 0; i < enemies.childCount; i++)
+        //This is the location of the AI enemy script on each enemy
+        /*
+         * Parent
+         *  EnemyBase
+         *   Scripts Object <-- Getting this and taking the AI script from it
+        */
+        for (int i = 0; i < enemies.childCount; i++)
         {
-            cultists.Add(enemies.GetChild(i).GetChild(1).GetChild(0).GetComponent<CultistAi>());
+            enemyList.Add(enemies.GetChild(i).GetChild(0).GetChild(0).GetComponent<EnemyBase>());
         }
         if (fadePanel == null)
         {
             return;
         }
         StartCoroutine(nameof(FadeIn));
-        player = GameObject.Find("Player").transform;
     }
 
     private void Start()
@@ -61,9 +68,9 @@ public class RespawnManager : MonoBehaviour
         //Experimental For Cutscense
         player.parent = null;
 
-        foreach(CultistAi cultistAi in cultists)
+        foreach(EnemyBase enemies in enemyList)
         {
-            cultistAi.RestartCultist();
+            enemies.ResetEnemy();
         }
         player.transform.position = currentSpawnPoint;
         Debug.Log("restarted cultists and player");
