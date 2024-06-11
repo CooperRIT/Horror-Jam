@@ -7,6 +7,7 @@ public class Lantern : MonoBehaviour
 {
     [Header("Scriptable Object Reference")]
     [SerializeField] private AudioPitcherSO audioPitcherSO;
+    [SerializeField] private SoundEventChannel soundEventChannel;
 
     Controls controls;
     bool isOn;
@@ -92,6 +93,7 @@ public class Lantern : MonoBehaviour
             {
                 wheel.Rotate(maxSpinRate, 0, 0);
             }
+            soundEventChannel.CurrentSoundLevel += audioPitcherSO.audioLevel;
             yield return null;
         }
 
@@ -104,6 +106,7 @@ public class Lantern : MonoBehaviour
         {
             if (spotLight.intensity > 0)
             {
+                soundEventChannel.CurrentSoundLevel -= audioPitcherSO.audioLevel;
                 spotLight.intensity -= intensityRate * Time.deltaTime;
             }
             if (currentSpinRate > 0)
