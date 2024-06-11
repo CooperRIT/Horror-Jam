@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Lantern
   m_EditorClassIdentifier: 
   audioLevel: 3
-  decayLevel: 5
+  decayLevel: 0
   audioClips: []
   volume:
     minValue: 0
