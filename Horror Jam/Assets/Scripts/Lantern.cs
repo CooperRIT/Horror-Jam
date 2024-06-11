@@ -6,7 +6,7 @@ using UnityEngine.InputSystem;
 public class Lantern : MonoBehaviour
 {
     [Header("Scriptable Object Reference")]
-    [SerializeField] private SoundSourceSO soundSourceSO;
+    [SerializeField] private AudioPitcherSO audioPitcherSO;
     [SerializeField] private SoundEventChannel soundEventChannel;
 
     Controls controls;
@@ -93,7 +93,7 @@ public class Lantern : MonoBehaviour
             {
                 wheel.Rotate(maxSpinRate, 0, 0);
             }
-            soundEventChannel.currentSoundLevel += soundSourceSO.audioLevel * Time.deltaTime;
+            soundEventChannel.currentSoundLevel += audioPitcherSO.audioLevel * Time.deltaTime;
             yield return null;
         }
 
@@ -113,7 +113,7 @@ public class Lantern : MonoBehaviour
                 wheel.Rotate(currentSpinRate, 0, 0);
                 currentSpinRate -= spinRateRate * Time.deltaTime;
             }
-            soundEventChannel.currentSoundLevel -= soundSourceSO.audioLevel * Time.deltaTime;
+            soundEventChannel.currentSoundLevel -= audioPitcherSO.decayLevel * Time.deltaTime;
             yield return null;
         }
     }

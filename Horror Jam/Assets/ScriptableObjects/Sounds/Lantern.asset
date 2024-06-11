@@ -9,7 +9,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 36c56c0e684894844a2133fe151a09da, type: 3}
+  m_Script: {fileID: 11500000, guid: ba0cf70c6f7d5364ca457f1fc199ebba, type: 3}
   m_Name: Lantern
   m_EditorClassIdentifier: 
   audioLevel: 3
+  decayLevel: 5
+  audioClips: []
+  volume:
+    minValue: 0
+    maxValue: 0
+  pitch:
+    minValue: 0
+    maxValue: 0

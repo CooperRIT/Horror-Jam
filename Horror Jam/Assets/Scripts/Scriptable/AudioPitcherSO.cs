@@ -3,6 +3,12 @@ using UnityEngine;
 [CreateAssetMenu(menuName = "Audio/Audio Pitcher")]
 public class AudioPitcherSO : AudioSO
 {
+    [Header("Sound Level Settings")]
+    [Tooltip("The level of sound produced when active")]
+    public float audioLevel;
+    public float decayLevel;
+
+    [Header("Pitch Settings")]
     public AudioClip[] audioClips;
     public RangedFloat volume;
     public RangedFloat pitch;
