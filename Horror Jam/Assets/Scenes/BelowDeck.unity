@@ -300,6 +300,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Ghoul
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 8c0ac9bd35bc8244baa91023ed1a27f7, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8c0ac9bd35bc8244baa91023ed1a27f7, type: 3}
 --- !u!1 &382273263 stripped
@@ -457,15 +461,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2210646617093219876, guid: 3ff464556fcfba9479075e63a5f42b0f, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 4
+      value: -2.36
       objectReference: {fileID: 0}
     - target: {fileID: 2210646617093219876, guid: 3ff464556fcfba9479075e63a5f42b0f, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -16.89
+      value: -16.54
       objectReference: {fileID: 0}
     - target: {fileID: 2210646617093219876, guid: 3ff464556fcfba9479075e63a5f42b0f, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -81.85
+      value: -0.26
       objectReference: {fileID: 0}
     - target: {fileID: 2210646617093219876, guid: 3ff464556fcfba9479075e63a5f42b0f, type: 3}
       propertyPath: m_LocalRotation.w
@@ -498,6 +502,18 @@ PrefabInstance:
     - target: {fileID: 2210646617093219896, guid: 3ff464556fcfba9479075e63a5f42b0f, type: 3}
       propertyPath: m_Name
       value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 4333232957611910088, guid: 3ff464556fcfba9479075e63a5f42b0f, type: 3}
+      propertyPath: m_Range
+      value: 46.036873
+      objectReference: {fileID: 0}
+    - target: {fileID: 4333232957901746692, guid: 3ff464556fcfba9479075e63a5f42b0f, type: 3}
+      propertyPath: maxIntensity
+      value: 400
+      objectReference: {fileID: 0}
+    - target: {fileID: 4333232957901746692, guid: 3ff464556fcfba9479075e63a5f42b0f, type: 3}
+      propertyPath: intensityRate
+      value: 20
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3ff464556fcfba9479075e63a5f42b0f, type: 3}
@@ -559,6 +575,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: c9a8fac0feec2d44687115836739c42f, type: 3}
       propertyPath: m_Name
       value: Slither
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: c9a8fac0feec2d44687115836739c42f, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c9a8fac0feec2d44687115836739c42f, type: 3}
@@ -1256,6 +1276,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 94cda82adcb26d04783a32dd75cba553, type: 3}
       propertyPath: m_Name
       value: Head
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 94cda82adcb26d04783a32dd75cba553, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 94cda82adcb26d04783a32dd75cba553, type: 3}

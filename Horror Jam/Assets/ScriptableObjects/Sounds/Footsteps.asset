@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Footsteps
   m_EditorClassIdentifier: 
   audioLevel: 2
-  decayLevel: 4
+  decayLevel: 1
   audioClips:
   - {fileID: 8300000, guid: 22ec5a942f56f7e47aa4d6de5a47100d, type: 3}
   - {fileID: 8300000, guid: bf5189b26aac04d4aa51bf55f63b02dc, type: 3}
