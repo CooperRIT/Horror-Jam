@@ -63,6 +63,7 @@ public class RespawnManager : MonoBehaviour
         get { return currentSpawnPoint; }
     }
 
+    [ContextMenu("ResetScene")]
     public void RestartScene()
     {
         //Experimental For Cutscense

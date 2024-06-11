@@ -9,14 +9,15 @@ public class SoundMonster : EnemyBase
     [SerializeField] float currentDistance;
     [SerializeField] float maxDistance;
     [SerializeField] float minDistance;
-    [SerializeField] float minSound = 10;
-    [SerializeField] float maxSound = 100;
+    [Tooltip("How much sound is needed to alert the enemy")]
     [SerializeField] float soundToDistanceRatio;
     float currentSoundThreshold;
     Transform parentTransform;
     Transform player;
     [Header("AnimationCurves")]
     [SerializeField] AnimationCurve soundToDistanceCurve;
+
+    Vector3 startPosition;
 
     
 
@@ -26,19 +27,13 @@ public class SoundMonster : EnemyBase
     {
         player = GameObject.Find("Player").transform;
         parentTransform = transform.parent;
-        //SetKeys();
-    }
-
-    void SetKeys()
-    {
-        soundToDistanceCurve.keys[0].value = minSound;
-        soundToDistanceCurve.keys[1].value = maxSound;
+        startPosition = parentTransform.position;
     }
 
     // Update is called once per frame
     void Update()
     {
-        SoundInterest(20);
+        SoundInterest(50);
     }
 
     public void SoundInterest(float playerSound)
@@ -48,7 +43,8 @@ public class SoundMonster : EnemyBase
         if (playerSound > soundToDistanceRatio)
         {
             //Go to the player
-
+            Debug.Log("I can hear you");
+            parentTransform.LookAt(player.position);
         }
     }
 
@@ -75,6 +71,6 @@ public class SoundMonster : EnemyBase
 
     public override void ResetEnemy()
     {
-        throw new System.NotImplementedException();
+        parentTransform.position = startPosition;
     }
 }
