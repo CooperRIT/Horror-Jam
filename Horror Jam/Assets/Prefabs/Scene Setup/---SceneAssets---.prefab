@@ -1050,7 +1050,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e6a344fdbc419b9429857eb797f77ab9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cultists: []
+  enemyList: []
   fadePanel: {fileID: 44577824}
   fadeAmount: 0.25
   fadeInCurve:
@@ -1241,12 +1241,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   uiEventChannel: {fileID: 11400000, guid: b707338632e6e1f4e849c8a980d409ee, type: 2}
+  audioPitcherSO: {fileID: 11400000, guid: 52dacef1c335c8940a5f1beb61fdfe05, type: 2}
   promptText: {fileID: 2973464610808104118}
   timePerLetter: 0.1
-  audioClips:
-  - {fileID: 8300000, guid: 71781ab1c62a2784eb8ba3c746cfb188, type: 3}
-  minPitch: 0.95
-  maxPitch: 1.1
   audioSource: {fileID: 0}
 --- !u!1001 &2973464609881726582
 PrefabInstance:

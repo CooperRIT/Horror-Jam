@@ -4,16 +4,10 @@ using UnityEngine;
 
 public class FootstepAudioPitcher : MonoBehaviour
 {
+    [Header("Scriptable Object Reference")]
+    [SerializeField] private AudioPitcherSO audioPitcherSO;
+
     [Header("Footstep Settings")]
-    [Tooltip("The audio clips that will be played when walking")]
-    [SerializeField] private AudioClip[] audioClips;
-
-    [Tooltip("Minimum pitch the footstep can be")]
-    [SerializeField] private float minPitch = 0.95f;
-
-    [Tooltip("Maximum pitch the footstep can be")]
-    [SerializeField] private float maxPitch = 1.1f;
-
     [Tooltip("How long it takes to play when you start walking")]
     [SerializeField] private float playSpeed = 1f;
 
@@ -43,11 +37,7 @@ public class FootstepAudioPitcher : MonoBehaviour
         {
             currentTime = 0.0f;
 
-            audioSource.pitch = Random.Range(minPitch, maxPitch);
-
-            int index = Random.Range(0, audioClips.Length);
-            AudioClip clip = audioClips[index];
-            audioSource.PlayOneShot(clip);
+            audioPitcherSO.Play(audioSource);
         }
     }
 }
