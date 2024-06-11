@@ -5440,7 +5440,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   audioPitcherSO: {fileID: 11400000, guid: defbe7d99228ca342ae21b9b17401110, type: 2}
-  soundEventChannel: {fileID: 11400000, guid: 735300f21b4c8ab4c987fbb371d21e25, type: 2}
   playSpeed: 5
   audioInterval: 0.35
 --- !u!82 &1528997398
@@ -5672,13 +5671,13 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 4ce4cb55a8266f5419e96de2c8b0bbfb, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.4
+  m_Volume: 0.3
   m_Pitch: 1
   Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
-  Priority: 177
+  Priority: 233
   DopplerLevel: 1
   MinDistance: 1
   MaxDistance: 500
