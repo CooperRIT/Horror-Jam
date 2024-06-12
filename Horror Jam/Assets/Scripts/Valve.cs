@@ -50,6 +50,9 @@ public class Valve : MonoBehaviour, IInteract
 
     private float playSoundTime;
 
+    [Header("Flesh Wall Reference")]
+    [SerializeField] private FleshWall fleshWall;
+
     private void Start()
     {
         source = GetComponent<AudioSource>();
@@ -66,6 +69,7 @@ public class Valve : MonoBehaviour, IInteract
             interactPrompt = "Valve closed";
             uiEventChannel.TriggerEvent(interactPrompt);
             screenShake.TriggerEvent(duration, intensity);
+            fleshWall.CollapseWall();
             return;
         }
 

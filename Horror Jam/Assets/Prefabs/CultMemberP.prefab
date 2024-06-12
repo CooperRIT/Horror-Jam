@@ -298,6 +298,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7daec89e9f6f4504fa4bb520f7aa4f14, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  seenAudioPitcher: {fileID: 11400000, guid: 47d31295483ee934aa570e41b332b278, type: 2}
+  chaseAudioPitcher: {fileID: 11400000, guid: a69c9500fbaff914699b735ae33775b3, type: 2}
   locationsToPatrol: []
   circlingPatrol: 1
   timer: 0
@@ -312,8 +314,6 @@ MonoBehaviour:
   exposurePerFrame: 1.5
   exposureDecayRate: 0.3
   currentExposure: 0
-  seenClip: {fileID: 8300000, guid: 16db612d9d1815040af4bae989e82074, type: 3}
-  chaseClip: {fileID: 8300000, guid: 7614785c0468f7d4f8b9bf49115ef422, type: 3}
 --- !u!82 &7092142443455582741
 AudioSource:
   m_ObjectHideFlags: 0

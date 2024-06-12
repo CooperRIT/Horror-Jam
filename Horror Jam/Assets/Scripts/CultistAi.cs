@@ -13,6 +13,10 @@ enum CultistStates
 
 public class CultistAi : EnemyBase
 {
+    [Header("Scriptable Object Reference")]
+    [SerializeField] AudioPitcherSO seenAudioPitcher;
+    [SerializeField] AudioPitcherSO chaseAudioPitcher;
+
     CultistStates currentState;
     NavMeshAgent cultist;
 
@@ -73,10 +77,7 @@ public class CultistAi : EnemyBase
     float startingSpeed;
     float startingIntensity;
 
-    [Header("Audio")]
     private AudioSource source;
-    [SerializeField] private AudioClip seenClip;
-    [SerializeField] private AudioClip chaseClip;
 
 
     // Start is called before the first frame update
@@ -231,7 +232,8 @@ public class CultistAi : EnemyBase
                 {
                     if (stateBeforeStopping == -1)
                     {
-                        source.PlayOneShot(seenClip);
+                        Debug.Log("Seen");
+                        seenAudioPitcher.Play(source);
                         stateBeforeStopping = (int)currentState;
                     }
                     currentState = CultistStates.Stopped;
@@ -290,7 +292,7 @@ public class CultistAi : EnemyBase
             }
 
         }
-        source.PlayOneShot(chaseClip);
+        chaseAudioPitcher.Play(source);
         currentState = CultistStates.Pursuing;
     }
 
