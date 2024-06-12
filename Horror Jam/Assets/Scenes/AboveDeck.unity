@@ -1491,10 +1491,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: FullyOpenShippingContainer
       objectReference: {fileID: 0}
-    - target: {fileID: 75148022209245696, guid: bdd108c64ee23254888b6521609c239c, type: 3}
-      propertyPath: m_Layer
-      value: 3
-      objectReference: {fileID: 0}
     - target: {fileID: 738918092069578938, guid: bdd108c64ee23254888b6521609c239c, type: 3}
       propertyPath: m_RootOrder
       value: 99
@@ -1539,18 +1535,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 994050232773234519, guid: bdd108c64ee23254888b6521609c239c, type: 3}
-      propertyPath: m_Mesh
-      value: 
-      objectReference: {fileID: 8385836491182413749, guid: 273d595d36c13404b96ad395aede6535, type: 3}
-    - target: {fileID: 994050232773234519, guid: bdd108c64ee23254888b6521609c239c, type: 3}
-      propertyPath: m_Convex
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4462769828899694367, guid: bdd108c64ee23254888b6521609c239c, type: 3}
-      propertyPath: m_Mesh
-      value: 
-      objectReference: {fileID: -730542500482238828, guid: b2d94dfafbdf82e4baaea7643ba94c21, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bdd108c64ee23254888b6521609c239c, type: 3}
 --- !u!1001 &90599157
