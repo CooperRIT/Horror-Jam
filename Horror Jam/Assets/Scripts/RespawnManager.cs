@@ -5,6 +5,9 @@ using UnityEngine.UI;
 
 public class RespawnManager : MonoBehaviour
 {
+    [Header("Scriptable Object Reference")]
+    [SerializeField] ResetEventChannel resetEventChannel;
+
     Vector3 currentSpawnPoint;
     [SerializeField] List<EnemyBase> enemyList;
     Transform player;
@@ -75,6 +78,7 @@ public class RespawnManager : MonoBehaviour
         }
         player.transform.position = currentSpawnPoint;
         Debug.Log("restarted cultists and player");
+        resetEventChannel.EventTrigger();
         inputEventChannel.TriggerEvent(true);
         StartCoroutine(FadeIn());
     }
