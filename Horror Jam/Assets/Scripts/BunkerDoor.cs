@@ -12,5 +12,5 @@ public class BunkerDoor : MonoBehaviour, IInteract
     [SerializeField] private string interactPrompt = "Press [E] to pickup lantern";
     public string Prompt { get { return interactPrompt; } }
 
-    public void Interact() => SceneManager.LoadScene(sceneNumber);
+    public void Interact(bool isInteracting) => SceneManager.LoadScene(sceneNumber);
 }

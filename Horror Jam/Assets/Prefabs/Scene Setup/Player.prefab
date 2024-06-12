@@ -10,7 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1399398772}
   - component: {fileID: 1399398769}
-  - component: {fileID: 1399398771}
   - component: {fileID: 1399398770}
   m_Layer: 6
   m_Name: OverlayCamera
@@ -77,14 +76,6 @@ Camera:
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
---- !u!81 &1399398771
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1399398768}
-  m_Enabled: 1
 --- !u!114 &1399398770
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6153,7 +6144,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &8756636657499047411
 Transform:
   m_ObjectHideFlags: 0

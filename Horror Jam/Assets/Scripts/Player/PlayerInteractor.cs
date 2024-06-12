@@ -14,6 +14,8 @@ public class PlayerInteractor : MonoBehaviour
     private bool canInteract;
     public void CanInteract() => canInteract = true;
 
+    public void StopInteracting() => canInteract = false;
+
     bool interactable;
 
     IInteract interact;
@@ -36,9 +38,7 @@ public class PlayerInteractor : MonoBehaviour
 
         if (interact == null) return;
 
-        interact.Interact();
-
-        canInteract = false;
+        interact.Interact(canInteract);
     }
     private void OnTriggerExit(Collider other)
     {
@@ -49,5 +49,5 @@ public class PlayerInteractor : MonoBehaviour
 public interface IInteract
 {
     string Prompt { get; }
-    public void Interact();
+    public void Interact(bool isInteracting);
 }

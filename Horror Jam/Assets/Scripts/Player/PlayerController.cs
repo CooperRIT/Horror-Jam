@@ -163,6 +163,8 @@ public class PlayerController : MonoBehaviour
     }
 
     private void CallInteract(InputAction.CallbackContext ctx) => playerInteractor.CanInteract();
+
+    private void CancelInteract(InputAction.CallbackContext ctx) => playerInteractor.StopInteracting();
     private void SetInput(bool canInput)
     {
         rb.velocity = new Vector3(0, 0, 0);
@@ -172,6 +174,7 @@ public class PlayerController : MonoBehaviour
     {
         playerMovement.Enable();
         playerMovement.Interact.performed += CallInteract;
+        playerMovement.Interact.canceled += CancelInteract;
 
         inputEventChannel.CanInput += SetInput;
     }
@@ -180,6 +183,7 @@ public class PlayerController : MonoBehaviour
     {
         playerMovement.Disable();
         playerMovement.Interact.performed -= CallInteract;
+        playerMovement.Interact.canceled -= CancelInteract;
 
         inputEventChannel.CanInput -= SetInput;
     }

@@ -10,7 +10,7 @@ public class TestInteractable : MonoBehaviour, IInteract
     [SerializeField] private string interactPrompt = "Press E for candy";
     public string Prompt { get { return interactPrompt; } }
 
-    public void Interact()
+    public void Interact(bool isInteracting)
     {
         Debug.Log("Your IP: 173.28.82.1");
     }
