@@ -8,8 +8,12 @@ public class DoorLocked : MonoBehaviour, IInteract
     [SerializeField] private string interactPrompt = "The door is locked";
     public string Prompt { get { return interactPrompt; } }
 
-    public void Interact(bool isInteracting)
+    public void Interact()
     {
         //Play locked door sound effect
+    }
+    public void ExitInteract()
+    {
+
     }
 }

@@ -14,11 +14,15 @@ public class LaternPickup : MonoBehaviour, IInteract
     [SerializeField] private string interactPrompt = "Press [E] to pickup lantern";
     public string Prompt { get { return interactPrompt; } }
 
-    public void Interact(bool isInteracting)
+    public void Interact()
     {
         lantern.SetActive(true);
         gameObject.SetActive(false);
 
         uiEventChannel.TriggerEvent(string.Empty);
+    }
+    public void ExitInteract()
+    {
+
     }
 }

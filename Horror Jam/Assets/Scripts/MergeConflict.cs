@@ -6,8 +6,12 @@ public class MergeConflict : MonoBehaviour, IInteract
 {
     public string Prompt => "Press [E] to cause merge conflict";
 
-    public void Interact(bool isInteracting)
+    public void Interact()
     {
         Application.Quit();
+    }
+    public void ExitInteract()
+    {
+
     }
 }

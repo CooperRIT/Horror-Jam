@@ -34,11 +34,12 @@ public class PlayerInteractor : MonoBehaviour
     {
         if (interactable) return;
 
-        if (!canInteract) return;
-
         if (interact == null) return;
 
-        interact.Interact(canInteract);
+        if (canInteract)
+            interact.Interact();
+        else
+            interact.ExitInteract();
     }
     private void OnTriggerExit(Collider other)
     {
@@ -49,5 +50,6 @@ public class PlayerInteractor : MonoBehaviour
 public interface IInteract
 {
     string Prompt { get; }
-    public void Interact(bool isInteracting);
+    public void Interact();
+    public void ExitInteract();
 }

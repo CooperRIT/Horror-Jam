@@ -30,20 +30,24 @@ public class Valve : MonoBehaviour, IInteract
 
     private bool canTurn;
 
-    public void Interact(bool isInteracting)
+    public void Interact()
     {
         if (currentTurningAmount >= maxTurningAmount)
         {
-            StartCoroutine(StopTurning());
+            canTurn = false;
             Debug.Log("Valve Closed!");
             return;
         }
 
         if (canTurn) return;
 
-        canTurn = isInteracting;
+        canTurn = true;
 
         StartCoroutine(StartTurning());
+    }
+    public void ExitInteract()
+    {
+        canTurn = false;
     }
 
     IEnumerator StartTurning()
@@ -52,7 +56,7 @@ public class Valve : MonoBehaviour, IInteract
         {
             if (valveSpinRate < maxSpinRate)
             {
-                valveObject.Rotate(valveSpinRate, 0, 0);
+                valveObject.Rotate(0, 0, valveSpinRate);
                 valveSpinRate += spinRateMultiplier * Time.deltaTime;
             }
             else
@@ -64,18 +68,17 @@ public class Valve : MonoBehaviour, IInteract
 
             yield return null;
         }
+        Debug.Log("Stopping!");
         StartCoroutine(StopTurning());
     }
 
     IEnumerator StopTurning()
     {
-        canTurn = false;
-
         while (!canTurn)
         {
             if (valveSpinRate > 0)
             {
-                valveObject.Rotate(valveSpinRate, 0, 0);
+                valveObject.Rotate(0, 0, valveSpinRate);
                 valveSpinRate -= spinRateMultiplier * Time.deltaTime;
             }
             
