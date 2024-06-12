@@ -65,12 +65,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   soundEventChannel: {fileID: 11400000, guid: 735300f21b4c8ab4c987fbb371d21e25, type: 2}
   audioPitcherSO: {fileID: 11400000, guid: a4ab3958e56bf09438aea23af817af87, type: 2}
+  uiEventChannel: {fileID: 11400000, guid: b707338632e6e1f4e849c8a980d409ee, type: 2}
+  screenShake: {fileID: 11400000, guid: cb69795a4b80f5948ad3d7889bfb5c43, type: 2}
   interactPrompt: Hold [E] to close valve
   maxTurningAmount: 10
-  spinRateMultiplier: 1.5
-  maxSpinRate: 3
+  spinRateMultiplier: 0.3
+  maxSpinRate: 0.8
   valveObject: {fileID: 1687557822510014772}
-  playSoundInterval: 1
+  duration: 1
+  intensity: 0.3
+  playSoundInterval: 2
 --- !u!82 &6687289466399189287
 AudioSource:
   m_ObjectHideFlags: 0
@@ -437,7 +441,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3541837390423306553, guid: 1105f043c642fba448cdeaf66ff5706b, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -1.4161835
+      value: -1.1661835
       objectReference: {fileID: 0}
     - target: {fileID: 3541837390423306553, guid: 1105f043c642fba448cdeaf66ff5706b, type: 3}
       propertyPath: m_LocalPosition.y

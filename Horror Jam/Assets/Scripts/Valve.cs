@@ -10,6 +10,7 @@ public class Valve : MonoBehaviour, IInteract
     [SerializeField] SoundEventChannel soundEventChannel;
     [SerializeField] AudioPitcherSO audioPitcherSO;
     [SerializeField] UIEventChannel uiEventChannel;
+    [SerializeField] ScreenShakeEventChannel screenShake;
 
     [Header("Interact Settings")]
     [SerializeField] private string interactPrompt = "Hold [E] to close valve";
@@ -34,6 +35,13 @@ public class Valve : MonoBehaviour, IInteract
 
     private bool canTurn;
 
+    private bool valveClosed;
+
+    [Header("Screen Shake Settings")]
+    [SerializeField] private float duration = 1f;
+
+    [SerializeField] private float intensity = 0.3f;
+
     [Header("Audio Settings")]
     [Tooltip("How much time passes between each sound queue")]
     [SerializeField] private float playSoundInterval = 1f;
@@ -49,11 +57,15 @@ public class Valve : MonoBehaviour, IInteract
 
     public void Interact()
     {
-        if (currentTurningAmount >= maxTurningAmount)
+        if (valveClosed) return;
+
+        if (currentTurningAmount >= maxTurningAmount && !valveClosed)
         {
+            valveClosed = true;
             canTurn = false;
             interactPrompt = "Valve closed";
             uiEventChannel.TriggerEvent(interactPrompt);
+            screenShake.TriggerEvent(duration, intensity);
             return;
         }
 
