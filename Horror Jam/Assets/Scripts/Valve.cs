@@ -51,7 +51,10 @@ public class Valve : MonoBehaviour, IInteract
     private float playSoundTime;
 
     [Header("Flesh Wall Reference")]
-    [SerializeField] private FleshWall fleshWall;
+    //[SerializeField] private FleshWall fleshWall;
+
+    //MODIFIYED BY COOPER
+    [SerializeField] List<FleshWall> fleshWalls = new List<FleshWall>();
 
     private void Start()
     {
@@ -69,7 +72,10 @@ public class Valve : MonoBehaviour, IInteract
             interactPrompt = "Valve closed";
             uiEventChannel.TriggerEvent(interactPrompt);
             screenShake.TriggerEvent(duration, intensity);
-            fleshWall.CollapseWall();
+            foreach(FleshWall fleshWall in fleshWalls)
+            {
+                fleshWall.CollapseWall();
+            }
             return;
         }
 
