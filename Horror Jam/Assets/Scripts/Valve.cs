@@ -9,6 +9,7 @@ public class Valve : MonoBehaviour, IInteract
     [Header("Scriptable Object Reference")]
     [SerializeField] SoundEventChannel soundEventChannel;
     [SerializeField] AudioPitcherSO audioPitcherSO;
+    [SerializeField] UIEventChannel uiEventChannel;
 
     [Header("Interact Settings")]
     [SerializeField] private string interactPrompt = "Hold [E] to close valve";
@@ -17,25 +18,42 @@ public class Valve : MonoBehaviour, IInteract
     [Header("Valve Settings")]
     [Tooltip("The amount of seconds the player has to interact with the valve")]
     [SerializeField] private float maxTurningAmount = 10f;
-
-    [SerializeField] private float valveSpinRate = 0f;
-
+    
+    [Tooltip("How long it takes the valve to speed up")]
     [SerializeField] private float spinRateMultiplier = 3f;
 
-    [SerializeField] private float maxSpinRate = 5f;
+    [Tooltip("The max speed the valve can rotate")]
+    [SerializeField] private float maxSpinRate = 3f;
 
+    [Tooltip("The object that is being rotated")]
     [SerializeField] private Transform valveObject;
+
+    private float valveSpinRate = 0f;
 
     private float currentTurningAmount;
 
     private bool canTurn;
+
+    [Header("Audio Settings")]
+    [Tooltip("How much time passes between each sound queue")]
+    [SerializeField] private float playSoundInterval = 1f;
+
+    private AudioSource source;
+
+    private float playSoundTime;
+
+    private void Start()
+    {
+        source = GetComponent<AudioSource>();
+    }
 
     public void Interact()
     {
         if (currentTurningAmount >= maxTurningAmount)
         {
             canTurn = false;
-            Debug.Log("Valve Closed!");
+            interactPrompt = "Valve closed";
+            uiEventChannel.TriggerEvent(interactPrompt);
             return;
         }
 
@@ -62,13 +80,18 @@ public class Valve : MonoBehaviour, IInteract
             else
                 valveObject.Rotate(0, 0, maxSpinRate);
 
+            if (playSoundTime < Time.time)
+            {
+                playSoundTime = Time.time + playSoundInterval;
+                audioPitcherSO.Play(source);
+            }
+
             currentTurningAmount += Time.deltaTime;
 
             soundEventChannel.CurrentSoundLevel += audioPitcherSO.audioLevel;
 
             yield return null;
         }
-        Debug.Log("Stopping!");
         StartCoroutine(StopTurning());
     }
 
@@ -81,7 +104,6 @@ public class Valve : MonoBehaviour, IInteract
                 valveObject.Rotate(0, 0, valveSpinRate);
                 valveSpinRate -= spinRateMultiplier * Time.deltaTime;
             }
-            
             yield return null;
         }
     }
