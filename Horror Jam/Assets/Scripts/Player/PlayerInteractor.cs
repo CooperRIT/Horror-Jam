@@ -32,6 +32,8 @@ public class PlayerInteractor : MonoBehaviour
 
     private void OnTriggerStay(Collider other)
     {
+        if (!uiEventChannel.IsTextFinished) return;
+
         if (interactable) return;
 
         if (interact == null) return;
