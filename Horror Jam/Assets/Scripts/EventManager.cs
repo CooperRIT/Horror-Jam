@@ -5,11 +5,11 @@ public class EventManager : MonoBehaviour
 {
     [Header("Scriptable Object Reference")]
     [SerializeField] private EventChannel eventChannel;
+    [SerializeField] private AudioPitcherSO audioPitcherSO;
 
     [Header("Events Refernces")]
     [SerializeField] private VisualEffect lightningSpawner;
     [SerializeField] private AudioSource audioSource;
-    [SerializeField] private AudioClip lightningClip;
 
     [Header("Respawn Manager")]
     [SerializeField] private RespawnManager respawnManager;
@@ -35,7 +35,7 @@ public class EventManager : MonoBehaviour
                 lightningSpawner.transform.rotation = vfxTransform.rotation;
 
                 lightningSpawner.Play();
-                audioSource.PlayOneShot(lightningClip);
+                audioPitcherSO.Play(audioSource);
                 break;
 
             default:
