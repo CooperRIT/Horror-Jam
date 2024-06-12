@@ -7,6 +7,7 @@ public class EventTrigger : MonoBehaviour
 {
     [Header("Scriptable Object Reference")]
     [SerializeField] private EventChannel eventChannel;
+    [SerializeField] private ResetEventChannel resetEventChannel;
 
 
     [Header("Event Trigger Settings")]
@@ -19,6 +20,10 @@ public class EventTrigger : MonoBehaviour
 
     [SerializeField] private bool destroyOnTrigger;
 
+    private Collider triggerCollider;
+
+    private void Start() => triggerCollider = GetComponent<Collider>();
+
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.layer != playerLayer) return;
@@ -27,6 +32,9 @@ public class EventTrigger : MonoBehaviour
 
         if (!destroyOnTrigger) return;
 
-        Destroy(gameObject);
+        triggerCollider.enabled = false;
     }
+    void OnReset() => triggerCollider.enabled = true;
+    private void OnEnable() => resetEventChannel.Reset += OnReset;
+    private void OnDisable() => resetEventChannel.Reset -= OnReset;
 }

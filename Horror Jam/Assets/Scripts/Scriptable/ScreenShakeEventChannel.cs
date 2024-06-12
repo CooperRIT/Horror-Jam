@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(menuName = "Events/Screen Shake")]
+[CreateAssetMenu(menuName = "Event Channel/Screen Shake")]
 public class ScreenShakeEventChannel : ScriptableObject
 {
     public delegate void ShakeScreen(float duration, float intensity);

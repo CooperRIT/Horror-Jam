@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(menuName = "Events/Sound Event")]
+[CreateAssetMenu(menuName = "Event Channel/Sound Event")]
 public class SoundEventChannel : ScriptableObject
 {
     private float currentSoundLevel = 0;
