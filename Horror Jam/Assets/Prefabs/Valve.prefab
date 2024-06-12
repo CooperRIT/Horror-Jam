@@ -73,7 +73,7 @@ MonoBehaviour:
   maxSpinRate: 0.8
   valveObject: {fileID: 1687557822510014772}
   duration: 1
-  intensity: 0.3
+  intensity: 2
   playSoundInterval: 2
 --- !u!82 &6687289466399189287
 AudioSource:
