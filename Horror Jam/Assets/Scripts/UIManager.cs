@@ -25,7 +25,7 @@ public class UIManager : MonoBehaviour
 
     private void SetPromptText(string prompt)
     {
-        if(prompt == string.Empty)
+        if (prompt == string.Empty)
         {
             typing = false;
             StopAllCoroutines();
@@ -34,6 +34,7 @@ public class UIManager : MonoBehaviour
         }
         this.prompt = prompt;
         if (typing) return;
+        uiEventChannel.IsTextFinished = false;
         StartCoroutine(nameof(DisplayText));
     }
 
@@ -50,6 +51,7 @@ public class UIManager : MonoBehaviour
             yield return timedLetters;
         }
         typing = false;
+        uiEventChannel.IsTextFinished = true;
     }
 
     public void LoadScene(int sceneNumber) => SceneManager.LoadScene(sceneNumber);
