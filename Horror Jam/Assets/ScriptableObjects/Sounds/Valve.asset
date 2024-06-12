@@ -14,10 +14,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   audioLevel: 5
   decayLevel: 0
-  audioClips: []
+  audioClips:
+  - {fileID: 8300000, guid: 1f6287d5eca9d224e808ac2abf474428, type: 3}
+  - {fileID: 8300000, guid: 2de0b0c1cede8674d8484f8cd886762d, type: 3}
+  - {fileID: 8300000, guid: 87670294d289a5d4fb00f639431193cb, type: 3}
   volume:
-    minValue: 0
-    maxValue: 0
+    minValue: 1
+    maxValue: 1
   pitch:
-    minValue: 0
-    maxValue: 0
+    minValue: 0.8
+    maxValue: 1.1

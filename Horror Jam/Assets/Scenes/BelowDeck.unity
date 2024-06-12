@@ -1706,25 +1706,25 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 2995106481355629220, guid: 058b96b6111a3b44ca0f2d7f0c5eacae, type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: 35db9f4e425cca6469c5b37181d80efd, type: 2}
     - target: {fileID: 4277601509725128379, guid: 058b96b6111a3b44ca0f2d7f0c5eacae, type: 3}
       propertyPath: maxSpinRate
-      value: 3
+      value: 0.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 4277601509725128379, guid: 058b96b6111a3b44ca0f2d7f0c5eacae, type: 3}
+      propertyPath: uiEventChannel
+      value: 
+      objectReference: {fileID: 11400000, guid: b707338632e6e1f4e849c8a980d409ee, type: 2}
+    - target: {fileID: 4277601509725128379, guid: 058b96b6111a3b44ca0f2d7f0c5eacae, type: 3}
+      propertyPath: playSoundInterval
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4277601509725128379, guid: 058b96b6111a3b44ca0f2d7f0c5eacae, type: 3}
       propertyPath: spinRateMultiplier
-      value: 1.5
+      value: 0.3
       objectReference: {fileID: 0}
-    - target: {fileID: 4332669462719626595, guid: 058b96b6111a3b44ca0f2d7f0c5eacae, type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: 35db9f4e425cca6469c5b37181d80efd, type: 2}
     - target: {fileID: 5985927672201049837, guid: 058b96b6111a3b44ca0f2d7f0c5eacae, type: 3}
       propertyPath: m_Name
-      value: ValveV2 (4)
+      value: ValveV2
       objectReference: {fileID: 0}
     - target: {fileID: 6366287963898850391, guid: 058b96b6111a3b44ca0f2d7f0c5eacae, type: 3}
       propertyPath: m_RootOrder
@@ -2094,12 +2094,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   soundEventChannel: {fileID: 0}
   audioPitcherSO: {fileID: 0}
+  uiEventChannel: {fileID: 0}
   interactPrompt: Hold [E] to close valve
   maxTurningAmount: 10
-  valveSpinRate: 0
   spinRateMultiplier: 3
   maxSpinRate: 5
   valveObject: {fileID: 0}
+  playSoundInterval: 0
 --- !u!65 &4607595045603016383
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2346,12 +2347,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   soundEventChannel: {fileID: 0}
   audioPitcherSO: {fileID: 0}
+  uiEventChannel: {fileID: 0}
   interactPrompt: Hold [E] to close valve
   maxTurningAmount: 10
-  valveSpinRate: 0
   spinRateMultiplier: 3
   maxSpinRate: 5
   valveObject: {fileID: 0}
+  playSoundInterval: 0
 --- !u!65 &4607595046205683133
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2379,12 +2381,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   soundEventChannel: {fileID: 0}
   audioPitcherSO: {fileID: 0}
+  uiEventChannel: {fileID: 0}
   interactPrompt: Hold [E] to close valve
   maxTurningAmount: 10
-  valveSpinRate: 0
   spinRateMultiplier: 3
   maxSpinRate: 5
   valveObject: {fileID: 0}
+  playSoundInterval: 0
 --- !u!65 &4607595046489156507
 BoxCollider:
   m_ObjectHideFlags: 0
