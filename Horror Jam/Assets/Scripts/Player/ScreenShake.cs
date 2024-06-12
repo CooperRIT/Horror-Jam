@@ -7,6 +7,8 @@ public class ScreenShake : MonoBehaviour
     [Header("Scriptable Object Reference")]
     [SerializeField] ScreenShakeEventChannel screenShake;
 
+    [SerializeField] private AnimationCurve shakeCurve;
+
     public void StartShaking(float duration, float intensity) => StartCoroutine(Shake(duration, intensity));
 
     IEnumerator Shake(float duration, float intensity)
@@ -18,7 +20,7 @@ public class ScreenShake : MonoBehaviour
         {
             elapsedTime += Time.deltaTime;
 
-            transform.position = startPosition + (Random.insideUnitSphere * intensity);
+            transform.position = startPosition + (Random.insideUnitSphere * (intensity * shakeCurve.Evaluate(elapsedTime)));
             
             yield return null;
         }
