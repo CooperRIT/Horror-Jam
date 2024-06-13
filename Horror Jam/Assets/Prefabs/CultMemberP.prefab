@@ -311,8 +311,8 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 584
   maxExposure: 1
-  exposurePerFrame: 1.5
-  exposureDecayRate: 0.3
+  exposurePerFrame: 0.7
+  exposureDecayRate: 0.2
   currentExposure: 0
 --- !u!82 &7092142443455582741
 AudioSource:
@@ -653,7 +653,7 @@ Light:
   m_Cookie: {fileID: 0}
   m_DrawHalo: 0
   m_Flare: {fileID: 0}
-  m_RenderMode: 0
+  m_RenderMode: 1
   m_CullingMask:
     serializedVersion: 2
     m_Bits: 4294967295

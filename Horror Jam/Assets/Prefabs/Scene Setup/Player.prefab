@@ -121,7 +121,7 @@ GameObject:
   - component: {fileID: 1567407316}
   - component: {fileID: 1567407317}
   - component: {fileID: 2108635882}
-  m_Layer: 6
+  m_Layer: 4
   m_Name: PlayerInteractor
   m_TagString: Untagged
   m_Icon: {fileID: 0}

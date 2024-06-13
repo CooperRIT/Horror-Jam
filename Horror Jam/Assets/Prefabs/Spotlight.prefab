@@ -345,5 +345,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e1bd31c74cb03fc4a85ed51bc0f752df, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  despawnDistance: 100
+  despawnDistance: 45
   spotLight: {fileID: 4741112612560676488}
