@@ -13,6 +13,6 @@ public class DeathEventChannel : ScriptableObject
     public delegate void OnDeath();
     public event OnDeath KillPlayer;
 
-    public void TriggerCultistDeathEvent(int cutSceneIndex) => CultistKill?.Invoke(cutSceneIndex);
+    public void startCutSceneOnKill(int cutSceneIndex) => CultistKill?.Invoke(cutSceneIndex);
     public void TriggerRespawn() => KillPlayer?.Invoke();
 }

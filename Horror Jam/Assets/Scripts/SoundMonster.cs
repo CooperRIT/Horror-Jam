@@ -42,7 +42,6 @@ public class SoundMonster : EnemyBase
     // Update is called once per frame
     void Update()
     {
-        Debug.Log(currentSoundLevel);
         SoundInterest(currentSoundLevel);
     }
 

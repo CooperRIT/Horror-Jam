@@ -9,7 +9,7 @@ public class DeathManager : MonoBehaviour
 
     [SerializeField] CutsceneManager cutsceneManager;
 
-    public void OnKilledByCultist(int cutSceneIndex)
+    public void startCutSceneOnKill(int cutSceneIndex)
     {
         //Change this value for different cutscenes
         //TEMP FOR TESTING
@@ -26,12 +26,12 @@ public class DeathManager : MonoBehaviour
 
     private void OnEnable()
     {
-        deathEventChannel.CultistKill += OnKilledByCultist;
+        deathEventChannel.CultistKill += startCutSceneOnKill;
         deathEventChannel.KillPlayer += OnDeath;
     }
     private void OnDisable()
     {
-        deathEventChannel.CultistKill -= OnKilledByCultist;
+        deathEventChannel.CultistKill -= startCutSceneOnKill;
         deathEventChannel.KillPlayer -= OnDeath;
     }
 }
