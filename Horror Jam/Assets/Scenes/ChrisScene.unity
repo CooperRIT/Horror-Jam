@@ -637,6 +637,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3939975854911453736, guid: 1105f043c642fba448cdeaf66ff5706b, type: 3}
       propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3939975854911453736, guid: 1105f043c642fba448cdeaf66ff5706b, type: 3}
+      propertyPath: m_Intensity
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4210006915005082499, guid: 1105f043c642fba448cdeaf66ff5706b, type: 3}
@@ -872,6 +876,11 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!108 &631762186 stripped
+Light:
+  m_CorrespondingSourceObject: {fileID: 3939975854911453736, guid: 1105f043c642fba448cdeaf66ff5706b, type: 3}
+  m_PrefabInstance: {fileID: 801414983}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &691885254
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1041,6 +1050,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3939975854911453736, guid: 1105f043c642fba448cdeaf66ff5706b, type: 3}
       propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3939975854911453736, guid: 1105f043c642fba448cdeaf66ff5706b, type: 3}
+      propertyPath: m_Intensity
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4210006915005082499, guid: 1105f043c642fba448cdeaf66ff5706b, type: 3}
@@ -1633,6 +1646,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3939975854911453736, guid: 1105f043c642fba448cdeaf66ff5706b, type: 3}
       propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3939975854911453736, guid: 1105f043c642fba448cdeaf66ff5706b, type: 3}
+      propertyPath: m_Intensity
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4210006915005082499, guid: 1105f043c642fba448cdeaf66ff5706b, type: 3}
@@ -2214,18 +2231,13 @@ PrefabInstance:
     - target: {fileID: 2973464611598142935, guid: afe3bf058a3d7f842875e2433ac211fa, type: 3}
       propertyPath: lightList.Array.data[1]
       value: 
-      objectReference: {fileID: 1912107966}
+      objectReference: {fileID: 631762186}
     - target: {fileID: 2973464611944461544, guid: afe3bf058a3d7f842875e2433ac211fa, type: 3}
       propertyPath: audioSource
       value: 
       objectReference: {fileID: 2210646616696662232}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: afe3bf058a3d7f842875e2433ac211fa, type: 3}
---- !u!108 &1912107966 stripped
-Light:
-  m_CorrespondingSourceObject: {fileID: 3939975854911453736, guid: 1105f043c642fba448cdeaf66ff5706b, type: 3}
-  m_PrefabInstance: {fileID: 596398249}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &2210646616696662231
 PrefabInstance:
   m_ObjectHideFlags: 0
