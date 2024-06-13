@@ -11,6 +11,7 @@ public class Valve : MonoBehaviour, IInteract
     [SerializeField] AudioPitcherSO audioPitcherSO;
     [SerializeField] UIEventChannel uiEventChannel;
     [SerializeField] ScreenShakeEventChannel screenShake;
+    [SerializeField] HeartEventChannel heartEventChannel;
 
     [Header("Interact Settings")]
     [SerializeField] private string interactPrompt = "Hold [E] to close valve";
@@ -50,11 +51,12 @@ public class Valve : MonoBehaviour, IInteract
 
     private float playSoundTime;
 
-    [Header("Flesh Wall Reference")]
-    //[SerializeField] private FleshWall fleshWall;
-
     //MODIFIYED BY COOPER
+    [Header("Flesh Wall Reference")]
     [SerializeField] List<FleshWall> fleshWalls = new List<FleshWall>();
+
+    [Header("Heart Settings")]
+    [SerializeField] int heartState;
 
     private void Start()
     {
@@ -67,11 +69,23 @@ public class Valve : MonoBehaviour, IInteract
 
         if (currentTurningAmount >= maxTurningAmount && !valveClosed)
         {
+            //Prevent further interactions
             valveClosed = true;
+
+            //Stop rotating
             canTurn = false;
+
+            //Set new prompt
             interactPrompt = "Valve closed";
             uiEventChannel.TriggerEvent(interactPrompt);
+
+            //Shake Screen
             screenShake.TriggerEvent(duration, intensity);
+
+            //Change heart audio
+            heartEventChannel.TriggerEvent(heartState);
+
+            //Collapse flesh walls
             foreach(FleshWall fleshWall in fleshWalls)
             {
                 fleshWall.CollapseWall();
