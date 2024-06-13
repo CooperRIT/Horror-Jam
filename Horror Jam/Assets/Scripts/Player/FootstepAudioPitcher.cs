@@ -20,6 +20,8 @@ public class FootstepAudioPitcher : MonoBehaviour
 
     private float currentTime;
 
+    float audioAcc = 0;
+
     void Start()
     {
         playerController = GetComponent<PlayerController>();
@@ -32,11 +34,16 @@ public class FootstepAudioPitcher : MonoBehaviour
         if (!playerController.IsGrounded || !playerController.IsMoving)
         {
             currentTime = 0f;
-            soundEventChannel.CurrentSoundLevel -= audioPitcherSO.audioLevel * Time.deltaTime;
+            if(audioAcc > 0)
+            {
+                audioAcc -= audioPitcherSO.audioLevel * Time.deltaTime;
+                soundEventChannel.CurrentSoundLevel -= audioPitcherSO.audioLevel * Time.deltaTime;
+            }
         }   
         else if (playerController.IsMoving)
         {
             currentTime += playSpeed / 10 * Time.deltaTime;
+            audioAcc += audioPitcherSO.audioLevel * Time.deltaTime;
             soundEventChannel.CurrentSoundLevel += audioPitcherSO.audioLevel * Time.deltaTime;
         }
 
