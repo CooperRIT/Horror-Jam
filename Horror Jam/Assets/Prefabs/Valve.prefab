@@ -67,6 +67,7 @@ MonoBehaviour:
   audioPitcherSO: {fileID: 11400000, guid: a4ab3958e56bf09438aea23af817af87, type: 2}
   uiEventChannel: {fileID: 11400000, guid: b707338632e6e1f4e849c8a980d409ee, type: 2}
   screenShake: {fileID: 11400000, guid: cb69795a4b80f5948ad3d7889bfb5c43, type: 2}
+  heartEventChannel: {fileID: 0}
   interactPrompt: Hold [E] to close valve
   maxTurningAmount: 10
   spinRateMultiplier: 0.3
@@ -75,6 +76,9 @@ MonoBehaviour:
   duration: 1
   intensity: 2
   playSoundInterval: 2
+  fleshWalls:
+  - {fileID: 0}
+  heartState: 0
 --- !u!82 &6687289466399189287
 AudioSource:
   m_ObjectHideFlags: 0
