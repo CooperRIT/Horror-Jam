@@ -197,10 +197,10 @@ public class PlayerController : MonoBehaviour
             {
                 //if the player touches the cultist
                 case "Cultist":
-                    deathEventChannel.startCutSceneOnKill(0);
+                    deathEventChannel.startCutSceneOnKill(0, false);
                     break;
                 case "SoundCreature":
-                    deathEventChannel.startCutSceneOnKill(0);
+                    deathEventChannel.startCutSceneOnKill(0, true);
                     break;
             }
         }

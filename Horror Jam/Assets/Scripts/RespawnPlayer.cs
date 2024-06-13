@@ -32,13 +32,17 @@ public class RespawnPlayer : MonoBehaviour
 
     public void DisablePlayer(int childIndex)
     {
-        transform.GetChild(childIndex).GetChild(1).GetChild(0).gameObject.SetActive(true);
-        transform.GetChild(childIndex).GetChild(1).GetChild(1).gameObject.SetActive(false);
+        
     }
 
     public void EnablePlayer(int childIndex)
     {
         transform.GetChild(childIndex).GetChild(1).GetChild(1).gameObject.SetActive(true);
         transform.GetChild(childIndex).GetChild(1).GetChild(0).gameObject.SetActive(false);
+    }
+
+    public void TeleportToPlayer()
+    {
+
     }
 }

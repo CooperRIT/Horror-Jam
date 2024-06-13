@@ -2179,6 +2179,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7609690457841509937}
   - component: {fileID: 7120434603514592394}
+  - component: {fileID: 4468070399532185016}
   m_Layer: 8
   m_Name: Old Man Idle (1)
   m_TagString: SoundCreature
@@ -2226,6 +2227,20 @@ NavMeshAgent:
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
+--- !u!136 &4468070399532185016
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7120434603514592395}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 2.75
+  m_Height: 14.763883
+  m_Direction: 1
+  m_Center: {x: 0, y: 6.8819394, z: 0}
 --- !u!1 &7142828115051261139
 GameObject:
   m_ObjectHideFlags: 0
