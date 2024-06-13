@@ -131,6 +131,7 @@ public class Valve : MonoBehaviour, IInteract
             yield return null;
         }
         StartCoroutine(StopTurning());
+        StartCoroutine(SoundDecay());
     }
 
     IEnumerator StopTurning()
@@ -144,7 +145,6 @@ public class Valve : MonoBehaviour, IInteract
             }
             yield return null;
         }
-        StartCoroutine(SoundDecay());
     }
 
     IEnumerator SoundDecay()
