@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.VFX;
 
@@ -10,6 +11,17 @@ public class EventManager : MonoBehaviour
     [Header("Events Refernces")]
     [SerializeField] private VisualEffect lightningSpawner;
     [SerializeField] private AudioSource audioSource;
+    
+
+    [Header("Light Settings")]
+    [SerializeField] private List<Light> lightList;
+
+    [Tooltip("How many lights you want to enable in one event trigger")]
+    [SerializeField] private int lightIterations;
+
+    [SerializeField] private float lightIntensity = 25f;
+
+    private int lightIndex = 0;
 
     [Header("Respawn Manager")]
     [SerializeField] private RespawnManager respawnManager;
@@ -45,6 +57,16 @@ public class EventManager : MonoBehaviour
                 break;
             case 2:
                 soundMonster.RunToPosition(teleportPosition.position);
+                break;
+
+            case 3:
+                for (int i = 0; i < lightIterations; i++)
+                {
+                    if (lightIndex > lightList.Count) return;
+
+                    lightList[lightIndex].intensity = lightIntensity;
+                    lightIndex++;
+                }
                 break;
 
             default:
