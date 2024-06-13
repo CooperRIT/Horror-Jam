@@ -34,13 +34,13 @@ public class UIManager : MonoBehaviour
         }
         this.prompt = prompt;
         if (typing) return;
-        uiEventChannel.IsTextFinished = false;
         StartCoroutine(nameof(DisplayText));
     }
 
     IEnumerator DisplayText()
     {
         typing = true;
+        uiEventChannel.IsTextFinished = false;
         timedLetters = new WaitForSeconds(timePerLetter);
         string newPrompt = "";
         for(int i = 0; i < prompt.Length; i++)
