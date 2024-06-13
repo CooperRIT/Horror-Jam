@@ -17,8 +17,8 @@ MonoBehaviour:
   audioClips:
   - {fileID: 8300000, guid: 7614785c0468f7d4f8b9bf49115ef422, type: 3}
   volume:
-    minValue: 0.6
-    maxValue: 0.6
+    minValue: 0.7
+    maxValue: 0.7
   pitch:
     minValue: 0.8
     maxValue: 1
