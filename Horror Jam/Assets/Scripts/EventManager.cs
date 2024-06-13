@@ -14,6 +14,12 @@ public class EventManager : MonoBehaviour
     [Header("Respawn Manager")]
     [SerializeField] private RespawnManager respawnManager;
 
+    [Header("Scene 2 References")]
+    [SerializeField] private SoundMonster soundMonster;
+
+    [Header("Valve 2 references")]
+    [SerializeField] Transform teleportPosition;
+
     public void EventTree(int eventID, Transform vfxTransform)
     {
         //Checks if the event is a respawn point(all respawn points have a negative event ID
@@ -36,6 +42,9 @@ public class EventManager : MonoBehaviour
 
                 lightningSpawner.Play();
                 audioPitcherSO.Play(audioSource);
+                break;
+            case 2:
+                soundMonster.RunToPosition(teleportPosition.position);
                 break;
 
             default:

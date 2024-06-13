@@ -97,7 +97,7 @@ public class Lantern : MonoBehaviour
             {
                 wheel.Rotate(maxSpinRate, 0, 0);
             }
-            soundEventChannel.CurrentSoundLevel += audioPitcherSO.audioLevel;
+            soundEventChannel.CurrentSoundLevel += audioPitcherSO.audioLevel * Time.deltaTime;
             yield return null;
         }
 
@@ -110,7 +110,7 @@ public class Lantern : MonoBehaviour
         {
             if (spotLight.intensity > 0)
             {
-                soundEventChannel.CurrentSoundLevel -= audioPitcherSO.audioLevel;
+                soundEventChannel.CurrentSoundLevel -= audioPitcherSO.audioLevel * Time.deltaTime;
                 spotLight.intensity -= intensityRate * Time.deltaTime;
             }
             if (currentSpinRate > 0)

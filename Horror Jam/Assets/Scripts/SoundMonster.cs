@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 using BelowDeck.MiniUtil;
 
 public class SoundMonster : EnemyBase
@@ -14,8 +15,12 @@ public class SoundMonster : EnemyBase
     [SerializeField] float soundToDistanceRatio;
     [SerializeField] SoundEventChannel soundEventChannel;
     [SerializeField] float currentSoundLevel => soundEventChannel.CurrentSoundLevel;
+
+    [Header("Component References")]
+    NavMeshAgent creatureNavMesh;
     Transform parentTransform;
     Transform player;
+
     [Header("AnimationCurves")]
     [Tooltip("IF U CHANGE THE VALUES ON THE MAX, GO AND CHANGE THE MAX IN SOUND EVENT CHANNELS")]
     [SerializeField] AnimationCurve soundToDistanceCurve;
@@ -31,11 +36,13 @@ public class SoundMonster : EnemyBase
         player = GameObject.Find("Player").transform;
         parentTransform = transform.parent;
         startPosition = parentTransform.position;
+        creatureNavMesh = parentTransform.GetComponent<NavMeshAgent>();
     }
 
     // Update is called once per frame
     void Update()
     {
+        Debug.Log(currentSoundLevel);
         SoundInterest(currentSoundLevel);
     }
 
@@ -64,6 +71,12 @@ public class SoundMonster : EnemyBase
         //Uses this evaluated disatance to return the ammount of sound needed from that distance
         soundToDistanceRatio = soundToDistanceCurve.Evaluate(normalizedValue);
 
+    }
+
+    public void RunToPosition(Vector3 movePosition)
+    {
+        parentTransform.position = movePosition;
+        //creatureNavMesh.SetDestination(runPosition);
     }
 
     float DistanceToPlayer()
