@@ -70,12 +70,13 @@ public class RespawnManager : MonoBehaviour
     public void RestartScene()
     {
         //Experimental For Cutscense
-        player.parent = null;
 
         foreach(EnemyBase enemies in enemyList)
         {
             enemies.ResetEnemy();
         }
+        Debug.Log("UnparentedPlayer");
+        player.parent = null;
         player.transform.position = currentSpawnPoint;
         Debug.Log("restarted cultists and player");
         resetEventChannel.EventTrigger();
