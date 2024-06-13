@@ -53,6 +53,7 @@ public class SoundMonster : EnemyBase
         if (playerSound > soundToDistanceRatio)
         {
             //Go to the player
+            creatureNavMesh.SetDestination(player.position);
             //Debug.Log("I can hear you");
             parentTransform.LookAt(player.position);
         }

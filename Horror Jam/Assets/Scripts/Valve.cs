@@ -124,7 +124,7 @@ public class Valve : MonoBehaviour, IInteract
 
             currentTurningAmount += Time.deltaTime;
 
-            soundEventChannel.CurrentSoundLevel += audioPitcherSO.audioLevel;
+            soundEventChannel.CurrentSoundLevel += audioPitcherSO.audioLevel * Time.deltaTime;
 
             yield return null;
         }

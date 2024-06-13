@@ -34,6 +34,8 @@ public class Lantern : MonoBehaviour
     {
         controls = new Controls();
         audioSource = GetComponentInParent<AudioSource>();
+        //Reset Sound Values When Picked up
+        soundEventChannel.CurrentSoundLevel = 0;
     }
 
     void Start()
