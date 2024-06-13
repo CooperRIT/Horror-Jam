@@ -6,13 +6,13 @@ using UnityEngine;
 public class DeathEventChannel : ScriptableObject
 {
     //For triggering the KilledByCultistCutscene
-    public delegate void OnKilledByCultist(int cutSceneIndex);
+    public delegate void OnKilledByCultist(int cutSceneIndex, bool teleportToPlayer);
     public event OnKilledByCultist CultistKill;
 
     ///For respawning the player
     public delegate void OnDeath();
     public event OnDeath KillPlayer;
 
-    public void startCutSceneOnKill(int cutSceneIndex) => CultistKill?.Invoke(cutSceneIndex);
+    public void startCutSceneOnKill(int cutSceneIndex, bool teleportToPlayer) => CultistKill?.Invoke(cutSceneIndex, teleportToPlayer);
     public void TriggerRespawn() => KillPlayer?.Invoke();
 }

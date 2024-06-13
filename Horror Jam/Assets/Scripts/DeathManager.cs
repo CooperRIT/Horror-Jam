@@ -9,11 +9,11 @@ public class DeathManager : MonoBehaviour
 
     [SerializeField] CutsceneManager cutsceneManager;
 
-    public void startCutSceneOnKill(int cutSceneIndex)
+    public void startCutSceneOnKill(int cutSceneIndex, bool teleportToPlayer)
     {
         //Change this value for different cutscenes
         //TEMP FOR TESTING
-        cutsceneManager.OnStartCutScene(cutSceneIndex);
+        cutsceneManager.OnStartCutScene(cutSceneIndex, teleportToPlayer);
     }
 
     /// <summary>

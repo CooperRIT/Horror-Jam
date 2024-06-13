@@ -18,7 +18,7 @@ public class CutsceneManager : MonoBehaviour
         cutSceneAnimator = cutSceneAnimatorTransform.GetComponent<Animator>();
     }
     // Start is called before the first frame update
-    public void OnStartCutScene(int cutSceneIndex)
+    public void OnStartCutScene(int cutSceneIndex, bool teleportToPlayer)
     {
         if(!hasCutscenes)
         {
@@ -26,10 +26,18 @@ public class CutsceneManager : MonoBehaviour
         }
         cutSceneAnimatorTransform.GetChild(cutSceneIndex).gameObject.SetActive(true);
         inputEventChannel.TriggerEvent(false);
-        player.parent = cutSceneAnimatorTransform.GetChild(cutSceneIndex).GetChild(1);
-        player.localPosition = Vector3.zero;
         string paramName = cutSceneAnimator.GetParameter(cutSceneIndex).name;
         cutSceneAnimator.SetTrigger(paramName);
+        if (teleportToPlayer)
+        {
+            cutSceneAnimatorTransform.GetChild(cutSceneIndex).position = player.position;
+            player.parent = cutSceneAnimatorTransform.GetChild(cutSceneIndex).GetChild(1);
+            cutSceneAnimatorTransform.GetChild(cutSceneIndex).GetChild(1).GetChild(0).gameObject.SetActive(true);
+            player.gameObject.SetActive(false);
+            return;
+        }
+        player.parent = cutSceneAnimatorTransform.GetChild(cutSceneIndex).GetChild(1);
+        player.localPosition = Vector3.zero;
     }
     
 
