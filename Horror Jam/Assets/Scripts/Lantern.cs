@@ -28,9 +28,12 @@ public class Lantern : MonoBehaviour
     float spinRateRate = 2;
     Vector3 spinDirection;
 
+    private AudioSource audioSource;
+
     private void Awake()
     {
         controls = new Controls();
+        audioSource = GetComponentInParent<AudioSource>();
     }
 
     void Start()
@@ -68,7 +71,7 @@ public class Lantern : MonoBehaviour
 
         isOn = true;
         StartCoroutine(nameof(SpinLampAction));
-
+        audioSource.Play();
     }
 
     void SlowDownLamp(InputAction.CallbackContext context)
@@ -88,6 +91,7 @@ public class Lantern : MonoBehaviour
             {
                 wheel.Rotate(currentSpinRate,0 , 0);
                 currentSpinRate += spinRateRate * Time.deltaTime;
+                audioSource.volume = currentSpinRate / maxSpinRate;
             }
             else
             {
@@ -113,6 +117,7 @@ public class Lantern : MonoBehaviour
             {
                 wheel.Rotate(currentSpinRate, 0, 0);
                 currentSpinRate -= spinRateRate * Time.deltaTime;
+                audioSource.volume = currentSpinRate / maxSpinRate;
             }
             yield return null;
         }

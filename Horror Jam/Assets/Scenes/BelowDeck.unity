@@ -263,7 +263,7 @@ AudioSource:
   Priority: 128
   DopplerLevel: 1
   MinDistance: 1
-  MaxDistance: 7
+  MaxDistance: 7.5
   Pan2D: 0
   rolloffMode: 1
   BypassEffects: 0
@@ -421,7 +421,7 @@ PrefabInstance:
       objectReference: {fileID: 1195693008}
     - target: {fileID: 4277601509725128379, guid: 058b96b6111a3b44ca0f2d7f0c5eacae, type: 3}
       propertyPath: heartState
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4277601509725128379, guid: 058b96b6111a3b44ca0f2d7f0c5eacae, type: 3}
       propertyPath: heartEventChannel
@@ -630,8 +630,8 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 6f6e1357971e8504789d345e4cc39c6f, type: 3}
-  m_PlayOnAwake: 1
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 1
@@ -739,9 +739,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   heartEventChannel: {fileID: 11400000, guid: 43a6e7686cdf8c04a82443129e11009b, type: 2}
   heartBeatSFX:
-  - {fileID: 11400000, guid: 9da5c3258a8a4844498057ada2b1441d, type: 2}
-  - {fileID: 11400000, guid: ce7d76bbce7015a4e8a76fa45a64fa37, type: 2}
-  - {fileID: 11400000, guid: 7cbb4ab30c455a743a03dc047ddcf98c, type: 2}
+  - {fileID: 8300000, guid: 6f6e1357971e8504789d345e4cc39c6f, type: 3}
+  - {fileID: 8300000, guid: bca95c396faaf9e40ac40dd5d6611ecd, type: 3}
+  - {fileID: 8300000, guid: 9f977df4e04a33844b9fa706ac995466, type: 3}
 --- !u!1 &420278435
 GameObject:
   m_ObjectHideFlags: 0
@@ -1208,6 +1208,10 @@ PrefabInstance:
     - target: {fileID: 4333232957611910088, guid: 3ff464556fcfba9479075e63a5f42b0f, type: 3}
       propertyPath: m_Intensity
       value: 162.95
+      objectReference: {fileID: 0}
+    - target: {fileID: 4333232957901746692, guid: 3ff464556fcfba9479075e63a5f42b0f, type: 3}
+      propertyPath: gainRate
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 8272551806154137417, guid: 3ff464556fcfba9479075e63a5f42b0f, type: 3}
       propertyPath: m_IsActive
@@ -2212,7 +2216,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3541837390423306553, guid: 1105f043c642fba448cdeaf66ff5706b, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -10
+      value: -13
       objectReference: {fileID: 0}
     - target: {fileID: 3541837390423306553, guid: 1105f043c642fba448cdeaf66ff5706b, type: 3}
       propertyPath: m_LocalPosition.y
@@ -2268,7 +2272,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3939975854911453736, guid: 1105f043c642fba448cdeaf66ff5706b, type: 3}
       propertyPath: m_Intensity
-      value: 25
+      value: 75
       objectReference: {fileID: 0}
     - target: {fileID: 4210006915005082499, guid: 1105f043c642fba448cdeaf66ff5706b, type: 3}
       propertyPath: m_Name
@@ -2395,6 +2399,102 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 8272551806154137417, guid: 3ff464556fcfba9479075e63a5f42b0f, type: 3}
   m_PrefabInstance: {fileID: 652946992}
   m_PrefabAsset: {fileID: 0}
+--- !u!82 &1685287122
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1685287120}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 3dfa4460b7e8b9c468ac1cb800f39950, type: 3}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 1
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0.7
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0.6861111
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1001 &1709098576
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2646,11 +2746,11 @@ PrefabInstance:
       objectReference: {fileID: 1195693008}
     - target: {fileID: 4277601509725128379, guid: 058b96b6111a3b44ca0f2d7f0c5eacae, type: 3}
       propertyPath: heartState
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4277601509725128379, guid: 058b96b6111a3b44ca0f2d7f0c5eacae, type: 3}
       propertyPath: maxTurningAmount
-      value: 15
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 4277601509725128379, guid: 058b96b6111a3b44ca0f2d7f0c5eacae, type: 3}
       propertyPath: heartEventChannel
@@ -2690,7 +2790,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6366287963898850391, guid: 058b96b6111a3b44ca0f2d7f0c5eacae, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 109.93
+      value: 109.61
       objectReference: {fileID: 0}
     - target: {fileID: 6366287963898850391, guid: 058b96b6111a3b44ca0f2d7f0c5eacae, type: 3}
       propertyPath: m_LocalRotation.w
@@ -3086,7 +3186,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9119731713336601469, guid: c806518e34ef0f64badf3550fc95e24d, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 1.88
+      value: -0.119999886
       objectReference: {fileID: 0}
     - target: {fileID: 9119731713336601469, guid: c806518e34ef0f64badf3550fc95e24d, type: 3}
       propertyPath: m_LocalRotation.w
@@ -3131,11 +3231,11 @@ PrefabInstance:
       objectReference: {fileID: 1195693008}
     - target: {fileID: 4277601509725128379, guid: 058b96b6111a3b44ca0f2d7f0c5eacae, type: 3}
       propertyPath: heartState
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 4277601509725128379, guid: 058b96b6111a3b44ca0f2d7f0c5eacae, type: 3}
       propertyPath: maxTurningAmount
-      value: 20
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 4277601509725128379, guid: 058b96b6111a3b44ca0f2d7f0c5eacae, type: 3}
       propertyPath: heartEventChannel
@@ -3365,7 +3465,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3541837390423306553, guid: 1105f043c642fba448cdeaf66ff5706b, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 10
+      value: 13
       objectReference: {fileID: 0}
     - target: {fileID: 3541837390423306553, guid: 1105f043c642fba448cdeaf66ff5706b, type: 3}
       propertyPath: m_LocalPosition.y
@@ -3421,7 +3521,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3939975854911453736, guid: 1105f043c642fba448cdeaf66ff5706b, type: 3}
       propertyPath: m_Intensity
-      value: 25
+      value: 75
       objectReference: {fileID: 0}
     - target: {fileID: 4210006915005082499, guid: 1105f043c642fba448cdeaf66ff5706b, type: 3}
       propertyPath: m_Name
