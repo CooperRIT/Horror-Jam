@@ -38,6 +38,8 @@ public class Valve : MonoBehaviour, IInteract
 
     private bool valveClosed;
 
+    [SerializeField] private float decayTime = 10f;
+
     [Header("Screen Shake Settings")]
     [SerializeField] private float duration = 1f;
 
@@ -140,6 +142,19 @@ public class Valve : MonoBehaviour, IInteract
                 valveObject.Rotate(0, 0, valveSpinRate);
                 valveSpinRate -= spinRateMultiplier * Time.deltaTime;
             }
+            yield return null;
+        }
+        StartCoroutine(SoundDecay());
+    }
+
+    IEnumerator SoundDecay()
+    {
+        float currentTime = 0;
+
+        while (decayTime > currentTime) 
+        {
+            currentTime += Time.deltaTime;
+            soundEventChannel.CurrentSoundLevel -= audioPitcherSO.audioLevel * Time.deltaTime;
             yield return null;
         }
     }
