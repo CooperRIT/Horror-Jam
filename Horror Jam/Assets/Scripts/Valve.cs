@@ -38,8 +38,6 @@ public class Valve : MonoBehaviour, IInteract
 
     private bool valveClosed;
 
-    [SerializeField] private float decayTime = 10f;
-
     [Header("Screen Shake Settings")]
     [SerializeField] private float duration = 1f;
 
@@ -151,7 +149,7 @@ public class Valve : MonoBehaviour, IInteract
     {
         float currentTime = 0;
 
-        while (decayTime > currentTime) 
+        while (maxTurningAmount > currentTime) 
         {
             currentTime += Time.deltaTime;
             soundEventChannel.CurrentSoundLevel -= audioPitcherSO.audioLevel * Time.deltaTime;
