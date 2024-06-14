@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ba0cf70c6f7d5364ca457f1fc199ebba, type: 3}
   m_Name: Valve
   m_EditorClassIdentifier: 
-  audioLevel: 5
-  decayLevel: 0
+  audioLevel: 3
+  decayLevel: 1
   audioClips:
   - {fileID: 8300000, guid: 1f6287d5eca9d224e808ac2abf474428, type: 3}
   - {fileID: 8300000, guid: 2de0b0c1cede8674d8484f8cd886762d, type: 3}
