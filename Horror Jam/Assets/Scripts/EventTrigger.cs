@@ -20,6 +20,8 @@ public class EventTrigger : MonoBehaviour
 
     [SerializeField] private bool destroyOnTrigger;
 
+    [SerializeField] int valveIndex;
+
     private Collider triggerCollider;
 
     private void Start() => triggerCollider = GetComponent<Collider>();
@@ -29,6 +31,8 @@ public class EventTrigger : MonoBehaviour
         if (other.gameObject.layer != playerLayer) return;
 
         eventChannel.TriggerEvent(eventID, vfxTransform);
+
+        resetEventChannel.ValveIndex = valveIndex;
 
         if (!destroyOnTrigger) return;
 

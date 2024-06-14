@@ -22,6 +22,10 @@ public class RespawnManager : MonoBehaviour
     [SerializeField] AnimationCurve fadeOutCurve;
     [SerializeField] InputEventChannel inputEventChannel;
 
+    [Header("Valve Settings")]
+    [SerializeField] List<Valve> valveList;
+    [SerializeField] int ValveIndex => resetEventChannel.ValveIndex;
+
     private void Awake()
     {
         enemyList = new List<EnemyBase>();
@@ -84,6 +88,9 @@ public class RespawnManager : MonoBehaviour
         resetEventChannel.EventTrigger();
         inputEventChannel.TriggerEvent(true);
         StartCoroutine(FadeIn());
+
+        if (ValveIndex > valveList.Count) return;
+        valveList[ValveIndex].RestartValve();
     }
 
     IEnumerator FadeIn()

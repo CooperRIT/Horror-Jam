@@ -156,4 +156,12 @@ public class Valve : MonoBehaviour, IInteract
             yield return null;
         }
     }
+
+    public void RestartValve()
+    {
+        StopAllCoroutines();
+        valveClosed = false;
+        currentTurningAmount = 0;
+        interactPrompt = "Hold [E] to close valve";
+    }
 }
