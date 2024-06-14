@@ -6,8 +6,13 @@ using UnityEngine.Audio;
 
 public class LightFlicker : MonoBehaviour
 {
+    [Header("Scriptable Object Reference")]
+    [SerializeField] ResetEventChannel resetEventChannel;
+
     [Header("Light Flicker Settings")]
     [SerializeField] float flickerDistance;
+
+    [SerializeField] float baseIntensity;
 
     private Vector3 enemyPosition => MonsterPosition.Instance.transform.position;
 
@@ -35,4 +40,12 @@ public class LightFlicker : MonoBehaviour
         audioSource.Play();
         isLightBroken = true;
     }
+    void ResetLight()
+    {
+        isLightBroken = false;
+        lightSource.intensity = baseIntensity;
+    }
+
+    private void OnEnable() => resetEventChannel.Reset += ResetLight;
+    private void OnDisable() => resetEventChannel.Reset -= ResetLight;
 }
