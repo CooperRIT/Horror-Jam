@@ -7,6 +7,7 @@ public class RespawnManager : MonoBehaviour
 {
     [Header("Scriptable Object Reference")]
     [SerializeField] ResetEventChannel resetEventChannel;
+    [SerializeField] SoundEventChannel soundEventChannel;
 
     Vector3 currentSpawnPoint;
     [SerializeField] List<EnemyBase> enemyList;
@@ -76,6 +77,7 @@ public class RespawnManager : MonoBehaviour
             enemies.ResetEnemy();
         }
         Debug.Log("UnparentedPlayer");
+        soundEventChannel.CurrentSoundLevel = 0;
         player.parent = null;
         player.transform.position = currentSpawnPoint;
         Debug.Log("restarted cultists and player");

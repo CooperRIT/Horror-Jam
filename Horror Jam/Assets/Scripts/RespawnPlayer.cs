@@ -34,7 +34,7 @@ public class RespawnPlayer : MonoBehaviour
     public void EnablePlayer(int childIndex)
     {
         Debug.Log("taint");
-        transform.GetChild(childIndex).GetChild(1).GetChild(1).gameObject.SetActive(true);
+        GameManager.Instance.Player.SetActive(true);
         transform.GetChild(childIndex).GetChild(1).GetChild(0).gameObject.SetActive(false);
     }
 }

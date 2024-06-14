@@ -88,5 +88,6 @@ public class SoundMonster : EnemyBase
     public override void ResetEnemy()
     {
         parentTransform.position = startPosition;
+        creatureNavMesh.SetDestination(startPosition);
     }
 }
