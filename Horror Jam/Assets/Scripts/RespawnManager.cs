@@ -8,6 +8,7 @@ public class RespawnManager : MonoBehaviour
     [Header("Scriptable Object Reference")]
     [SerializeField] ResetEventChannel resetEventChannel;
     [SerializeField] SoundEventChannel soundEventChannel;
+    [SerializeField] UIEventChannel uiEventChannel;
 
     Vector3 currentSpawnPoint;
     [SerializeField] List<EnemyBase> enemyList;
@@ -85,11 +86,12 @@ public class RespawnManager : MonoBehaviour
         player.parent = null;
         player.transform.position = currentSpawnPoint;
         Debug.Log("restarted cultists and player");
+        uiEventChannel.TriggerEvent(string.Empty);
         resetEventChannel.EventTrigger();
         inputEventChannel.TriggerEvent(true);
         StartCoroutine(FadeIn());
 
-        if (ValveIndex > valveList.Count) return;
+        if (ValveIndex >= valveList.Count) return;
         valveList[ValveIndex].RestartValve();
     }
 

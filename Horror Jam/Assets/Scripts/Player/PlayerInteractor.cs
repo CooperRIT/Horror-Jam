@@ -34,7 +34,11 @@ public class PlayerInteractor : MonoBehaviour
     {
         if (!uiEventChannel.IsTextFinished) return;
 
-        if (interactable) return;
+        if (interactable)
+        {
+            uiEventChannel.TriggerEvent(string.Empty);
+            return;
+        }
 
         if (interact == null) return;
 

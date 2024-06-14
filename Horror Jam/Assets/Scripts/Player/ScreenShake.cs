@@ -9,6 +9,12 @@ public class ScreenShake : MonoBehaviour
 
     [SerializeField] private AnimationCurve shakeCurve;
 
+    [ContextMenu("Shake")]
+    public void Shake()
+    {
+        StartShaking(1, 1);
+    }
+
     public void StartShaking(float duration, float intensity) => StartCoroutine(Shake(duration, intensity));
 
     IEnumerator Shake(float duration, float intensity)

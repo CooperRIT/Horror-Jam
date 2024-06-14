@@ -163,5 +163,10 @@ public class Valve : MonoBehaviour, IInteract
         valveClosed = false;
         currentTurningAmount = 0;
         interactPrompt = "Hold [E] to close valve";
+
+        foreach (FleshWall fleshWall in fleshWalls)
+        {
+            fleshWall.ResetWall();
+        }
     }
 }

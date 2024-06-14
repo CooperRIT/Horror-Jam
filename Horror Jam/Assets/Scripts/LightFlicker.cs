@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using BelowDeck.MiniUtil;
 using UnityEngine.Audio;
+using Unity.VisualScripting;
 
 public class LightFlicker : MonoBehaviour
 {
@@ -11,9 +12,6 @@ public class LightFlicker : MonoBehaviour
 
     [Header("Light Flicker Settings")]
     [SerializeField] float flickerDistance;
-
-    [SerializeField] float baseIntensity;
-
     private Vector3 enemyPosition => MonsterPosition.Instance.transform.position;
 
     private AudioSource audioSource;
@@ -22,11 +20,15 @@ public class LightFlicker : MonoBehaviour
 
     bool isLightBroken;
 
+    float baseIntensity;
+
     // Start is called before the first frame update
     void Start()
     {
         audioSource = GetComponent<AudioSource>();
-        lightSource = GetComponentInChildren<Light>();  
+        lightSource = GetComponentInChildren<Light>(); 
+        
+        baseIntensity = lightSource.intensity;
     }
 
     // Update is called once per frame
