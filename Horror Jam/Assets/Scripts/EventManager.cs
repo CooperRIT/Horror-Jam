@@ -62,7 +62,7 @@ public class EventManager : MonoBehaviour
             case 3:
                 for (int i = 0; i < lightIterations; i++)
                 {
-                    if (lightIndex > lightList.Count) return;
+                    if (lightIndex >= lightList.Count) return;
 
                     lightList[lightIndex].intensity = lightIntensity;
                     lightIndex++;
