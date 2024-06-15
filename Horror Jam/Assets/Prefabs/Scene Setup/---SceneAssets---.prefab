@@ -1019,10 +1019,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   eventChannel: {fileID: 11400000, guid: 6dc4e509d24954a4a8890ba7e21b7efc, type: 2}
+  audioPitcherSO: {fileID: 0}
   lightningSpawner: {fileID: 0}
   audioSource: {fileID: 0}
-  lightningClip: {fileID: 8300000, guid: 78fe928513b699f45a9e7bf878811747, type: 3}
+  lightList: []
+  lightIterations: 0
+  lightIntensity: 25
   respawnManager: {fileID: 1617832229}
+  soundMonster: {fileID: 0}
+  teleportPosition: {fileID: 0}
+  runPosition: {fileID: 0}
+  event4: {fileID: 0}
+  lantern: {fileID: 0}
 --- !u!114 &1617832230
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1050,6 +1058,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e6a344fdbc419b9429857eb797f77ab9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  resetEventChannel: {fileID: 0}
+  soundEventChannel: {fileID: 0}
+  uiEventChannel: {fileID: 0}
   enemyList: []
   fadePanel: {fileID: 44577824}
   fadeAmount: 0.25
@@ -1111,6 +1122,7 @@ MonoBehaviour:
     m_PostInfinity: 2
     m_RotationOrder: 4
   inputEventChannel: {fileID: 11400000, guid: 490ac51ab80db3545a560a54d204c36c, type: 2}
+  valveList: []
 --- !u!114 &1395875407
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1200,12 +1212,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
   m_ReferenceResolution: {x: 800, y: 600}
   m_ScreenMatchMode: 0
-  m_MatchWidthOrHeight: 0
+  m_MatchWidthOrHeight: 1
   m_PhysicalUnit: 3
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
