@@ -38,6 +38,8 @@ public class SoundMonster : EnemyBase
         parentTransform = transform.parent;
         startPosition = parentTransform.position;
         creatureNavMesh = parentTransform.GetComponent<NavMeshAgent>();
+        maxDistanceAtStart = maxDistance;
+        maxDistance = 10;
     }
 
     // Update is called once per frame
@@ -81,18 +83,19 @@ public class SoundMonster : EnemyBase
 
     public void TeleportToPosition(Vector3 movePosition)
     {
+        maxDistance = maxDistanceAtStart;
         parentTransform.position = movePosition;
     }
 
     public void DeAgroMonster(float howLongDeAgro)
     {
         maxDistance = 10;
-        Invoke(nameof(ResetMaxDistance), howLongDeAgro);
+        //Invoke(nameof(ResetMaxDistance), howLongDeAgro);
     }
 
     void ResetMaxDistance()
     {
-        maxDistance = maxDistanceAtStart;
+        //maxDistance = maxDistanceAtStart;
     }
 
     public void RunToPosition(Vector3 movePosition)
