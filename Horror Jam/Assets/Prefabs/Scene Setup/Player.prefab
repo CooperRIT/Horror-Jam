@@ -5549,7 +5549,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   audioPitcherSO: {fileID: 11400000, guid: defbe7d99228ca342ae21b9b17401110, type: 2}
-  soundEventChannel: {fileID: 0}
+  soundEventChannel: {fileID: 11400000, guid: 735300f21b4c8ab4c987fbb371d21e25, type: 2}
   playSpeed: 7
   audioInterval: 0.35
 --- !u!82 &1528997398

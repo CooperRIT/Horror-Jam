@@ -72,6 +72,9 @@ public class HeartAudio : MonoBehaviour
         heartAnimation.enabled = false;
         heartBurst.Play();
         heartExplode.Play();
+
+        //Fade out and thank you for playing message or thank you for your sacrifice
+        //Load title screen
     }
 
     private void OnEnable() => heartEventChannel.Stage += HeartState;
