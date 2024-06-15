@@ -41,6 +41,9 @@ public class EventManager : MonoBehaviour
     [Header("Case 6 reference")]
     [SerializeField] GameObject lantern;
 
+    [Header("Valve 3 references")]
+    [SerializeField] Transform valve3TeleportPosition;
+
     public void EventTree(int eventID, Transform vfxTransform)
     {
         //Checks if the event is a respawn point(all respawn points have a negative event ID
@@ -86,6 +89,9 @@ public class EventManager : MonoBehaviour
                 break;
             case 6:
                 lantern.SetActive(false);
+                break;
+            case 7:
+                soundMonster.TeleportToPosition(valve3TeleportPosition.position);
                 break;
 
             default:

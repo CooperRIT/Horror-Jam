@@ -26,6 +26,9 @@ public class SoundMonster : EnemyBase
     [Tooltip("IF U CHANGE THE VALUES ON THE MAX, GO AND CHANGE THE MAX IN SOUND EVENT CHANNELS")]
     [SerializeField] AnimationCurve soundToDistanceCurve;
 
+    [Header("Footstep variables")]
+    [SerializeField] MonsterFootsteps monsterFootsteps;
+
     Vector3 startPosition;
 
     
@@ -83,13 +86,14 @@ public class SoundMonster : EnemyBase
 
     public void TeleportToPosition(Vector3 movePosition)
     {
+        monsterFootsteps.enabled = true;
         maxDistance = maxDistanceAtStart;
         parentTransform.position = movePosition;
     }
 
     public void DeAgroMonster(float howLongDeAgro)
     {
-        maxDistance = 10;
+        maxDistance = 3;
         //Invoke(nameof(ResetMaxDistance), howLongDeAgro);
     }
 

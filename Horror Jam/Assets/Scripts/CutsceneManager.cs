@@ -10,6 +10,9 @@ public class CutsceneManager : MonoBehaviour
     bool hasCutscenes;
     [SerializeField] InputEventChannel inputEventChannel;
 
+    [Header("Scene 2 Only")]
+    [SerializeField] AudioSource jumpScareAudio;
+
     private void Awake()
     {
         player = GameObject.Find("Player").transform;
@@ -34,6 +37,7 @@ public class CutsceneManager : MonoBehaviour
             player.parent = cutSceneAnimatorTransform.GetChild(cutSceneIndex).GetChild(1);
             cutSceneAnimatorTransform.GetChild(cutSceneIndex).GetChild(1).GetChild(0).gameObject.SetActive(true);
             player.gameObject.SetActive(false);
+            jumpScareAudio.Play();
             return;
         }
         player.parent = cutSceneAnimatorTransform.GetChild(cutSceneIndex).GetChild(1);

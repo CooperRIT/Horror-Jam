@@ -37,4 +37,5 @@ public class RespawnPlayer : MonoBehaviour
         GameManager.Instance.Player.SetActive(true);
         transform.GetChild(childIndex).GetChild(1).GetChild(0).gameObject.SetActive(false);
     }
+
 }
