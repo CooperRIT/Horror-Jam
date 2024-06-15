@@ -32,6 +32,9 @@ public class EventManager : MonoBehaviour
     [Header("Valve 2 references")]
     [SerializeField] Transform teleportPosition;
 
+    [Header("case 4 references")]
+    [SerializeField] GameObject event4;
+
     public void EventTree(int eventID, Transform vfxTransform)
     {
         //Checks if the event is a respawn point(all respawn points have a negative event ID
@@ -56,7 +59,7 @@ public class EventManager : MonoBehaviour
                 audioPitcherSO.Play(audioSource);
                 break;
             case 2:
-                soundMonster.RunToPosition(teleportPosition.position);
+                event4.gameObject.SetActive(true);
                 break;
 
             case 3:
@@ -67,6 +70,9 @@ public class EventManager : MonoBehaviour
                     lightList[lightIndex].intensity = lightIntensity;
                     lightIndex++;
                 }
+                break;
+            case 4:
+                soundMonster.RunToPosition(teleportPosition.position);
                 break;
 
             default:

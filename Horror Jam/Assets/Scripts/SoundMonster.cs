@@ -49,6 +49,11 @@ public class SoundMonster : EnemyBase
     {
         CalculateSoundThresholds();
 
+        if(maxDistance < DistanceToPlayer())
+        {
+            return;
+        }
+        Debug.Log(playerSound);
         if (playerSound > soundToDistanceRatio)
         {
             //Go to the player
@@ -76,7 +81,6 @@ public class SoundMonster : EnemyBase
     public void RunToPosition(Vector3 movePosition)
     {
         parentTransform.position = movePosition;
-        //creatureNavMesh.SetDestination(runPosition);
     }
 
     float DistanceToPlayer()
