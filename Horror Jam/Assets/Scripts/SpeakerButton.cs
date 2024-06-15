@@ -7,16 +7,17 @@ public class SpeakerButton : MonoBehaviour, IInteract
     [SerializeField] SoundMonster soundMonster;
     [SerializeField] Transform runPosition;
     [SerializeField] AudioSource audioSource;
-    public string Prompt => throw new System.NotImplementedException();
+    public string Prompt => "Activate Speakers";
 
     public void ExitInteract()
     {
-        throw new System.NotImplementedException();
+
     }
 
     public void Interact()
     {
         audioSource.Play();
+        soundMonster.DeAgroMonster(10);
         soundMonster.RunToPosition(runPosition.position);
     }
 
