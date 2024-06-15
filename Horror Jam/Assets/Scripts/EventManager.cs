@@ -31,6 +31,10 @@ public class EventManager : MonoBehaviour
 
     [Header("Valve 2 references")]
     [SerializeField] Transform teleportPosition;
+    [SerializeField] Transform runPosition;
+
+    [Header("case 4 references")]
+    [SerializeField] GameObject event4;
 
     public void EventTree(int eventID, Transform vfxTransform)
     {
@@ -56,7 +60,7 @@ public class EventManager : MonoBehaviour
                 audioPitcherSO.Play(audioSource);
                 break;
             case 2:
-                soundMonster.RunToPosition(teleportPosition.position);
+                event4.gameObject.SetActive(true);
                 break;
 
             case 3:
@@ -67,6 +71,12 @@ public class EventManager : MonoBehaviour
                     lightList[lightIndex].intensity = lightIntensity;
                     lightIndex++;
                 }
+                break;
+            case 4:
+                soundMonster.TeleportToPosition(teleportPosition.position);
+                break;
+            case 5:
+                //soundMonster.TeleportToPosition(runPosition.position);
                 break;
 
             default:
