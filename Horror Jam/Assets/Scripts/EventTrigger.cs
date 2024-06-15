@@ -23,6 +23,9 @@ public class EventTrigger : MonoBehaviour
     [SerializeField] int valveIndex;
 
     private Collider triggerCollider;
+    Vector3 startPosition;
+
+    private void Awake() => startPosition = transform.position;
 
     private void Start() => triggerCollider = GetComponent<Collider>();
 
@@ -38,7 +41,11 @@ public class EventTrigger : MonoBehaviour
 
         triggerCollider.enabled = false;
     }
-    void OnReset() => triggerCollider.enabled = true;
+    void OnReset()
+    {
+        transform.position = startPosition;
+        triggerCollider.enabled = true;
+    }
     private void OnEnable() => resetEventChannel.Reset += OnReset;
     private void OnDisable() => resetEventChannel.Reset -= OnReset;
 }

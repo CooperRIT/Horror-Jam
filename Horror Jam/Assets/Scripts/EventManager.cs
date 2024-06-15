@@ -35,7 +35,8 @@ public class EventManager : MonoBehaviour
     [SerializeField] Transform runPosition;
 
     [Header("case 4 references")]
-    [SerializeField] GameObject event4;
+    [SerializeField] Transform event4;
+    [SerializeField] Transform event4TeleportPosition;
 
     [Header("Case 6 reference")]
     [SerializeField] GameObject lantern;
@@ -64,7 +65,7 @@ public class EventManager : MonoBehaviour
                 audioPitcherSO.Play(audioSource);
                 break;
             case 2:
-                event4.gameObject.SetActive(true);
+                event4.transform.position = event4TeleportPosition.position;
                 break;
 
             case 3:
