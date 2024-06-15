@@ -15,12 +15,10 @@ MonoBehaviour:
   audioLevel: 0
   decayLevel: 0
   audioClips:
-  - {fileID: 8300000, guid: 136e190528ae17542985bdbc00197b67, type: 3}
-  - {fileID: 8300000, guid: c5d6605d40ca75140ba474d5c3e8ac6b, type: 3}
-  - {fileID: 8300000, guid: 656c7348dbd52734a926279531583744, type: 3}
+  - {fileID: 8300000, guid: de44b7ee4caa7b7458063f02345da017, type: 3}
   volume:
     minValue: 1
     maxValue: 1
   pitch:
-    minValue: 0.6
+    minValue: 0.8
     maxValue: 1
