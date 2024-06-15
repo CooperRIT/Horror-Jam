@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.VFX;
 
@@ -35,6 +36,9 @@ public class EventManager : MonoBehaviour
 
     [Header("case 4 references")]
     [SerializeField] GameObject event4;
+
+    [Header("Case 6 reference")]
+    [SerializeField] GameObject lantern;
 
     public void EventTree(int eventID, Transform vfxTransform)
     {
@@ -78,6 +82,9 @@ public class EventManager : MonoBehaviour
             case 5:
                 soundMonster.DeAgroMonster(5);
                 soundMonster.RunToPosition(runPosition.position);
+                break;
+            case 6:
+                lantern.SetActive(false);
                 break;
 
             default:

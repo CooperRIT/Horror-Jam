@@ -33,6 +33,7 @@ public class SoundMeter : MonoBehaviour
     private void Start()
     {
         state = LightStates.Green;
+        currentLight = soundLights[0];
     }
 
     private void Update()
@@ -71,15 +72,20 @@ public class SoundMeter : MonoBehaviour
 
         if (!isSameLight)
         {
+            //Re-enable current light
+            currentLight.enabled = true;
+
+            //Change current light
+            currentLight = soundLights[(int)state];
+
+            //Play blinking 
             isSameLight = true;
             StartCoroutine(BlinkLight());
         }
     }
 
     IEnumerator BlinkLight()
-    {
-        currentLight = soundLights[(int)state];
-
+    {  
         while (isSameLight)
         {
             currentLight.enabled = false;
@@ -87,6 +93,5 @@ public class SoundMeter : MonoBehaviour
             currentLight.enabled = true;
             yield return new WaitForSeconds(blinkingInterval);
         }
-        currentLight.enabled = true;
     }
 }
