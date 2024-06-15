@@ -10,6 +10,7 @@ public class SoundMonster : EnemyBase
     [Header("Sound Values")]
     [SerializeField] float currentDistance;
     [SerializeField] float maxDistance;
+    float maxDistanceAtStart;
     [SerializeField] float minDistance;
     [Tooltip("How much sound is needed to alert the enemy")]
     [SerializeField] float soundToDistanceRatio;
@@ -82,6 +83,18 @@ public class SoundMonster : EnemyBase
     {
         parentTransform.position = movePosition;
     }
+
+    public void DeAgroMonster(float howLongDeAgro)
+    {
+        maxDistance = 10;
+        Invoke(nameof(ResetMaxDistance), howLongDeAgro);
+    }
+
+    void ResetMaxDistance()
+    {
+        maxDistance = maxDistanceAtStart;
+    }
+
     public void RunToPosition(Vector3 movePosition)
     {
         creatureNavMesh.SetDestination(movePosition);
