@@ -80,8 +80,8 @@ public class EventManager : MonoBehaviour
                 soundMonster.TeleportToPosition(teleportPosition.position);
                 break;
             case 5:
-                soundMonster.DeAgroMonster(5);
-                soundMonster.RunToPosition(runPosition.position);
+                //soundMonster.DeAgroMonster(5);
+                //soundMonster.RunToPosition(runPosition.position);
                 break;
             case 6:
                 lantern.SetActive(false);
