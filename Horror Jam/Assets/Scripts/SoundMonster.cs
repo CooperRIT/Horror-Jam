@@ -78,9 +78,13 @@ public class SoundMonster : EnemyBase
 
     }
 
-    public void RunToPosition(Vector3 movePosition)
+    public void TeleportToPosition(Vector3 movePosition)
     {
         parentTransform.position = movePosition;
+    }
+    public void RunToPosition(Vector3 movePosition)
+    {
+        creatureNavMesh.SetDestination(movePosition);
     }
 
     float DistanceToPlayer()

@@ -31,6 +31,7 @@ public class EventManager : MonoBehaviour
 
     [Header("Valve 2 references")]
     [SerializeField] Transform teleportPosition;
+    [SerializeField] Transform runPosition;
 
     [Header("case 4 references")]
     [SerializeField] GameObject event4;
@@ -72,7 +73,10 @@ public class EventManager : MonoBehaviour
                 }
                 break;
             case 4:
-                soundMonster.RunToPosition(teleportPosition.position);
+                soundMonster.TeleportToPosition(teleportPosition.position);
+                break;
+            case 5:
+                //soundMonster.TeleportToPosition(runPosition.position);
                 break;
 
             default:
