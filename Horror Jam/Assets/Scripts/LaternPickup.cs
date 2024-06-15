@@ -19,10 +19,13 @@ public class LaternPickup : MonoBehaviour, IInteract
         lantern.SetActive(true);
         gameObject.SetActive(false);
 
-        uiEventChannel.TriggerEvent(string.Empty);
+        uiEventChannel.TriggerEvent("Hold [LMB] to charge lantern");
+        Invoke(nameof(ClearText), 5f);
     }
     public void ExitInteract()
     {
 
     }
+
+    void ClearText() => uiEventChannel.TriggerEvent(string.Empty);
 }
