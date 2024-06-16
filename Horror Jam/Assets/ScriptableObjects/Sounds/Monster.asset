@@ -15,7 +15,9 @@ MonoBehaviour:
   audioLevel: 0
   decayLevel: 0
   audioClips:
-  - {fileID: 8300000, guid: de44b7ee4caa7b7458063f02345da017, type: 3}
+  - {fileID: 8300000, guid: fa60cb30bc0dbf8489b02c7e7588283c, type: 3}
+  - {fileID: 8300000, guid: fba41c78b7a890f41a02a6a5824bdee8, type: 3}
+  - {fileID: 8300000, guid: 20c9d7824edfcf640905e60fae6efe26, type: 3}
   volume:
     minValue: 1
     maxValue: 1
