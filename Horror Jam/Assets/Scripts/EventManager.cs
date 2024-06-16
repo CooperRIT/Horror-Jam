@@ -16,6 +16,7 @@ public class EventManager : MonoBehaviour
 
     [Header("Light Settings")]
     [SerializeField] private List<Light> lightList;
+    [SerializeField] private AudioSource lightsAudio;
 
     [Tooltip("How many lights you want to enable in one event trigger")]
     [SerializeField] private int lightIterations;
@@ -40,6 +41,7 @@ public class EventManager : MonoBehaviour
 
     [Header("Case 6 reference")]
     [SerializeField] GameObject lantern;
+
 
     [Header("Valve 3 references")]
     [SerializeField] Transform valve3TeleportPosition;
@@ -79,6 +81,7 @@ public class EventManager : MonoBehaviour
                     lightList[lightIndex].intensity = lightIntensity;
                     lightIndex++;
                 }
+                lightsAudio.Play();
                 break;
             case 4:
                 soundMonster.TeleportToPosition(teleportPosition.position);
