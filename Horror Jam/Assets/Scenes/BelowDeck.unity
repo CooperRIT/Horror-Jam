@@ -10358,15 +10358,15 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1455273986}
-  m_LocalRotation: {x: -0, y: 0.99144495, z: 0.13052595, w: 0}
-  m_LocalPosition: {x: 0, y: 4.940091, z: -2.0772662}
+  m_LocalRotation: {x: 0, y: 0.9659259, z: 0.258819, w: 0}
+  m_LocalPosition: {x: 0, y: 5.9015284, z: -1.8761799}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 88582204}
   m_Father: {fileID: 1078071360}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: -15, y: 180, z: 0}
+  m_LocalEulerAnglesHint: {x: -30, y: 180, z: 0}
 --- !u!114 &1455273988
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12431,7 +12431,7 @@ PrefabInstance:
       objectReference: {fileID: 11400000, guid: 43a6e7686cdf8c04a82443129e11009b, type: 2}
     - target: {fileID: 4277601509725128379, guid: 058b96b6111a3b44ca0f2d7f0c5eacae, type: 3}
       propertyPath: fleshWalls.Array.size
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 4277601509725128379, guid: 058b96b6111a3b44ca0f2d7f0c5eacae, type: 3}
       propertyPath: fleshWalls.Array.data[0]
@@ -12445,6 +12445,10 @@ PrefabInstance:
       propertyPath: fleshWalls.Array.data[2]
       value: 
       objectReference: {fileID: 647898464}
+    - target: {fileID: 4277601509725128379, guid: 058b96b6111a3b44ca0f2d7f0c5eacae, type: 3}
+      propertyPath: fleshWalls.Array.data[3]
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 5348639719752257246, guid: 058b96b6111a3b44ca0f2d7f0c5eacae, type: 3}
       propertyPath: baseIntensity
       value: 25
