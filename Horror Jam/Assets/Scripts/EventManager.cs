@@ -33,6 +33,7 @@ public class EventManager : MonoBehaviour
 
     [Header("Valve 2 references")]
     [SerializeField] Transform teleportPosition;
+    [SerializeField] Transform runAwayPosition;
     [SerializeField] Transform runPosition;
 
     [Header("case 4 references")]
@@ -87,8 +88,7 @@ public class EventManager : MonoBehaviour
                 soundMonster.TeleportToPosition(teleportPosition.position);
                 break;
             case 5:
-                //soundMonster.DeAgroMonster(5);
-                //soundMonster.RunToPosition(runPosition.position);
+                
                 break;
             case 6:
                 lantern.SetActive(false);
@@ -97,6 +97,8 @@ public class EventManager : MonoBehaviour
                 soundMonster.TeleportToPosition(valve3TeleportPosition.position);
                 break;
             case 8:
+                soundMonster.DeAgroMonster(10f);
+                soundMonster.RunToPosition(runAwayPosition.position);
                 break;
 
             default:
