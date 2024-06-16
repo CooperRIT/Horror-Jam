@@ -49,6 +49,7 @@ public class Valve : MonoBehaviour, IInteract
     private AudioSource source;
 
     private float playSoundTime;
+    float accSound;
 
     //MODIFIYED BY COOPER
     [Header("Flesh Wall Reference")]
@@ -124,6 +125,7 @@ public class Valve : MonoBehaviour, IInteract
             currentTurningAmount += Time.deltaTime;
 
             soundEventChannel.CurrentSoundLevel += audioPitcherSO.audioLevel * Time.deltaTime;
+            accSound += audioPitcherSO.audioLevel * Time.deltaTime;
 
             yield return null;
         }
@@ -151,7 +153,11 @@ public class Valve : MonoBehaviour, IInteract
         while (maxTurningAmount > currentTime) 
         {
             currentTime += Time.deltaTime;
-            soundEventChannel.CurrentSoundLevel -= audioPitcherSO.audioLevel * Time.deltaTime;
+            if(accSound >= 0)
+            {
+                soundEventChannel.CurrentSoundLevel -= audioPitcherSO.audioLevel * Time.deltaTime;
+                accSound -= audioPitcherSO.audioLevel * Time.deltaTime;
+            }
             yield return null;
         }
     }
