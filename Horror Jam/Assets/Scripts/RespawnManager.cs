@@ -128,6 +128,11 @@ public class RespawnManager : MonoBehaviour
         Debug.Log("Finished Fading Out");
     }
 
+    public void startFadeOut()
+    {
+        StartCoroutine(nameof(FadeOut));
+    }
+
     void CutToBlack()
     {
         Color slate = fadePanel.color;

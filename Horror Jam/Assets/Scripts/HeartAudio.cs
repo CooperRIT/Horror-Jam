@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.VFX;
+using UnityEngine.SceneManagement;
 
 public class HeartAudio : MonoBehaviour
 {
@@ -12,7 +13,7 @@ public class HeartAudio : MonoBehaviour
 
     [Header("Cutscene Settings")]
     [SerializeField] float explodeDelay;
-
+    [SerializeField] RespawnManager respawnManager;
 
     private AudioSource audioSource;
 
@@ -72,6 +73,10 @@ public class HeartAudio : MonoBehaviour
         heartAnimation.enabled = false;
         heartBurst.Play();
         heartExplode.Play();
+        yield return new WaitForSeconds(4f);
+        respawnManager.startFadeOut();
+        yield return new WaitForSeconds(4f);
+        SceneManager.LoadScene(0);
 
         //Fade out and thank you for playing message or thank you for your sacrifice
         //Load title screen
