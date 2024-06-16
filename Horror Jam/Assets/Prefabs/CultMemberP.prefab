@@ -305,7 +305,7 @@ MonoBehaviour:
   timer: 0
   spottingTime: 3
   maxSpeed: 15
-  visionConeRange: 15
+  visionConeRange: 20
   visionConeFOV: 120
   obstructionLayer:
     serializedVersion: 2

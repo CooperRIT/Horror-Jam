@@ -152,6 +152,7 @@ public class CultistAi : EnemyBase
     void Patroling()
     {
         cultist.SetDestination(locationsToPatrol[currentPatrol]);
+        headLight.intensity = startingIntensity;
 
         //Switch to Spotting once cultist arrives at destination
         if (Vector3.Distance(locationsToPatrol[currentPatrol], cultist.transform.position) <= minPatrolDistance)
@@ -241,6 +242,7 @@ public class CultistAi : EnemyBase
                     cultistTransform.LookAt(hit.point);
                     if (!exposedThisFrame)
                     {
+                        headLight.intensity += exposurePerFrame * Time.deltaTime * 2;
                         currentExposure += exposurePerFrame * Time.deltaTime;
                         exposedThisFrame = true;
                     }
