@@ -96,6 +96,8 @@ public class EventManager : MonoBehaviour
             case 7:
                 soundMonster.TeleportToPosition(valve3TeleportPosition.position);
                 break;
+            case 8:
+                break;
 
             default:
                 throw new System.Exception("Event ID out of range");
