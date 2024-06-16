@@ -467,7 +467,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4741112612560676488, guid: a83d31c7ba7c12f4689da25eba0be4c9, type: 3}
       propertyPath: m_Intensity
-      value: 150
+      value: 200
       objectReference: {fileID: 0}
     - target: {fileID: 4741112612560676488, guid: a83d31c7ba7c12f4689da25eba0be4c9, type: 3}
       propertyPath: m_InnerSpotAngle
@@ -1691,7 +1691,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4741112612560676488, guid: a83d31c7ba7c12f4689da25eba0be4c9, type: 3}
       propertyPath: m_Intensity
-      value: 150
+      value: 300
       objectReference: {fileID: 0}
     - target: {fileID: 4741112612560676488, guid: a83d31c7ba7c12f4689da25eba0be4c9, type: 3}
       propertyPath: m_InnerSpotAngle
@@ -2388,7 +2388,7 @@ AudioSource:
   Spatialize: 0
   SpatializePostEffects: 0
   Priority: 0
-  DopplerLevel: 1
+  DopplerLevel: 0
   MinDistance: 1
   MaxDistance: 150
   Pan2D: 0
@@ -2449,7 +2449,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 1
+      value: 0
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -8373,7 +8373,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4741112612560676488, guid: a83d31c7ba7c12f4689da25eba0be4c9, type: 3}
       propertyPath: m_Intensity
-      value: 150
+      value: 300
       objectReference: {fileID: 0}
     - target: {fileID: 4741112612560676488, guid: a83d31c7ba7c12f4689da25eba0be4c9, type: 3}
       propertyPath: m_InnerSpotAngle
@@ -9135,7 +9135,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: bcc6f9053da89894aaa72c230ffeb7c4, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 167.58835
+      value: 161.33835
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: bcc6f9053da89894aaa72c230ffeb7c4, type: 3}
       propertyPath: m_LocalRotation.w
