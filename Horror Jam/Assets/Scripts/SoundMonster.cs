@@ -93,7 +93,7 @@ public class SoundMonster : EnemyBase
 
     public void DeAgroMonster(float howLongDeAgro)
     {
-        maxDistance = 3;
+        maxDistance = 0;
         //Invoke(nameof(ResetMaxDistance), howLongDeAgro);
     }
 
