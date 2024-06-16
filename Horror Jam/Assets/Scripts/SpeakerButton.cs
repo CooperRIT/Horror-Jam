@@ -7,7 +7,7 @@ public class SpeakerButton : MonoBehaviour, IInteract
     [SerializeField] SoundMonster soundMonster;
     [SerializeField] Transform runPosition;
     [SerializeField] AudioSource audioSource;
-    public string Prompt => "Press [E] to distract";
+    public string Prompt => "Activate Speakers";
 
     public void ExitInteract()
     {

@@ -961,6 +961,10 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4277601509725128379, guid: 058b96b6111a3b44ca0f2d7f0c5eacae, type: 3}
+      propertyPath: interactPrompt
+      value: Close Valve
+      objectReference: {fileID: 0}
+    - target: {fileID: 4277601509725128379, guid: 058b96b6111a3b44ca0f2d7f0c5eacae, type: 3}
       propertyPath: maxTurningAmount
       value: 10
       objectReference: {fileID: 0}
@@ -4584,7 +4588,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8272551806154137417, guid: 3ff464556fcfba9479075e63a5f42b0f, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8756636657499047411, guid: 3ff464556fcfba9479075e63a5f42b0f, type: 3}
       propertyPath: m_LocalPosition.x
@@ -14755,6 +14759,10 @@ PrefabInstance:
       propertyPath: lantern
       value: 
       objectReference: {fileID: 1685287120}
+    - target: {fileID: 8720502498583350426, guid: c806518e34ef0f64badf3550fc95e24d, type: 3}
+      propertyPath: interactPrompt
+      value: Pickup lantern
+      objectReference: {fileID: 0}
     - target: {fileID: 9119731713336601469, guid: c806518e34ef0f64badf3550fc95e24d, type: 3}
       propertyPath: m_RootOrder
       value: 0

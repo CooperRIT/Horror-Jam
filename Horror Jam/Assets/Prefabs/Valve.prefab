@@ -68,7 +68,7 @@ MonoBehaviour:
   uiEventChannel: {fileID: 11400000, guid: b707338632e6e1f4e849c8a980d409ee, type: 2}
   screenShake: {fileID: 11400000, guid: cb69795a4b80f5948ad3d7889bfb5c43, type: 2}
   heartEventChannel: {fileID: 0}
-  interactPrompt: Hold [E] to close valve
+  interactPrompt: Close Valve
   maxTurningAmount: 10
   spinRateMultiplier: 0.3
   maxSpinRate: 0.8
@@ -627,4 +627,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2180395244f062b4c80c4f24d1660078, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  resetEventChannel: {fileID: 0}
   flickerDistance: 15

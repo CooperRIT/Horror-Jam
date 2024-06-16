@@ -27043,6 +27043,10 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: -0.15003797
       objectReference: {fileID: 0}
+    - target: {fileID: 1387271537503493352, guid: 4c198b94c92a9034a9004743b0dceb2f, type: 3}
+      propertyPath: interactPrompt
+      value: Enter Below Deck
+      objectReference: {fileID: 0}
     - target: {fileID: 3575643028401998523, guid: 4c198b94c92a9034a9004743b0dceb2f, type: 3}
       propertyPath: m_RootOrder
       value: 300

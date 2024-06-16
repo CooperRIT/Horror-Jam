@@ -13,7 +13,7 @@ public class Valve : MonoBehaviour, IInteract
     [SerializeField] HeartEventChannel heartEventChannel;
 
     [Header("Interact Settings")]
-    [SerializeField] private string interactPrompt = "Hold [E] to close valve";
+    [SerializeField] private string interactPrompt = "Close valve";
     public string Prompt { get { return interactPrompt; } }
 
     [Header("Valve Settings")]
@@ -167,7 +167,7 @@ public class Valve : MonoBehaviour, IInteract
         StopAllCoroutines();
         valveClosed = false;
         currentTurningAmount = 0;
-        interactPrompt = "Hold [E] to close valve";
+        interactPrompt = "Close valve";
 
         foreach (FleshWall fleshWall in fleshWalls)
         {
