@@ -5504,8 +5504,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tiltInSpeed: 3
-  tiltOutSpeed: 5
-  tiltAmount: -2.5
+  tiltOutSpeed: 3
+  tiltAmount: -2
   cam: {fileID: 2210646617724671470}
 --- !u!54 &2210646617093219875
 Rigidbody:
